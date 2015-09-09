@@ -1,0 +1,4 @@
+E:\HFC Project\OutSource\bin\Debug\OutSource.dll
+E:\HFC Project\OutSource\bin\Debug\OutSource.pdb
+E:\HFC Project\OutSource\obj\Debug\OutSource.dll
+E:\HFC Project\OutSource\obj\Debug\OutSource.pdb

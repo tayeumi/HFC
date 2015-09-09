@@ -49,3 +49,5 @@ E:\HFC Project\HFC\obj\x86\Debug\HFC.exe
 E:\HFC Project\HFC\obj\x86\Debug\HFC.pdb
 E:\HFC Project\HFC\obj\x86\Debug\HFC.Forms.frmMaps.resources
 E:\HFC Project\HFC\obj\x86\Debug\HFC.Forms.frmNodeList_UpdateByPath.resources
+E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.exe
+E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.pdb
