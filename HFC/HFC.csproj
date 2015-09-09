@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26F16C1E-024C-4ECA-9B0C-B5516DF4E855}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HFC</RootNamespace>
+    <AssemblyName>HFC</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>my_network.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=95fc6c5621878f0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.2.Core, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v12.2.Core, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.2.Core, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v12.2.Core, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v12.2.Core, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.2.Wizard, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v12.2.UI, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v12.2.Core, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v12.2.Presets, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v12.2.Win, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.2.Extensions, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v12.2.UI, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v12.2.Extensions, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v12.2, Version=12.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.SmoExtended, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.SmoExtended.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\App.cs" />
+    <Compile Include="Class\CMTS.cs" />
+    <Compile Include="Class\CN-ADMIN.cs" />
+    <Compile Include="Class\DbAccess.cs" />
+    <Compile Include="Class\ExportDataToExcel.cs" />
+    <Compile Include="Class\MyWebServer.cs" />
+    <Compile Include="Class\NW_CurrentTrafic.cs" />
+    <Compile Include="Class\NW_Device.cs" />
+    <Compile Include="Class\NW_Interface.cs" />
+    <Compile Include="Class\NW_InterfaceControllerWarning.cs" />
+    <Compile Include="Class\NW_InterfaceGauge.cs" />
+    <Compile Include="Class\NW_Node.cs" />
+    <Compile Include="Class\NW_SignalLog.cs" />
+    <Compile Include="Class\RegistryWriter.cs" />
+    <Compile Include="Class\SolarWinds.cs" />
+    <Compile Include="Class\SolarWinds_Get.cs" />
+    <Compile Include="Class\S_SendMail.cs" />
+    <Compile Include="Forms\frmCn-adminWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCn-adminWeb.Designer.cs">
+      <DependentUpon>frmCn-adminWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList.Designer.cs">
+      <DependentUpon>frmDeviceList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList_Request.Designer.cs">
+      <DependentUpon>frmDeviceList_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList_Request_Static.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList_Request_Static.Designer.cs">
+      <DependentUpon>frmDeviceList_Request_Static.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeviceList_Update.Designer.cs">
+      <DependentUpon>frmDeviceList_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDeviceToNode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDeviceToNode.Designer.cs">
+      <DependentUpon>frmDeviceToNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInterfaceGauge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInterfaceGauge.Designer.cs">
+      <DependentUpon>frmInterfaceGauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmInterfaceSolarWind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmInterfaceSolarWind.Designer.cs">
+      <DependentUpon>frmInterfaceSolarWind.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMaps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMaps.Designer.cs">
+      <DependentUpon>frmMaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNodeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNodeList.Designer.cs">
+      <DependentUpon>frmNodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNodeList_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNodeList_Update.Designer.cs">
+      <DependentUpon>frmNodeList_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNodeList_UpdateByPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNodeList_UpdateByPath.Designer.cs">
+      <DependentUpon>frmNodeList_UpdateByPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSignalChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSignalChart.Designer.cs">
+      <DependentUpon>frmSignalChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSignalChartDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSignalChartDetail.Designer.cs">
+      <DependentUpon>frmSignalChartDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSignalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSignalHistory.Designer.cs">
+      <DependentUpon>frmSignalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSignalRepair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSignalRepair.Designer.cs">
+      <DependentUpon>frmSignalRepair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSignalRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSignalRequest.Designer.cs">
+      <DependentUpon>frmSignalRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTraffic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTraffic.Designer.cs">
+      <DependentUpon>frmTraffic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTrafficMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTrafficMonitor.Designer.cs">
+      <DependentUpon>frmTrafficMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCauHinh.Designer.cs">
+      <DependentUpon>frmCauHinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaiting.Designer.cs">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\frmCn-adminWeb.resx">
+      <DependentUpon>frmCn-adminWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeviceList.resx">
+      <DependentUpon>frmDeviceList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeviceList_Request.resx">
+      <DependentUpon>frmDeviceList_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeviceList_Request_Static.resx">
+      <DependentUpon>frmDeviceList_Request_Static.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeviceList_Update.resx">
+      <DependentUpon>frmDeviceList_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDeviceToNode.resx">
+      <DependentUpon>frmDeviceToNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInterfaceGauge.resx">
+      <DependentUpon>frmInterfaceGauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmInterfaceSolarWind.resx">
+      <DependentUpon>frmInterfaceSolarWind.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMaps.resx">
+      <DependentUpon>frmMaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNodeList.resx">
+      <DependentUpon>frmNodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNodeList_Update.resx">
+      <DependentUpon>frmNodeList_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNodeList_UpdateByPath.resx">
+      <DependentUpon>frmNodeList_UpdateByPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSignalChart.resx">
+      <DependentUpon>frmSignalChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSignalChartDetail.resx">
+      <DependentUpon>frmSignalChartDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSignalHistory.resx">
+      <DependentUpon>frmSignalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSignalRepair.resx">
+      <DependentUpon>frmSignalRepair.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSignalRequest.resx">
+      <DependentUpon>frmSignalRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTraffic.resx">
+      <DependentUpon>frmTraffic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTrafficMonitor.resx">
+      <DependentUpon>frmTrafficMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCauHinh.resx">
+      <DependentUpon>frmCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaiting.resx">
+      <DependentUpon>frmWaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="History\Change.txt" />
+    <Content Include="History\Help.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="my_network.ico" />
+    <None Include="Resources\Action_Navigation_Next_Object.png" />
+    <None Include="Resources\offline.png" />
+    <None Include="Resources\161.png" />
+    <None Include="Resources\151.png" />
+    <None Include="Resources\b_g.jpg" />
+    <None Include="Resources\b_g.png" />
+    <None Include="Resources\Action_Cancel.png" />
+    <None Include="Resources\Action_LocalizationImport.png" />
+    <None Include="Resources\Action_Navigation_History_Forward.png" />
+    <None Include="Resources\uncheck.png" />
+    <None Include="Resources\checkforall.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\Action_Chart_Printing_Preview.png" />
+    <None Include="Resources\Action_ChooseSkin.png" />
+    <None Include="Resources\BO_StateMachine.png" />
+    <None Include="Resources\BO_StateMachine_32x32.png" />
+    <None Include="Resources\user_gray_female.png" />
+    <None Include="Resources\BO_Customer.png" />
+    <None Include="Resources\0.png" />
+    <None Include="Resources\Printer_21.bmp" />
+    <None Include="Resources\Printer_2.bmp" />
+    <None Include="Resources\edit_mode.png" />
+    <None Include="Resources\ProgramOff.bmp" />
+    <None Include="Resources\Excel.bmp" />
+    <None Include="Resources\Printer.bmp" />
+    <None Include="Resources\Delete.bmp" />
+    <None Include="Resources\Edit.bmp" />
+    <None Include="Resources\add.gif" />
+    <None Include="Resources\intro.jpg" />
+    <None Include="Resources\16.png" />
+    <None Include="Resources\15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SnmpSharpNet\SnmpSharpNet.csproj">
+      <Project>{8E150D42-5D05-40F8-A388-C3A55EB4A141}</Project>
+      <Name>SnmpSharpNet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

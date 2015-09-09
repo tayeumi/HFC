@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <meta charset="utf-8">	
+    <title>Path</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>	
+  </head>
+  <body>
+    <div id="map"></div>
+	<div id="latlng"></div>
+    <script>	
+	var path1 = [
+{lat:10.81453,lng:  106.68683} 
+];
+	
+	
+function initMap() {
+  // Create the map.
+   // loadfirst 
+  //var first = new google.maps.LatLng(41.850, -87.650);
+  var map = new google.maps.Map(document.getElementById('map'), {
+     zoom: 15,
+     center: {lat:10.81453, lng: 106.68683} ,
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+  }); 
+
+  var marker = new google.maps.Marker({
+    position: {lat:10.81453, lng: 106.68683},
+    map: map,
+    title: 'Node'
+  });
+  
+  
+ var flightPath = new google.maps.Polyline({ 
+ path: path1 ,
+geodesic: true,
+strokeColor: '#FF0000', 
+strokeOpacity: 1.0,
+strokeWeight: 2
+});
+ flightPath.setMap(map);
+   
+	 
+  var infowindow = new google.maps.InfoWindow({
+    content: 'contentString'
+  });
+   
+google.maps.event.addListener(map, 'click', function( event ){
+ var marker = new google.maps.Marker({
+    position: event.latLng,
+    map: map,
+    title: 'Vi tri '+event.latLng.lat() + ',' +event.latLng.lng()
+  });
+ var lats = ''+event.latLng.lat(); 
+  var lngs = ''+event.latLng.lng(); 
+  var info='Location: ' +lats.substring(0,9) + ', '+lngs.substring(0,10) ;
+  document.getElementById('latlng').innerHTML=''+lats.substring(0,9) + ', '+lngs.substring(0,10) ;
+
+  marker.addListener('click', function() {  
+	infowindow.setContent(info);
+    infowindow.open(map, marker);
+  });
+ 
+});	
+	
+}
+
+    </script>
+    <script async defer 
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
+  </body>
+</html>

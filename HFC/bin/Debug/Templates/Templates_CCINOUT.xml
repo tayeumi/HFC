@@ -1,0 +1,88 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="Columns" iskey="true" value="15">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Width">149</property>
+      <property name="Name">colInOutCode</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Width">65</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">5</property>
+      <property name="Name">colMachineNumber</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Width">71</property>
+      <property name="Name">colInOutMode</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Width">144</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Name">colTimeStr</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Width">138</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Name">colFirstName</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Width">71</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Name">colLastName</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Width">120</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Name">colEmployeeCode</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Width">66</property>
+      <property name="Name">colTimeOut</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="Width">61</property>
+      <property name="Name">colTimeIn</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="Width">103</property>
+      <property name="Name">colDepartmentName</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="Width">66</property>
+      <property name="Name">colDayStr</property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="Width">66</property>
+      <property name="Name">colDateStr</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="Width">142</property>
+      <property name="Name">colGroupName</property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Width">37</property>
+      <property name="Name">colIndex</property>
+    </property>
+    <property name="Item15" isnull="true" iskey="true">
+      <property name="Width">123</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Name">colEnrollNumber</property>
+    </property>
+  </property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ShowGroupPanel">false</property>
+    <property name="ShowAutoFilterRow">true</property>
+    <property name="RowAutoHeight">true</property>
+  </property>
+  <property name="MRUFilters">~Xtra#Base64AAEAAAD/////AQAAAAAAAAAMAgAAAF5EZXZFeHByZXNzLlh0cmFHcmlkLnYxMi4yLCBWZXJzaW9uPTEyLjIuMTAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhBQEAAAA2RGV2RXhwcmVzcy5YdHJhR3JpZC5WaWV3cy5CYXNlLk1SVVZpZXdGaWx0ZXJDb2xsZWN0aW9uAQAAABNDb2xsZWN0aW9uQmFzZStsaXN0AxxTeXN0ZW0uQ29sbGVjdGlvbnMuQXJyYXlMaXN0AgAAAAkDAAAABAMAAAAcU3lzdGVtLkNvbGxlY3Rpb25zLkFycmF5TGlzdAMAAAAGX2l0ZW1zBV9zaXplCF92ZXJzaW9uBQAACAgJBAAAAAQAAAAGAAAAEAQAAAAEAAAACQUAAAAJBgAAAAkHAAAACQgAAAAMCQAAAFpEZXZFeHByZXNzLkRhdGEudjEyLjIsIFZlcnNpb249MTIuMi4xMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEFBQAAAClEZXZFeHByZXNzLlh0cmFHcmlkLlZpZXdzLkJhc2UuVmlld0ZpbHRlcgIAAAAYZk5vbkNvbHVtbkZpbHRlckNyaXRlcmlhE0NvbGxlY3Rpb25CYXNlK2xpc3QEAypEZXZFeHByZXNzLkRhdGEuRmlsdGVyaW5nLkNyaXRlcmlhT3BlcmF0b3IJAAAAHFN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QCAAAACgkKAAAAAQYAAAAFAAAACgkLAAAAAQcAAAAFAAAACgkMAAAAAQgAAAAFAAAACgkNAAAAAQoAAAADAAAACQ4AAAABAAAAAwAAAAELAAAAAwAAAAkPAAAAAQAAAAMAAAABDAAAAAMAAAAJEAAAAAEAAAADAAAAAQ0AAAADAAAACREAAAABAAAAAwAAABAOAAAABAAAAAkSAAAADQMQDwAAAAQAAAAJEwAAAA0DEBAAAAAEAAAACRQAAAANAxARAAAABAAAAAkVAAAADQMMFgAAABlEZXZFeHByZXNzLlh0cmFHcmlkLnYxMi4yBRIAAAAzRGV2RXhwcmVzcy5YdHJhR3JpZC5WaWV3cy5CYXNlLlZpZXdDb2x1bW5GaWx0ZXJJbmZvAgAAAAZGaWx0ZXIGQ29sdW1uBAEsRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkNvbHVtbkZpbHRlckluZm8WAAAAFgAAAAkXAAAABhgAAAALY29sTGFzdE5hbWUBEwAAABIAAAAJGQAAAAkYAAAAARQAAAASAAAACRsAAAAGHAAAABFjb2xEZXBhcnRtZW50TmFtZQEVAAAAEgAAAAkdAAAACRwAAAAFFwAAACxEZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuQ29sdW1uRmlsdGVySW5mbwUAAAAEVHlwZQRLaW5kC0Rpc3BsYXlUZXh0DEZpbHRlclN0cmluZwVWYWx1ZQAAAQEBCAgWAAAAAwAAAAAAAAAGHwAAAAAGIAAAAB5TdGFydHNXaXRoKFtMYXN0TmFtZV0sICdTYW5nJykGIQAAAARTYW5nARkAAAAXAAAAAwAAAAAAAAAJHwAAAAYjAAAAHVN0YXJ0c1dpdGgoW0xhc3ROYW1lXSwgJ0jDoCcpBiQAAAADSMOgARsAAAAXAAAAAwAAAAAAAAAJHwAAAAYmAAAAKlN0YXJ0c1dpdGgoW0RlcGFydG1lbnROYW1lXSwgJ1Bow7JuZyB0aHUnKQYnAAAAClBow7JuZyB0aHUBHQAAABcAAAADAAAAAAAAAAkfAAAABikAAAAyU3RhcnRzV2l0aChbRGVwYXJ0bWVudE5hbWVdLCAnUGjDsm5nIFRodSBDxrDhu5tjJykGKgAAABJQaMOybmcgVGh1IEPGsOG7m2ML</property>
+  <property name="ActiveFilterString" />
+  <property name="GroupSummarySortInfoState" />
+  <property name="FindFilterText" />
+  <property name="FindPanelVisible">false</property>
+</XtraSerializer>

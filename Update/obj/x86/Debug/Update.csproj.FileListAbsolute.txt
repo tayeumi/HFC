@@ -1,0 +1,28 @@
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\bin\Debug\Update.exe
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\bin\Debug\Update.pdb
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\obj\x86\Debug\Update.Properties.Resources.resources
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\obj\x86\Debug\Update.exe
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\obj\x86\Debug\Update.pdb
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\obj\x86\Debug\Update.Update.resources
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\bin\Debug\Update.exe.config
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\obj\x86\Debug\ResGen.read.1.tlog
+E:\Du An Phan Mem IT Pro\IT_Pro\Update\obj\x86\Debug\ResGen.write.1.tlog
+E:\HRM Project\HRM\Update\bin\Debug\Update.exe.config
+E:\HRM Project\HRM\Update\bin\Debug\Update.exe
+E:\HRM Project\HRM\Update\bin\Debug\Update.pdb
+E:\HRM Project\HRM\Update\obj\x86\Debug\Update.Update.resources
+E:\HRM Project\HRM\Update\obj\x86\Debug\Update.Properties.Resources.resources
+E:\HRM Project\HRM\Update\obj\x86\Debug\Update.exe
+E:\HRM Project\HRM\Update\obj\x86\Debug\Update.pdb
+E:\HRM Project\HRM\Update\obj\x86\Debug\Update.csproj.GenerateResource.Cache
+E:\HRM Project\HRM\Update\obj\x86\Debug\Update.csprojResolveAssemblyReference.cache
+E:\HFC Project\Update\bin\Debug\Update.exe.config
+E:\HFC Project\Update\bin\Debug\Update.exe
+E:\HFC Project\Update\bin\Debug\Update.pdb
+E:\HFC Project\Update\obj\x86\Debug\Update.Update.resources
+E:\HFC Project\Update\obj\x86\Debug\Update.Properties.Resources.resources
+E:\HFC Project\Update\obj\x86\Debug\Update.csproj.GenerateResource.Cache
+E:\HFC Project\Update\obj\x86\Debug\Update.exe
+E:\HFC Project\Update\obj\x86\Debug\Update.pdb
+E:\HFC Project\Update\obj\x86\Debug\Update.csprojResolveAssemblyReference.cache

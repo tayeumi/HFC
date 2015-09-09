@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
+	_meta
+    <title>Node List</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }	  
+    </style>	
+	
+  </head>
+  <body _loadfun >
+    <div id="map"></div>
+    <script>
+var map;
+var tomap=0;
+function initMap() {
+   map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,   
+	center: {lat: 10.8133611, lng: 106.6974304}
+  });  
+		//addmac
+  // addMarker({lat: 10.8133611, lng: 106.6974304},'aa', map)
+  // addMarker({lat: 10.80371, lng: 106.69145},'aa', map)
+  _node
+}
+function addMarker(MarkerName,location,_title, map,info,_link) {
+  // Add the marker at the clicked location, and add the next-available label
+  // from the array of alphabetical characters.
+  
+	MarkerName = new google.maps.Marker({
+    position: location,
+	icon: _link ,
+	title: _title,		
+    	map: map
+  });
+  MarkerName.addListener('click', function() {
+    info.open(map, MarkerName);
+  });
+}
+_loadauto
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initMap"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+E:\LBC\QLHT\SendFile\bin\Debug\SendFile.exe
+E:\LBC\QLHT\SendFile\bin\Debug\SendFile.pdb
+E:\LBC\QLHT\SendFile\obj\Debug\ResolveAssemblyReference.cache
+E:\LBC\QLHT\SendFile\obj\Debug\SendFile.Properties.Resources.resources
+E:\LBC\QLHT\SendFile\obj\Debug\SendFile.SendFile.resources
+E:\LBC\QLHT\SendFile\obj\Debug\SendFile.exe
+E:\LBC\QLHT\SendFile\obj\Debug\SendFile.pdb
+E:\LBC\QLHT\SendFile\obj\Debug\ResGen.read.1.tlog
+E:\LBC\QLHT\SendFile\obj\Debug\ResGen.write.1.tlog
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\obj\Debug\SendFile.exe
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\obj\Debug\SendFile.pdb
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\bin\Debug\SendFile.exe
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\bin\Debug\SendFile.pdb
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\obj\Debug\ResolveAssemblyReference.cache
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\obj\Debug\SendFile.Properties.Resources.resources
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\obj\Debug\SendFile.SendFile.resources
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\obj\Debug\ResGen.read.1.tlog
+E:\Du An Phan Mem IT Pro\IT_Pro\SendFile\obj\Debug\ResGen.write.1.tlog
+E:\HRM Project\HRM\SendFile\bin\Debug\SendFile.exe
+E:\HRM Project\HRM\SendFile\bin\Debug\SendFile.pdb
+E:\HRM Project\HRM\SendFile\obj\Debug\SendFile.Properties.Resources.resources
+E:\HRM Project\HRM\SendFile\obj\Debug\SendFile.SendFile.resources
+E:\HRM Project\HRM\SendFile\obj\Debug\SendFile.exe
+E:\HRM Project\HRM\SendFile\obj\Debug\SendFile.pdb
+E:\HRM Project\HRM\SendFile\obj\Debug\SendFile.csproj.GenerateResource.Cache
+E:\HFC Project\SendFile\bin\Debug\SendFile.exe
+E:\HFC Project\SendFile\bin\Debug\SendFile.pdb
+E:\HFC Project\SendFile\obj\Debug\SendFile.Properties.Resources.resources
+E:\HFC Project\SendFile\obj\Debug\SendFile.SendFile.resources
+E:\HFC Project\SendFile\obj\Debug\SendFile.csproj.GenerateResource.Cache
+E:\HFC Project\SendFile\obj\Debug\SendFile.exe
+E:\HFC Project\SendFile\obj\Debug\SendFile.pdb
+E:\HFC Project\SendFile\obj\Debug\SendFile.csprojResolveAssemblyReference.cache

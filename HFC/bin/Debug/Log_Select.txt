@@ -1,0 +1,26 @@
+select SUBSCRIBER.SUBS_ID, SUBSCRIBER.SUBS_CODE, SUBSCRIBER.SUBS_NAME,
+                        SUBSCRIBER.USERNAME, SUBSCRIBER.INSTADDRNO, STREET.STRT_NAME, 
+                        WARD.WARD_NAME, DISTRICT.DIST_NAME, BLOCK.BLOCK_NAME,
+                        CONTRACT.CONT_ID, CONTRACT.CONT_CODE, CONTRACT.SIGNDATE, CONTRACT.TAKEOVERDATE,
+                        CONTRACT.STAT_ID from subscriber join subsmac on subscriber.subs_id = subsmac.subs_id
+                        join macaddress on subsmac.mac_id = macaddress.mac_id
+                        join subscontract on subscriber.subs_id = subscontract.subs_id
+                        join contract on subscontract.cont_id = contract.cont_id
+                        JOIN STREET ON SUBSCRIBER.INSTSTRTID = STREET.STRT_ID
+                        JOIN WARD ON SUBSCRIBER.INSTWARDID = WARD.WARD_ID
+                        JOIN DISTRICT ON SUBSCRIBER.INSTDISTID = DISTRICT.DIST_ID
+                        LEFT JOIN BLOCK ON SUBSCRIBER.INSTBLOCKID = BLOCK.BLOCK_ID
+                        where contract.serg_id = 'INTERNET' AND mac_address = '00-0E-09-2E-F2-5D'
+select SUBSCRIBER.SUBS_ID, SUBSCRIBER.SUBS_CODE, SUBSCRIBER.SUBS_NAME,
+                        SUBSCRIBER.USERNAME, SUBSCRIBER.INSTADDRNO, STREET.STRT_NAME, 
+                        WARD.WARD_NAME, DISTRICT.DIST_NAME, BLOCK.BLOCK_NAME,
+                        CONTRACT.CONT_ID, CONTRACT.CONT_CODE, CONTRACT.SIGNDATE, CONTRACT.TAKEOVERDATE,
+                        CONTRACT.STAT_ID from subscriber join subsmac on subscriber.subs_id = subsmac.subs_id
+                        join macaddress on subsmac.mac_id = macaddress.mac_id
+                        join subscontract on subscriber.subs_id = subscontract.subs_id
+                        join contract on subscontract.cont_id = contract.cont_id
+                        JOIN STREET ON SUBSCRIBER.INSTSTRTID = STREET.STRT_ID
+                        JOIN WARD ON SUBSCRIBER.INSTWARDID = WARD.WARD_ID
+                        JOIN DISTRICT ON SUBSCRIBER.INSTDISTID = DISTRICT.DIST_ID
+                        LEFT JOIN BLOCK ON SUBSCRIBER.INSTBLOCKID = BLOCK.BLOCK_ID
+                        where contract.serg_id = 'INTERNET' AND mac_address = '00-0E-09-2E-F2-5D'

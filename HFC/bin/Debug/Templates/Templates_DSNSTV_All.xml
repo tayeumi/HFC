@@ -1,0 +1,194 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="Columns" iskey="true" value="35">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Width">457</property>
+      <property name="Name">colBranchName</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Width">115</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Name">colDepartmentName</property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Width">80</property>
+      <property name="Name">colPhoTo</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Name">colEmployeeCode</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Width">100</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Name">colFirstName</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Width">59</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Name">colLastName</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Width">54</property>
+      <property name="Name">colSex</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Width">104</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">6</property>
+      <property name="Name">colBirthday</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="Width">153</property>
+      <property name="Name">colBirthPlace</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="Width">99</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">16</property>
+      <property name="Name">colCellPhone</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="Width">253</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">14</property>
+      <property name="Name">colMainAddress</property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="Width">66</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">5</property>
+      <property name="Name">colIDCard</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="Width">129</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">7</property>
+      <property name="Name">colIDCardDate</property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Width">131</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">8</property>
+      <property name="Name">colIDCardPlace</property>
+    </property>
+    <property name="Item15" isnull="true" iskey="true">
+      <property name="Width">60</property>
+      <property name="Name">colStatus</property>
+    </property>
+    <property name="Item16" isnull="true" iskey="true">
+      <property name="Width">117</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">17</property>
+      <property name="Name">colEmail</property>
+    </property>
+    <property name="Item17" isnull="true" iskey="true">
+      <property name="Width">74</property>
+      <property name="Name">colNationality</property>
+    </property>
+    <property name="Item18" isnull="true" iskey="true">
+      <property name="Width">67</property>
+      <property name="Name">colEthnic</property>
+    </property>
+    <property name="Item19" isnull="true" iskey="true">
+      <property name="Width">90</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">10</property>
+      <property name="Name">colReligion</property>
+    </property>
+    <property name="Item20" isnull="true" iskey="true">
+      <property name="Width">191</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">12</property>
+      <property name="Name">colSchool</property>
+    </property>
+    <property name="Item21" isnull="true" iskey="true">
+      <property name="Width">155</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">11</property>
+      <property name="Name">colEducation</property>
+    </property>
+    <property name="Item22" isnull="true" iskey="true">
+      <property name="Width">77</property>
+      <property name="Name">colLanguage</property>
+    </property>
+    <property name="Item23" isnull="true" iskey="true">
+      <property name="Width">43</property>
+      <property name="Name">colInformatic</property>
+    </property>
+    <property name="Item24" isnull="true" iskey="true">
+      <property name="Width">133</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">13</property>
+      <property name="Name">colProfessional</property>
+    </property>
+    <property name="Item25" isnull="true" iskey="true">
+      <property name="Width">152</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">9</property>
+      <property name="Name">colMarriage</property>
+    </property>
+    <property name="Item26" isnull="true" iskey="true">
+      <property name="Width">101</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Name">colPosition</property>
+    </property>
+    <property name="Item27" isnull="true" iskey="true">
+      <property name="Width">113</property>
+      <property name="Name">colGroupName</property>
+    </property>
+    <property name="Item28" isnull="true" iskey="true">
+      <property name="Width">85</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">18</property>
+      <property name="Name">colBeginDate</property>
+    </property>
+    <property name="Item29" isnull="true" iskey="true">
+      <property name="Width">144</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">15</property>
+      <property name="Name">colContactAddress</property>
+    </property>
+    <property name="Item30" isnull="true" iskey="true">
+      <property name="Name">colEndDate</property>
+    </property>
+    <property name="Item31" isnull="true" iskey="true">
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">19</property>
+      <property name="Name">colTaxCode</property>
+    </property>
+    <property name="Item32" isnull="true" iskey="true">
+      <property name="Name">colEnrollNumber</property>
+    </property>
+    <property name="Item33" isnull="true" iskey="true">
+      <property name="Width">111</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">20</property>
+      <property name="Name">colBankCode</property>
+    </property>
+    <property name="Item34" isnull="true" iskey="true">
+      <property name="Name">colColor</property>
+    </property>
+    <property name="Item35" isnull="true" iskey="true">
+      <property name="Width">41</property>
+      <property name="Visible">true</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Name">colImage</property>
+    </property>
+  </property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ColumnAutoWidth">false</property>
+    <property name="ShowAutoFilterRow">true</property>
+  </property>
+  <property name="ActiveFilterString" />
+  <property name="SortInfo">~Xtra#Base64AAEAAAD/////AQAAAAAAAAAMAgAAAF5EZXZFeHByZXNzLlh0cmFHcmlkLnYxMi4yLCBWZXJzaW9uPTEyLjIuMTAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhBQEAAAA4RGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mb0NvbGxlY3Rpb24EAAAACmdyb3VwQ291bnQFY2xvbmUPY2xvbmVHcm91cENvdW50E0NvbGxlY3Rpb25CYXNlK2xpc3QAAwADCLMBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tEZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuR3JpZENvbHVtblNvcnRJbmZvLCBEZXZFeHByZXNzLlh0cmFHcmlkLnYxMi4yLCBWZXJzaW9uPTEyLjIuMTAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iODhkMTc1NGQ3MDBlNDlhXV0IHFN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QCAAAAAQAAAAkDAAAAAQAAAAkEAAAABAMAAACzAVN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mbywgRGV2RXhwcmVzcy5YdHJhR3JpZC52MTIuMiwgVmVyc2lvbj0xMi4yLjEwLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YV1dAwAAAAZfaXRlbXMFX3NpemUIX3ZlcnNpb24EAAAwRGV2RXhwcmVzcy5YdHJhR3JpZC5Db2x1bW5zLkdyaWRDb2x1bW5Tb3J0SW5mb1tdAgAAAAgICQUAAAABAAAAAQAAAAQEAAAAHFN5c3RlbS5Db2xsZWN0aW9ucy5BcnJheUxpc3QDAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgUAAAgICQYAAAABAAAAAwAAAAcFAAAAAAEAAAAEAAAABC5EZXZFeHByZXNzLlh0cmFHcmlkLkNvbHVtbnMuR3JpZENvbHVtblNvcnRJbmZvAgAAAAkHAAAADQMQBgAAAAQAAAAJCAAAAA0DDAkAAAAZRGV2RXhwcmVzcy5YdHJhR3JpZC52MTIuMgUHAAAALkRldkV4cHJlc3MuWHRyYUdyaWQuQ29sdW1ucy5HcmlkQ29sdW1uU29ydEluZm8CAAAACVNvcnRPcmRlcgpDb2x1bW5OYW1lAAEICQAAAAIAAAAGCgAAABFjb2xEZXBhcnRtZW50TmFtZQEIAAAABwAAAAEAAAAJCgAAAAs=</property>
+  <property name="GroupSummarySortInfoState" />
+  <property name="FindFilterText" />
+  <property name="FindPanelVisible">false</property>
+</XtraSerializer>
