@@ -89,7 +89,7 @@
             this.linkfile.Name = "linkfile";
             this.linkfile.Size = new System.Drawing.Size(381, 21);
             this.linkfile.TabIndex = 1;
-            this.linkfile.Text = "E:\\HFC Project\\HFC\\bin\\Debug\\HFC.exe";
+            this.linkfile.Text = "E:\\DEV\\HFC\\HFC\\HFC\\bin\\Debug\\HFC.exe";
             // 
             // label1
             // 
@@ -166,7 +166,7 @@
             this.txtUpdate.Name = "txtUpdate";
             this.txtUpdate.Size = new System.Drawing.Size(381, 21);
             this.txtUpdate.TabIndex = 6;
-            this.txtUpdate.Text = "E:\\HFC Project\\Update\\bin\\Debug\\Update.exe";
+            this.txtUpdate.Text = "E:\\DEV\\HFC\\HFC\\Update\\bin\\Debug\\Update.exe";
             // 
             // SendFile
             // 

@@ -36,10 +36,11 @@
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition4 = new DevExpress.XtraGrid.StyleFormatCondition();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition5 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.gridSNRValue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOffline = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOnline = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colValue1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOffline = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barMenu = new DevExpress.XtraBars.Bar();
             this.btnConnect = new DevExpress.XtraBars.BarButtonItem();
@@ -70,7 +71,6 @@
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridNodeStatus = new DevExpress.XtraGrid.GridControl();
             this.gridNodeStatusDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNodeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -172,14 +172,14 @@
             this.gridSNRValue.VisibleIndex = 1;
             this.gridSNRValue.Width = 42;
             // 
-            // colOffline
+            // colOnline
             // 
-            this.colOffline.Caption = "Offline";
-            this.colOffline.FieldName = "Value2";
-            this.colOffline.Name = "colOffline";
-            this.colOffline.Visible = true;
-            this.colOffline.VisibleIndex = 2;
-            this.colOffline.Width = 46;
+            this.colOnline.Caption = "Online";
+            this.colOnline.FieldName = "Value1";
+            this.colOnline.Name = "colOnline";
+            this.colOnline.Visible = true;
+            this.colOnline.VisibleIndex = 1;
+            this.colOnline.Width = 45;
             // 
             // colValue4
             // 
@@ -210,6 +210,15 @@
             this.colValue1.Visible = true;
             this.colValue1.VisibleIndex = 3;
             this.colValue1.Width = 65;
+            // 
+            // colOffline
+            // 
+            this.colOffline.Caption = "Offline";
+            this.colOffline.FieldName = "Value2";
+            this.colOffline.Name = "colOffline";
+            this.colOffline.Visible = true;
+            this.colOffline.VisibleIndex = 2;
+            this.colOffline.Width = 46;
             // 
             // barManager1
             // 
@@ -360,22 +369,22 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 392);
-            this.barDockControlBottom.Size = new System.Drawing.Size(698, 59);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 390);
+            this.barDockControlBottom.Size = new System.Drawing.Size(698, 61);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 392);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 390);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(698, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 392);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 390);
             // 
             // dockManager1
             // 
@@ -394,13 +403,13 @@
             // 
             // hideContainerRight
             // 
-            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(199)))), ((int)(((byte)(216)))));
+            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.hideContainerRight.Controls.Add(this.dockPanel1);
             this.hideContainerRight.Controls.Add(this.dockPanel2);
             this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(675, 0);
+            this.hideContainerRight.Location = new System.Drawing.Point(679, 0);
             this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(23, 392);
+            this.hideContainerRight.Size = new System.Drawing.Size(19, 390);
             // 
             // dockPanel1
             // 
@@ -501,16 +510,16 @@
             this.dockPanel2.OriginalSize = new System.Drawing.Size(260, 200);
             this.dockPanel2.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel2.SavedIndex = 0;
-            this.dockPanel2.Size = new System.Drawing.Size(260, 392);
+            this.dockPanel2.Size = new System.Drawing.Size(260, 390);
             this.dockPanel2.Text = "Node Status";
             this.dockPanel2.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.gridNodeStatus);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(254, 365);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(252, 363);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // gridNodeStatus
@@ -524,7 +533,7 @@
             this.repositoryItemPictureEdit4,
             this.repositoryItemCheckEdit2,
             this.repositoryItemCheckEdit3});
-            this.gridNodeStatus.Size = new System.Drawing.Size(254, 365);
+            this.gridNodeStatus.Size = new System.Drawing.Size(252, 363);
             this.gridNodeStatus.TabIndex = 4;
             this.gridNodeStatus.UseEmbeddedNavigator = true;
             this.gridNodeStatus.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -534,14 +543,14 @@
             // 
             this.gridNodeStatusDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colOffline,
-            this.gridColumn1,
+            this.colOnline,
             this.colNodeName});
             styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Red;
             styleFormatCondition2.Appearance.Options.UseBackColor = true;
             styleFormatCondition2.ApplyToRow = true;
-            styleFormatCondition2.Column = this.colOffline;
+            styleFormatCondition2.Column = this.colOnline;
             styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
-            styleFormatCondition2.Value1 = 0;
+            styleFormatCondition2.Value1 = "0";
             this.gridNodeStatusDetail.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
             styleFormatCondition2});
             this.gridNodeStatusDetail.GridControl = this.gridNodeStatus;
@@ -555,15 +564,6 @@
             this.gridNodeStatusDetail.OptionsView.ShowAutoFilterRow = true;
             this.gridNodeStatusDetail.OptionsView.ShowGroupPanel = false;
             this.gridNodeStatusDetail.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.Default;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Online";
-            this.gridColumn1.FieldName = "Value1";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 45;
             // 
             // colNodeName
             // 
@@ -628,7 +628,7 @@
             this.groupItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupItem.Location = new System.Drawing.Point(0, 0);
             this.groupItem.Name = "groupItem";
-            this.groupItem.Size = new System.Drawing.Size(675, 392);
+            this.groupItem.Size = new System.Drawing.Size(679, 390);
             this.groupItem.TabIndex = 22;
             this.groupItem.Text = "Giám sát Thiết bị ( Nhiễu )";
             this.groupItem.DoubleClick += new System.EventHandler(this.groupItem_DoubleClick);
@@ -636,13 +636,13 @@
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(2, 16);
+            this.splitContainerControl1.Location = new System.Drawing.Point(2, 22);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.xtraTabControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridItem);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(671, 374);
+            this.splitContainerControl1.Size = new System.Drawing.Size(675, 366);
             this.splitContainerControl1.SplitterPosition = 192;
             this.splitContainerControl1.TabIndex = 2;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -653,7 +653,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(192, 374);
+            this.xtraTabControl1.Size = new System.Drawing.Size(192, 366);
             this.xtraTabControl1.TabIndex = 2;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -663,14 +663,14 @@
             this.xtraTabPage1.Controls.Add(this.radioRemote);
             this.xtraTabPage1.Controls.Add(this.gridItemRemote);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(190, 341);
+            this.xtraTabPage1.Size = new System.Drawing.Size(186, 338);
             this.xtraTabPage1.Text = "Interface Signal";
             // 
             // radioRemote
             // 
             this.radioRemote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioRemote.EditValue = "All";
-            this.radioRemote.Location = new System.Drawing.Point(2, 318);
+            this.radioRemote.Location = new System.Drawing.Point(2, 310);
             this.radioRemote.MenuManager = this.barManager1;
             this.radioRemote.Name = "radioRemote";
             this.radioRemote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -692,7 +692,7 @@
             this.gridItemRemote.Name = "gridItemRemote";
             this.gridItemRemote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.PicNhanVien});
-            this.gridItemRemote.Size = new System.Drawing.Size(182, 315);
+            this.gridItemRemote.Size = new System.Drawing.Size(182, 307);
             this.gridItemRemote.TabIndex = 1;
             this.gridItemRemote.UseEmbeddedNavigator = true;
             this.gridItemRemote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -753,7 +753,7 @@
             this.ItemCheckStatus,
             this.repositoryItemPictureEdit2,
             this.repositoryItemCheckEdit1});
-            this.gridItem.Size = new System.Drawing.Size(473, 374);
+            this.gridItem.Size = new System.Drawing.Size(478, 366);
             this.gridItem.TabIndex = 2;
             this.gridItem.UseEmbeddedNavigator = true;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1258,7 +1258,7 @@
         private DevExpress.XtraGrid.GridControl gridNodeStatus;
         private DevExpress.XtraGrid.Views.Grid.GridView gridNodeStatusDetail;
         private DevExpress.XtraGrid.Columns.GridColumn colOffline;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colOnline;
         private DevExpress.XtraGrid.Columns.GridColumn colNodeName;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit4;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;

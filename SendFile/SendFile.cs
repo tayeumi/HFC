@@ -76,7 +76,7 @@ namespace SendFile
           uploadFile(host.Text, "Config.xml", username.Text, password.Text);
           MessageBox.Show("Gửi yêu cầu xử lý thành công.");
           XmlDocument myXmlDocument1 = new XmlDocument();
-          myXmlDocument1.Load(@"E:\HFC Project\HFC\bin\Debug\Config.xml");
+          myXmlDocument1.Load(@"E:\DEV\HFC\HFC\HFC\bin\Debug\Config.xml");
           XmlNode node1;
           node1 = myXmlDocument1.DocumentElement;
           // MessageBox.Show(node.Name);
@@ -89,7 +89,7 @@ namespace SendFile
               }
 
           }
-          myXmlDocument1.Save(@"E:\HFC Project\HFC\bin\Debug\Config.xml");
+          myXmlDocument1.Save(@"E:\DEV\HFC\HFC\HFC\bin\Debug\Config.xml");
 
         }
 

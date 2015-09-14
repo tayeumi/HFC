@@ -12,7 +12,7 @@ namespace HFC.Class
 {
   public class CMTS
     {
-        public static TcpClient tcpClient;
+        public static TcpClient tcpClient{get;set;}
         public static string CMTS_Host = get_config("CMTS");//".";;
         public static string CMTS_Pass=Class.App.DecryptString(get_config("CMTS_TEL"), "PasswordID");
         public static string CMTS_Login = Class.App.DecryptString(get_config("CMTS_user"),"UserID");//".";;;

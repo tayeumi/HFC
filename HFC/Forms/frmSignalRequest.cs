@@ -310,7 +310,7 @@ namespace HFC.Forms
             {
                 btnStartFor10P_Click(null, null);
                 Class.App.Log_WriteApp(" Treo o Disconnect ");
-
+                Class.CMTS.tcpClient = null;    
             }
         }
 

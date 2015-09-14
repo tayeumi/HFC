@@ -19,3 +19,11 @@ E:\HFC Project\WebCM\bin\SnmpSharpNet.xml
 E:\HFC Project\WebCM\obj\Debug\WebCM.dll
 E:\HFC Project\WebCM\obj\Debug\WebCM.pdb
 E:\HFC Project\WebCM\obj\Debug\WebCM.csprojResolveAssemblyReference.cache
+E:\DEV\HFC\HFC\WebCM\bin\WebCM.dll
+E:\DEV\HFC\HFC\WebCM\bin\WebCM.pdb
+E:\DEV\HFC\HFC\WebCM\bin\SnmpSharpNet.dll
+E:\DEV\HFC\HFC\WebCM\bin\SnmpSharpNet.pdb
+E:\DEV\HFC\HFC\WebCM\bin\SnmpSharpNet.xml
+E:\DEV\HFC\HFC\WebCM\obj\Debug\WebCM.csprojResolveAssemblyReference.cache
+E:\DEV\HFC\HFC\WebCM\obj\Debug\WebCM.dll
+E:\DEV\HFC\HFC\WebCM\obj\Debug\WebCM.pdb
