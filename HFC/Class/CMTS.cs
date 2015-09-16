@@ -846,7 +846,7 @@ namespace HFC.Class
                                 {
                                     buffer = encoder.GetBytes(" ");
                                     clientStream.Write(buffer, 0, buffer.Length);
-                                    Thread.Sleep(100);
+                                    Thread.Sleep(50);
                                    // Application.DoEvents();
                                     Class.App.Wait++;
                                 }
@@ -880,28 +880,30 @@ namespace HFC.Class
                       // List<string> list = new List<string>();                     
                         result = result.Replace("TDMA", "TDMA \n");
                         result = result.Replace("\r--More--\b\b\b\b\b\b\b\b\b[K", "");
+                        result = result.Replace("\r", "");
                         List = result.Split('\n');
                         
                         list1 = new List<string>();
-                        for (int i = 0; i < List.Length; i++)
-                        {
+                        //for (int i = 0; i < List.Length; i++)
+                        //{
                             
-                            List[i] = List[i].ToString().Replace("\r--More-- \b\b\b\b\b\b\b\b\b[K", "");
-                            List[i] = List[i].ToString().Replace("\r", "");
-                            List[i] = List[i].ToString().Replace("--More--\b\b\b\b\b\b\b\b\b[K", "");
-                           
+                        //    List[i] = List[i].ToString().Replace("\r--More-- \b\b\b\b\b\b\b\b\b[K", "");
+                        //    List[i] = List[i].ToString().Replace("\r", "");
+                        //    List[i] = List[i].ToString().Replace("--More--\b\b\b\b\b\b\b\b\b[K", "");                            
 
-                            if (List[i].ToString().Trim().EndsWith("TDMA"))
-                            {
-                                if(List[i].ToString().Trim().Length>100)
-                                {
-                                    string txt = List[i];
-                                    txt = txt.Substring(txt.IndexOf("TDMA")+4);
-                                    list1.Add(txt);
-                                }
-                            }
-                        }
-                        
+                        //    if (List[i].ToString().Trim().EndsWith("TDMA"))
+                        //    {
+                        //        if(List[i].ToString().Trim().Length>20)
+                        //        {
+                        //            string txt = List[i];
+                        //            //txt = txt.Substring(txt.IndexOf("TDMA")+4);
+                        //            list1.Add(txt);
+                        //        }
+                        //    }
+                        //}
+                        //TextWriter sw = new StreamWriter(@"Temp.txt", true);
+                        //sw.WriteLine(result);
+                        //sw.Close();
                     }
                     catch { }
 

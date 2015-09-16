@@ -195,92 +195,80 @@ namespace HFC.Forms
                 {
                     DateTime dtime = DateTime.Now;
                     Class.CMTS cmts = new Class.CMTS();
-                    string value4 = "";
-                    string mac = "";
+                    //string value4 = "";
+                    //string mac = "";
                     string[] list = null;
+                    string[] cat = null;
                     dtPHY.Rows.Clear();
                     list = null;
                     List<string> list1 = new List<string>();
-                    // lay remote
+                    // lay PHY
                     cmts.PHY_Card_all(out list, Waiting,out list1);
                     if (list != null)
-                    {
+                    {                       
                         DataRow dr;
                         for (int i = 0; i < list.Length; i++)
-                        {                            
-                            value4 = "";
-                            Regex rMac = new Regex(@"(\w+).(\w+).(\w+).(\w+)");
-                            Match m3 = rMac.Match(list[i]);
-                            if (m3.Success)
-                            {
-                                string kq2 = m3.Value;
-                                mac = kq2;
-                               
-
-                                Regex rPHY = new Regex(@" [0-9\-]{3} ");
-                                Match m4 = rPHY.Match(list[i]);
-                                if (m4.Success)
+                        {
+                            list[i]=list[i].Trim();
+                            if(list[i].Trim().EndsWith("TDMA")){
+                                while (list[i].IndexOf("  ") > 0)
                                 {
-                                    string kq = m4.Value;
-                                    value4 = kq;
-
+                                    list[i] = list[i].Replace("  ", " ");
+                                }
+                                cat = list[i].Split(' ');
+                                if(cat.Length==8){
                                     dr = dtPHY.NewRow();
-                                    dr["MacAddress"] = mac;
-                                    dr["value4"] = value4;
+                                    dr["MacAddress"] = cat[0];
+                                    dr["value4"] = cat[5];
                                     dr["DateTime"] = dtime;
                                     dr["Status"] = "online";
                                     dtPHY.Rows.Add(dr);
+
                                 }
-                            }
-                        }
-
-                        
-                    }
-
-                    // bo sung
-                    if (list1 != null)
-                    {
-                        DataRow dr;
-                        for (int i = 0; i < list1.Count; i++)
-                        {
-                            value4 = "";
-                            Regex rMac = new Regex(@"(\w+).(\w+).(\w+).(\w+)");
-                            Match m3 = rMac.Match(list1[i]);
-                            if (m3.Success)
-                            {
-                                string kq2 = m3.Value;
-                                mac = kq2;
-
-                                Regex rPHY = new Regex(@" [0-9\-]{3} ");
-                                Match m4 = rPHY.Match(list1[i]);
-                                if (m4.Success)
+                                // xu ly dinh PHY
+                                if (cat.Length == 7)
                                 {
-                                    string kq = m4.Value;
-                                    value4 = kq;
-                                    if (value4 != "")
+                                    if (cat[4].Length == 5)
                                     {
-                                        if (value4.Length >= 6)
-                                        {
-                                            value4 = value4.Substring(0, 4);
-                                        }
-                                        if (int.Parse(value4) > 500)
-                                        {
-                                            value4 = "0";
-                                        }
-
                                         dr = dtPHY.NewRow();
-                                        dr["MacAddress"] = mac;
-                                        dr["value4"] = value4;
+                                        dr["MacAddress"] = cat[0];
+                                        dr["value4"] = cat[4].Substring(2);
                                         dr["DateTime"] = dtime;
                                         dr["Status"] = "online";
                                         dtPHY.Rows.Add(dr);
                                     }
-                                }
-                            }
 
-                        }
+                                }
+                              //  value4 = "";
+
+                            }
+                            //value4 = "";
+                            //Regex rMac = new Regex(@"(\w+).(\w+).(\w+).(\w+)");
+                            //Match m3 = rMac.Match(list[i]);
+                            //if (m3.Success)
+                            //{
+                            //    string kq2 = m3.Value;
+                            //    mac = kq2;
+                               
+
+                            //    Regex rPHY = new Regex(@" [0-9\-]{3} ");
+                            //    Match m4 = rPHY.Match(list[i]);
+                            //    if (m4.Success)
+                            //    {
+                            //        string kq = m4.Value;
+                            //        value4 = kq;
+
+                            //        dr = dtPHY.NewRow();
+                            //        dr["MacAddress"] = mac;
+                            //        dr["value4"] = value4;
+                            //        dr["DateTime"] = dtime;
+                            //        dr["Status"] = "online";
+                            //        dtPHY.Rows.Add(dr);
+                            //    }
+                            //}
+                        }                        
                     }
-                    // het phan bo sung
+                    
                 }
 
                 Waiting.CloseWaitForm();
