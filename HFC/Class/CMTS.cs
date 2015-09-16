@@ -879,7 +879,9 @@ namespace HFC.Class
 
                       // List<string> list = new List<string>();                     
                         result = result.Replace("TDMA", "TDMA \n");
+                        result = result.Replace("\r--More--\b\b\b\b\b\b\b\b\b[K", "");
                         List = result.Split('\n');
+                        
                         list1 = new List<string>();
                         for (int i = 0; i < List.Length; i++)
                         {

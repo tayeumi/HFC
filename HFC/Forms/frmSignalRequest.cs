@@ -453,7 +453,7 @@ namespace HFC.Forms
                 // them dl truoc khi insert
                 int x = 0;
                 int dem = 0;
-                while (x < 3)
+                while (x < 1)
                 {
                     dem = 0;
                     string value4;
