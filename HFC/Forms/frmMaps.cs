@@ -33,7 +33,7 @@ namespace HFC.Forms
             serverThread = new Thread(new ThreadStart(mWebserver.Start));
             serverThread.IsBackground = true;
             serverThread.Start();
-            this.Text = "Listening...";
+           // this.Text = "Listening...";
         }
 
         private void frmMaps_Load(object sender, EventArgs e)

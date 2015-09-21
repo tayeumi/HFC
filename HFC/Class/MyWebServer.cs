@@ -268,6 +268,14 @@ namespace HFC.Class
                         {
                             link = "http://maps.google.com/mapfiles/marker_orangeT.png";
                         }
+                        if (dt.Rows[i]["NodeGroup"].ToString() == "Q2")
+                        {
+                            link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=2%7c5680FC%7c000000&.png%3f";
+                        }
+                        if (dt.Rows[i]["NodeGroup"].ToString() == "Q9")
+                        {
+                            link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=9%7cE14E9D%7c000000&.png%3f";
+                        }
                         lat = dt.Rows[i]["Description"].ToString().Substring(0, dt.Rows[i]["Description"].ToString().IndexOf(','));
                         lng = dt.Rows[i]["Description"].ToString().Substring(dt.Rows[i]["Description"].ToString().IndexOf(',')+1);
                         _list +="var info"+i.ToString()+" = new google.maps.InfoWindow({\n"+
@@ -314,11 +322,11 @@ namespace HFC.Class
                             firstload = "var first = new google.maps.LatLng("+lat+", "+lng+");";
                             listinfo += "var first = new google.maps.LatLng(" + lat + ", " + lng + ");\n"+                               
                                          " var coordInfoWindow = new google.maps.InfoWindow();\n"+
-                                          "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "'));\n" +
+                                          "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "<br>Online/Offline: " + dt.Rows[i]["Value1"].ToString() + "/" + dt.Rows[i]["Value2"].ToString() + " <br> LastSync: "+DateTime.Now.ToShortTimeString()+"'));\n" +
                                           "coordInfoWindow.setPosition(first);\n"+
                                           "coordInfoWindow.open(map);\n"+  
                                           "map.addListener('zoom_changed', function() {\n"+
-                                            "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "'));\n" +
+                                            "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "<br>Online/Offline: " + dt.Rows[i]["Value1"].ToString() + "/" + dt.Rows[i]["Value2"].ToString() + " <br> LastSync: " + DateTime.Now.ToShortTimeString() + "'));\n" +
                                            " coordInfoWindow.open(map);	\n"+
                                           "}); \n";
                             //kiem tra xem co Path ko
