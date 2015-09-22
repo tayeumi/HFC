@@ -1648,33 +1648,45 @@ namespace HFC.Forms
         {
             try
             {
-                btnConnect_Click(null, null);
-                Thread.Sleep(10);               
-                btnRemote_Click(null, null);
-                Thread.Sleep(10);                
-                btnDisconnect_Click(null, null);
-                loadDevice();
-                gridItem.DataSource = dtDevice;
-                Class.NW_Device de = new Class.NW_Device();
-                Waiting.ShowWaitForm();
-                Waiting.SetWaitFormDescription("Tiến trình lưu dữ liệu !");
-                for (int i = 0; i < dtDevice.Rows.Count; i++)
-                {
-                    Waiting.SetWaitFormDescription("Tiến trình lưu dữ liệu ! (" +i.ToString()+")");
-                    de.MacAddress = dtDevice.Rows[i]["MacAddress"].ToString();
-                    de.Value1 = dtDevice.Rows[i]["Value1"].ToString();
-                    de.Value2 = dtDevice.Rows[i]["Value2"].ToString();
-                    de.Value3 = dtDevice.Rows[i]["Value3"].ToString();
-                    de.DateTime = (DateTime)dtDevice.Rows[i]["DateTime"];
-                    de.Status = dtDevice.Rows[i]["Status"].ToString();
-                    de.Update();
-                }
-                Waiting.CloseWaitForm();
+                 int Min = DateTime.Now.Minute;
+                 if ( Min == 10 ||  Min == 30 ||  Min == 50)
+                 {
+                     timerMaps.Enabled = false;
+                     btnConnect_Click(null, null);
+                     Thread.Sleep(10);
+                     btnRemote_Click(null, null);
+                     Thread.Sleep(10);
+                     btnDisconnect_Click(null, null);
+                     loadDevice();
+                     gridItem.DataSource = dtDevice;
+                     Class.NW_Device de = new Class.NW_Device();
+                     // dung snmp
+
+
+                     Waiting.ShowWaitForm();
+                     Waiting.SetWaitFormDescription("Tiến trình lưu dữ liệu !");
+                     for (int i = 0; i < dtDevice.Rows.Count; i++)
+                     {
+                         Waiting.SetWaitFormDescription("Tiến trình lưu dữ liệu ! (" + i.ToString() + ")");
+                         de.MacAddress = dtDevice.Rows[i]["MacAddress"].ToString();
+                         de.Value1 = dtDevice.Rows[i]["Value1"].ToString();
+                         de.Value2 = dtDevice.Rows[i]["Value2"].ToString();
+                         de.Value3 = dtDevice.Rows[i]["Value3"].ToString();
+                         de.DateTime = (DateTime)dtDevice.Rows[i]["DateTime"];
+                         de.Status = dtDevice.Rows[i]["Status"].ToString();
+                         de.Update();
+                     }
+                     Waiting.CloseWaitForm();
+
+                     timerMaps.Enabled = true;
+                 }
             }
             catch (Exception ex)
             {
+                timerMaps.Enabled = true;
                 Class.App.Log_WriteApp(ex.Message.ToString());
                 btnDisconnect_Click(null, null);
+                 
                 //timer10.Enabled = true;
             }
         }

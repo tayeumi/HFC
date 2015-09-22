@@ -502,7 +502,7 @@
             // 
             // timerMaps
             // 
-            this.timerMaps.Interval = 420000;
+            this.timerMaps.Interval = 1000;
             this.timerMaps.Tick += new System.EventHandler(this.timerMaps_Tick);
             // 
             // frmSignalRequest

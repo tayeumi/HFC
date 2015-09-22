@@ -773,7 +773,7 @@
             this.btnLog1Thang,
             this.btnBieudo1Thang});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 192);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 214);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // btnCapnhattuModem

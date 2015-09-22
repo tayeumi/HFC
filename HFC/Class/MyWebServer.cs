@@ -77,7 +77,7 @@ namespace HFC.Class
                         msg = msg.Replace("_meta", "");
                         msg = msg.Replace("_loadfun", "");
                         msg = msg.Replace("_loadauto", "");
-                        msg = updateNode(msg);
+                        msg = updateNode(msg,"all");
                         //msg = updateLocation(lat, lng, detail, msg);
 
                         byte[] buffer = Encoding.UTF8.GetBytes(msg);
@@ -176,7 +176,7 @@ namespace HFC.Class
                                                                 "tomap=0;\n" +
                                                                 "}\n" +
                                                             "};");
-                            msg = updateNode(msg);
+                            msg = updateNode(msg," ");
                             
                             //msg = updateLocation(lat, lng, detail, msg);
 
@@ -242,7 +242,7 @@ namespace HFC.Class
            return txt;
         }
 
-        string updateNode(string txt)
+        string updateNode(string txt,string all)
         {
             NW_Node node = new NW_Node();
             DataTable dt = node.NW_Node_GetList();
@@ -256,33 +256,71 @@ namespace HFC.Class
                 {
                     if (dt.Rows[i]["Description"].ToString().IndexOf(',') > 0)
                     {
-                        if (dt.Rows[i]["NodeGroup"].ToString() == "BT")
+                        if (all == " ")
                         {
-                            link = "http://maps.google.com/mapfiles/marker_greenB.png";
+                            if (dt.Rows[i]["Total"] != DBNull.Value)
+                            {
+                                if (dt.Rows[i]["NodeGroup"].ToString() == "BT")
+                                {
+                                    link = "http://maps.google.com/mapfiles/marker_greenB.png";
+                                }
+                                if (dt.Rows[i]["NodeGroup"].ToString() == "GV")
+                                {
+                                    link = "http://maps.google.com/mapfiles/marker_purpleG.png";
+                                }
+                                if (dt.Rows[i]["NodeGroup"].ToString() == "TD")
+                                {
+                                    link = "http://maps.google.com/mapfiles/marker_orangeT.png";
+                                }
+                                if (dt.Rows[i]["NodeGroup"].ToString() == "Q2")
+                                {
+                                    link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=2%7c5680FC%7c000000&.png%3f";
+                                }
+                                if (dt.Rows[i]["NodeGroup"].ToString() == "Q9")
+                                {
+                                    link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=9%7cE14E9D%7c000000&.png%3f";
+                                }
+                                lat = dt.Rows[i]["Description"].ToString().Substring(0, dt.Rows[i]["Description"].ToString().IndexOf(','));
+                                lng = dt.Rows[i]["Description"].ToString().Substring(dt.Rows[i]["Description"].ToString().IndexOf(',') + 1);
+                                _list += "var info" + i.ToString() + " = new google.maps.InfoWindow({\n" +
+                                                            "content: 'Node:" + dt.Rows[i]["NodeName"].ToString() + "<br> Device: " + dt.Rows[i]["Total"].ToString() + "'\n" +
+                                                          "});\n" +
+                                    "var N" + i.ToString() + "\n" +
+                                    "addMarker(N" + i.ToString() + ",{lat: " + lat + ", lng: " + lng + "},'" + dt.Rows[i]["NodeName"].ToString() + "', map,info" + i.ToString() + ",'" + link + "') \n";
+                            }
                         }
-                        if (dt.Rows[i]["NodeGroup"].ToString() == "GV")
+
+                        else
                         {
-                            link = "http://maps.google.com/mapfiles/marker_purpleG.png";
+                            if (dt.Rows[i]["NodeGroup"].ToString() == "BT")
+                            {
+                                link = "http://maps.google.com/mapfiles/marker_greenB.png";
+                            }
+                            if (dt.Rows[i]["NodeGroup"].ToString() == "GV")
+                            {
+                                link = "http://maps.google.com/mapfiles/marker_purpleG.png";
+                            }
+                            if (dt.Rows[i]["NodeGroup"].ToString() == "TD")
+                            {
+                                link = "http://maps.google.com/mapfiles/marker_orangeT.png";
+                            }
+                            if (dt.Rows[i]["NodeGroup"].ToString() == "Q2")
+                            {
+                                link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=2%7c5680FC%7c000000&.png%3f";
+                            }
+                            if (dt.Rows[i]["NodeGroup"].ToString() == "Q9")
+                            {
+                                link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=9%7cE14E9D%7c000000&.png%3f";
+                            }
+                            lat = dt.Rows[i]["Description"].ToString().Substring(0, dt.Rows[i]["Description"].ToString().IndexOf(','));
+                            lng = dt.Rows[i]["Description"].ToString().Substring(dt.Rows[i]["Description"].ToString().IndexOf(',') + 1);
+                            _list += "var info" + i.ToString() + " = new google.maps.InfoWindow({\n" +
+                                                        "content: 'Node:" + dt.Rows[i]["NodeName"].ToString() + "<br> Device: " + dt.Rows[i]["Total"].ToString() + "'\n" +
+                                                      "});\n" +
+                                "var N" + i.ToString() + "\n" +
+                                "addMarker(N" + i.ToString() + ",{lat: " + lat + ", lng: " + lng + "},'" + dt.Rows[i]["NodeName"].ToString() + "', map,info" + i.ToString() + ",'" + link + "') \n";
+
                         }
-                        if (dt.Rows[i]["NodeGroup"].ToString() == "TD")
-                        {
-                            link = "http://maps.google.com/mapfiles/marker_orangeT.png";
-                        }
-                        if (dt.Rows[i]["NodeGroup"].ToString() == "Q2")
-                        {
-                            link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=2%7c5680FC%7c000000&.png%3f";
-                        }
-                        if (dt.Rows[i]["NodeGroup"].ToString() == "Q9")
-                        {
-                            link = "http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=9%7cE14E9D%7c000000&.png%3f";
-                        }
-                        lat = dt.Rows[i]["Description"].ToString().Substring(0, dt.Rows[i]["Description"].ToString().IndexOf(','));
-                        lng = dt.Rows[i]["Description"].ToString().Substring(dt.Rows[i]["Description"].ToString().IndexOf(',')+1);
-                        _list +="var info"+i.ToString()+" = new google.maps.InfoWindow({\n"+
-                                                    "content: 'Node:" + dt.Rows[i]["NodeName"].ToString() + "'\n" +
-                                                  "});\n" +
-                            "var N"+i.ToString() +"\n"+
-                            "addMarker(N"+i.ToString()+",{lat: " + lat + ", lng: " + lng + "},'" + dt.Rows[i]["NodeName"].ToString() + "', map,info"+i.ToString()+",'"+link+"') \n";
                     }
                 }
             }           
@@ -322,11 +360,11 @@ namespace HFC.Class
                             firstload = "var first = new google.maps.LatLng("+lat+", "+lng+");";
                             listinfo += "var first = new google.maps.LatLng(" + lat + ", " + lng + ");\n"+                               
                                          " var coordInfoWindow = new google.maps.InfoWindow();\n"+
-                                          "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "<br>Online/Offline: " + dt.Rows[i]["Value1"].ToString() + "/" + dt.Rows[i]["Value2"].ToString() + " <br> LastSync: "+DateTime.Now.ToShortTimeString()+"'));\n" +
+                                          "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "<br>Online/Offline: " + dt.Rows[i]["Value1"].ToString() + "/" + dt.Rows[i]["Value2"].ToString() + " <br> LastSync: " + dt.Rows[i]["DateTime"].ToString()+ "'));\n" +
                                           "coordInfoWindow.setPosition(first);\n"+
                                           "coordInfoWindow.open(map);\n"+  
                                           "map.addListener('zoom_changed', function() {\n"+
-                                            "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "<br>Online/Offline: " + dt.Rows[i]["Value1"].ToString() + "/" + dt.Rows[i]["Value2"].ToString() + " <br> LastSync: " + DateTime.Now.ToShortTimeString() + "'));\n" +
+                                            "coordInfoWindow.setContent(createInfoWindowContent(first, map.getZoom(),'<span style=color:red><B>CẢNH BÁO MẤT TÍN HIỆU:</B></span><BR> NODE: " + dt.Rows[i]["NodeName"].ToString() + "<br>Online/Offline: " + dt.Rows[i]["Value1"].ToString() + "/" + dt.Rows[i]["Value2"].ToString() + " <br> LastSync: " + dt.Rows[i]["DateTime"].ToString() + "'));\n" +
                                            " coordInfoWindow.open(map);	\n"+
                                           "}); \n";
                             //kiem tra xem co Path ko
