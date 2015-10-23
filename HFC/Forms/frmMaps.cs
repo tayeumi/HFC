@@ -98,7 +98,11 @@ namespace HFC.Forms
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            checknodeDown();
+            try
+            {
+                checknodeDown();
+            }
+            catch { }
         }
 
         private void frmMaps_FormClosed(object sender, FormClosedEventArgs e)

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Text.RegularExpressions;
 using System.Threading;
+using HFC.Class;
 
 namespace HFC.Forms
 {
@@ -293,6 +294,7 @@ namespace HFC.Forms
                     Class.CMTS.Disconnect();
                     btnConnect.Enabled = true;
                 }
+                Class.CMTS.tcpClient = null;  
             }
             catch
             {
@@ -581,7 +583,7 @@ namespace HFC.Forms
                 int Min = DateTime.Now.Minute;
                 if (Min == 0  || Min == 20 || Min == 40)
                 {
-                    if (Min == 10)
+                    if (Min == 0)
                     {
                         if(checkBW.Checked)
                             Load_InsertInterface();
@@ -606,7 +608,7 @@ namespace HFC.Forms
             {
                 Waiting.ShowWaitForm();
                 Waiting.SetWaitFormDescription("Đang đọc và tải Interface từ SolarWinds");
-                string txt = "select * from Interfaces where NodeID=18 and InterfaceName LIKE 'Cable Downstream%' or InterfaceName ='gigaether15/0'";
+                string txt = "select * from Interfaces where NodeID=18";
                 Class.SolarWinds_Get clsSolarwind = new Class.SolarWinds_Get();
                 clsSolarwind.DateTime = DateTime.Now;
                 clsSolarwind.StrDate = DateTime.Now.ToString("dd/MM/yyyy H") + "h";
@@ -1718,6 +1720,26 @@ namespace HFC.Forms
                     dtDevice.Rows[i]["Status"] = "offline";
                 }
             }
+        }
+
+        private void btnMaps_Click(object sender, EventArgs e)
+        {
+            LoadSV();
+            btnMaps.Enabled = false;
+        }
+        private Thread serverThread;
+        MyWebServer mWebserver = new MyWebServer();
+        void LoadSV()
+        {
+            serverThread = new Thread(new ThreadStart(mWebserver.Start));
+            serverThread.IsBackground = true;
+            serverThread.Start();
+            this.Text = "Maps Port Listening...";
+        }
+
+        private void frmSignalRequest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mWebserver.Stop();
         }
 
     }

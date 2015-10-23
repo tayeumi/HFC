@@ -76,6 +76,7 @@
             this.timer30 = new System.Windows.Forms.Timer(this.components);
             this.checkMaps = new DevExpress.XtraEditors.CheckEdit();
             this.timerMaps = new System.Windows.Forms.Timer(this.components);
+            this.btnMaps = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemCheckStatus)).BeginInit();
@@ -146,7 +147,7 @@
             this.gridItem.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1,
             this.ItemCheckStatus});
-            this.gridItem.Size = new System.Drawing.Size(1226, 531);
+            this.gridItem.Size = new System.Drawing.Size(1226, 497);
             this.gridItem.TabIndex = 3;
             this.gridItem.UseEmbeddedNavigator = true;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -505,11 +506,22 @@
             this.timerMaps.Interval = 1000;
             this.timerMaps.Tick += new System.EventHandler(this.timerMaps_Tick);
             // 
+            // btnMaps
+            // 
+            this.btnMaps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnMaps.Location = new System.Drawing.Point(3, 559);
+            this.btnMaps.Name = "btnMaps";
+            this.btnMaps.Size = new System.Drawing.Size(80, 32);
+            this.btnMaps.TabIndex = 6;
+            this.btnMaps.Text = "Maps";
+            this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
+            // 
             // frmSignalRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 593);
+            this.Controls.Add(this.btnMaps);
             this.Controls.Add(this.checkMaps);
             this.Controls.Add(this.checkTraffic);
             this.Controls.Add(this.checkBW);
@@ -530,6 +542,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Request Thông Số";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmSignalRequest_FormClosed);
             this.Load += new System.EventHandler(this.frmSignalRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).EndInit();
@@ -594,6 +607,7 @@
         private System.Windows.Forms.Timer timer30;
         private DevExpress.XtraEditors.CheckEdit checkMaps;
         private System.Windows.Forms.Timer timerMaps;
+        private DevExpress.XtraEditors.SimpleButton btnMaps;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }
