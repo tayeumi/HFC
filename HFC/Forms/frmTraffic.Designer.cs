@@ -39,6 +39,8 @@
             this.colMacAdress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.ItemCheckStatus = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemPictureEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -97,7 +99,9 @@
             this.colDatetime,
             this.colMacAdress,
             this.colDS,
-            this.colUS});
+            this.colUS,
+            this.gridColumn1,
+            this.gridColumn2});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             styleFormatCondition1.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             styleFormatCondition1.Appearance.Options.UseBackColor = true;
@@ -171,6 +175,18 @@
             this.colUS.Name = "colUS";
             this.colUS.Visible = true;
             this.colUS.VisibleIndex = 3;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "CurrentDS";
+            this.gridColumn1.FieldName = "CurrentDS";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "CurrentUS";
+            this.gridColumn2.FieldName = "CurrentUS";
+            this.gridColumn2.Name = "gridColumn2";
             // 
             // repositoryItemPictureEdit1
             // 
@@ -401,5 +417,7 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
         private DevExpress.XtraCharts.ChartControl chartDS;
         private DevExpress.XtraCharts.ChartControl chartUS;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

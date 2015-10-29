@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colValue4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnRemote = new DevExpress.XtraEditors.SimpleButton();
             this.btnPHY = new DevExpress.XtraEditors.SimpleButton();
@@ -77,6 +77,7 @@
             this.checkMaps = new DevExpress.XtraEditors.CheckEdit();
             this.timerMaps = new System.Windows.Forms.Timer(this.components);
             this.btnMaps = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDeviceStatus = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemCheckStatus)).BeginInit();
@@ -174,15 +175,15 @@
             this.colLocation,
             this.colStatus,
             this.gridColumn4});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            styleFormatCondition1.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.ApplyToRow = true;
-            styleFormatCondition1.Column = this.colValue4;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "ToInt([Value4])<210 And Len([Value4])  > 0";
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            styleFormatCondition2.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.ApplyToRow = true;
+            styleFormatCondition2.Column = this.colValue4;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "ToInt([Value4])<210 And Len([Value4])  > 0";
             this.gridItemDetail.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1});
+            styleFormatCondition2});
             this.gridItemDetail.GridControl = this.gridItem;
             this.gridItemDetail.IndicatorWidth = 50;
             this.gridItemDetail.Name = "gridItemDetail";
@@ -516,11 +517,22 @@
             this.btnMaps.Text = "Maps";
             this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
             // 
+            // btnDeviceStatus
+            // 
+            this.btnDeviceStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDeviceStatus.Location = new System.Drawing.Point(89, 559);
+            this.btnDeviceStatus.Name = "btnDeviceStatus";
+            this.btnDeviceStatus.Size = new System.Drawing.Size(80, 32);
+            this.btnDeviceStatus.TabIndex = 6;
+            this.btnDeviceStatus.Text = "Device Status";
+            this.btnDeviceStatus.Click += new System.EventHandler(this.btnDeviceStatus_Click);
+            // 
             // frmSignalRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 593);
+            this.Controls.Add(this.btnDeviceStatus);
             this.Controls.Add(this.btnMaps);
             this.Controls.Add(this.checkMaps);
             this.Controls.Add(this.checkTraffic);
@@ -609,5 +621,6 @@
         private System.Windows.Forms.Timer timerMaps;
         private DevExpress.XtraEditors.SimpleButton btnMaps;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
+        private DevExpress.XtraEditors.SimpleButton btnDeviceStatus;
     }
 }

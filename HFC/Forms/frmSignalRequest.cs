@@ -27,12 +27,17 @@ namespace HFC.Forms
         DataTable dtTraffic = new DataTable();
         DataTable dtTraffic_select = new DataTable();
         DataTable dtDevice = new DataTable();
+        DataTable dtDeviceStatus = new DataTable();
         private void frmSignalRequest_Load(object sender, EventArgs e)
         {
             LoadInterface();
             NW_Device_GetList();
             loadSNR();
+            Class.NW_Device_Status cl = new NW_Device_Status();
+            cl.Interface = "";
+            dtDeviceStatus = cl.NW_Device_Status_GetByInterface();
         }
+
         void loadSNR()
         {
             Class.NW_InterfaceControllerWarning cls = new Class.NW_InterfaceControllerWarning();
@@ -1656,6 +1661,11 @@ namespace HFC.Forms
                      timerMaps.Enabled = false;
                      btnConnect_Click(null, null);
                      Thread.Sleep(10);
+                     if (Min == 10)
+                     {
+                         btnDeviceStatus_Click(null, null);
+                     }
+                     Thread.Sleep(10);
                      btnRemote_Click(null, null);
                      Thread.Sleep(10);
                      btnDisconnect_Click(null, null);
@@ -1740,6 +1750,89 @@ namespace HFC.Forms
         private void frmSignalRequest_FormClosed(object sender, FormClosedEventArgs e)
         {
             mWebserver.Stop();
+        }
+
+        private void btnDeviceStatus_Click(object sender, EventArgs e)
+        {
+            if (Waiting.IsSplashFormVisible)
+            {
+                Class.App.Log_WriteApp(" Treo o Load Device Status ");
+                return;
+            }
+            if (btnConnect.Enabled)
+                return;
+            try
+            {
+                Waiting.ShowWaitForm();
+                Waiting.SetWaitFormDescription("Đang tải Device Status.!");
+
+                if (!btnConnect.Enabled)
+                {
+                    DateTime dtime = DateTime.Now;
+                    Class.CMTS cmts = new Class.CMTS();
+                    string[] list = null;
+                    dtDeviceStatus.Rows.Clear();
+                    list = null;
+                    string[] list_cat = null;
+                    // lay remote
+                    cmts.Get_DeviceStatus(out list);
+                    if (list != null)
+                    {
+                        DataRow dr;
+
+                        for (int i = 0; i < list.Length; i++)
+                        {
+                            if(list[i].StartsWith("Cable")){
+                                list_cat = list[i].Split(' ');
+                                if (list_cat[1].IndexOf("/0") > 0)
+                                {
+                                    dr = dtDeviceStatus.NewRow();
+                                    dr["Interface"] = list_cat[0] + " " + list_cat[1];
+                                    dr["Modems"] = list_cat[2];
+                                    dr["Hosts"] = list_cat[3];
+                                    dr["DateTime"] = dtime;
+                                    dtDeviceStatus.Rows.Add(dr);
+                                }
+                            }
+                            if (list[i].StartsWith("Totals"))
+                            {
+                                list_cat = list[i].Split(' ');
+                                dr = dtDeviceStatus.NewRow();
+                                dr["Interface"] = list_cat[0];
+                                dr["Modems"] = list_cat[1];
+                                dr["Hosts"] = list_cat[2];
+                                dr["DateTime"] = dtime;
+                                dtDeviceStatus.Rows.Add(dr);
+                            }
+                              
+                        }
+
+                    }
+
+
+                }
+
+                Waiting.CloseWaitForm();
+                if (dtDeviceStatus.Rows.Count > 0)
+                {
+                    Class.NW_Device_Status dv = new NW_Device_Status();
+                    for (int i = 0; i < dtDeviceStatus.Rows.Count;i++ )
+                    {
+                        dv.Interface=dtDeviceStatus.Rows[i]["Interface"].ToString();
+                         dv.Modems=int.Parse(dtDeviceStatus.Rows[i]["Modems"].ToString());
+                         dv.Hosts=int.Parse(dtDeviceStatus.Rows[i]["Hosts"].ToString());
+                         dv.DateTime = (DateTime)dtDeviceStatus.Rows[i]["DateTime"];
+                         dv.Insert();
+                    }
+                }
+            }
+            catch
+            {
+                Waiting.CloseWaitForm();
+                // MessageBox.Show(ex.Message);
+                Class.CMTS.tcpClient = null;
+                btnConnect.Enabled = true;
+            }
         }
 
     }

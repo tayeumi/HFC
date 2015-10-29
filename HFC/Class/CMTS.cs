@@ -1657,5 +1657,87 @@ namespace HFC.Class
                }
            }
        }
+
+       public void Get_DeviceStatus(out string[] List)
+       {
+           List = null;
+           string t = "";
+
+           if (tcpClient.Connected)
+           {
+               string strCMD = "sh host authorization summary \r\n";
+
+               ASCIIEncoding encoder = new ASCIIEncoding();
+               byte[] buffer = encoder.GetBytes(strCMD);
+               NetworkStream clientStream = tcpClient.GetStream();
+               clientStream.Write(buffer, 0, buffer.Length);
+               Thread.Sleep(100);
+               byte[] message = new byte[8192 * 40];
+
+               do
+               {
+                   Thread.Sleep(100);
+               } while (!clientStream.DataAvailable);
+
+               if (clientStream.CanRead && clientStream.DataAvailable)
+               {
+                   //blocks until a client sends a message  
+                   try
+                   {
+                       int bytesRead;
+                       string result = "";
+                       while (true)
+                       {
+                           try
+                           {
+                               bytesRead = 0;
+                               bytesRead = clientStream.Read(message, 0, 8192 * 40);
+
+                               if (bytesRead == 0)
+                               {
+                                   break;
+                               }
+
+                               t = encoder.GetString(message, 0, bytesRead);
+                               t = t.Trim();
+                               result += t;
+                               if (t.EndsWith("--More--"))
+                               {
+                                   buffer = encoder.GetBytes(" ");
+                                   clientStream.Write(buffer, 0, buffer.Length);
+                                   Thread.Sleep(50);
+                                   Application.DoEvents();
+                               }
+                               if (t.EndsWith("MOT:7A#"))
+                               {
+                                   break;
+                               }
+                           }
+                           catch
+                           {
+                               break;
+                           }
+                       }
+                       while (result.IndexOf("  ") > 0)
+                       {
+                           result = result.Replace("  ", " ");
+                       }
+
+                       List = result.Split('\n');
+                       for (int i = 0; i < List.Length; i++)
+                       {
+                           List[i] = List[i].ToString().Replace("\r--More-- \b\b\b\b\b\b\b\b\b[K", "");
+                           List[i] = List[i].ToString().Replace("NEW_MOT:7A#", "");
+                           List[i] = List[i].ToString().Replace("--More--\b\b\b\b\b\b\b\b\b[K", "");
+                           List[i] = List[i].ToString().Replace("\r", "");
+
+                       }
+
+                   }
+                   catch { }
+
+               }
+           }
+       }
   }
 }

@@ -191,6 +191,7 @@
     <Compile Include="Class\MyWebServer.cs" />
     <Compile Include="Class\NW_CurrentTrafic.cs" />
     <Compile Include="Class\NW_Device.cs" />
+    <Compile Include="Class\NW_Device_Status.cs" />
     <Compile Include="Class\NW_Interface.cs" />
     <Compile Include="Class\NW_InterfaceControllerWarning.cs" />
     <Compile Include="Class\NW_InterfaceGauge.cs" />
@@ -235,6 +236,12 @@
     </Compile>
     <Compile Include="Forms\frmDeviceToNode.Designer.cs">
       <DependentUpon>frmDeviceToNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmInterfaceGauge.cs">
       <SubType>Form</SubType>
@@ -375,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDeviceToNode.resx">
       <DependentUpon>frmDeviceToNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmInterfaceGauge.resx">
       <DependentUpon>frmInterfaceGauge.cs</DependentUpon>

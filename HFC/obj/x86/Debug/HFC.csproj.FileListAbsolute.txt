@@ -100,3 +100,4 @@ E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.frmintro.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Properties.Resources.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.csproj.GenerateResource.Cache
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.exe.licenses
+E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmHome.resources

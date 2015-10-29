@@ -60,7 +60,7 @@ namespace HFC.Forms
         {
             try
             {
-                string txt = "select * from Interfaces where NodeID=18 and InterfaceName LIKE 'Cable Downstream%' or InterfaceName ='gigaether15/0'";
+                string txt = "select * from Interfaces where NodeID=18";
                 Class.SolarWinds_Get clsSolarwind = new Class.SolarWinds_Get();
                 clsSolarwind.DateTime = DateTime.Now;
                 DataTable dtSolarWind = clsSolarwind.SolarWinds_GetInterface(txt);

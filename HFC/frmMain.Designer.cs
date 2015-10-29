@@ -115,6 +115,8 @@
             this.btnBandWidth = new DevExpress.XtraBars.BarButtonItem();
             this.btnTraffic = new DevExpress.XtraBars.BarButtonItem();
             this.btnMonitor = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMaps = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDashboard = new DevExpress.XtraBars.BarButtonItem();
             this.LargeImageList = new DevExpress.Utils.ImageCollection(this.components);
             this.Menu_System = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.MenuHTTop1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -124,6 +126,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Menu_Get = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -146,7 +149,6 @@
             this.TabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.Waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::HFC.frmWaiting), true, true);
             this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
-            this.btnMaps = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SmallImageList)).BeginInit();
@@ -251,10 +253,11 @@
             this.btnBandWidth,
             this.btnTraffic,
             this.btnMonitor,
-            this.btnMaps});
+            this.btnMaps,
+            this.btnDashboard});
             this.ribbon.LargeImages = this.LargeImageList;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 129;
+            this.ribbon.MaxItemId = 130;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barSubItem4);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -871,6 +874,24 @@
             this.btnMonitor.Name = "btnMonitor";
             this.btnMonitor.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonitor_ItemClick);
             // 
+            // btnMaps
+            // 
+            this.btnMaps.Caption = "Maps";
+            this.btnMaps.Id = 128;
+            this.btnMaps.LargeImageIndex = 30;
+            this.btnMaps.LargeWidth = 100;
+            this.btnMaps.Name = "btnMaps";
+            this.btnMaps.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMaps_ItemClick);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Caption = "Home";
+            this.btnDashboard.Id = 129;
+            this.btnDashboard.LargeImageIndex = 31;
+            this.btnDashboard.LargeWidth = 90;
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDashboard_ItemClick);
+            // 
             // LargeImageList
             // 
             this.LargeImageList.ImageSize = new System.Drawing.Size(35, 35);
@@ -906,6 +927,7 @@
             this.LargeImageList.Images.SetKeyName(28, "BO_Contract_32x32.png");
             this.LargeImageList.Images.SetKeyName(29, "gauge.png");
             this.LargeImageList.Images.SetKeyName(30, "1439533498_Maps-Android-R.png");
+            this.LargeImageList.Images.SetKeyName(31, "Action_WindowList_32x32.png");
             // 
             // Menu_System
             // 
@@ -941,7 +963,8 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup4,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
             this.Menu_Action.Name = "Menu_Action";
             this.Menu_Action.Text = "Quản lý Cable Internet - CMTS";
             // 
@@ -972,6 +995,12 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.btnMonitor);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Customer Traffic";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnDashboard);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Dashboard";
             // 
             // Menu_Get
             // 
@@ -1098,15 +1127,6 @@
             // 
             this.alertControl.AllowHtmlText = true;
             this.alertControl.AutoHeight = true;
-            // 
-            // btnMaps
-            // 
-            this.btnMaps.Caption = "Maps";
-            this.btnMaps.Id = 128;
-            this.btnMaps.LargeImageIndex = 30;
-            this.btnMaps.LargeWidth = 100;
-            this.btnMaps.Name = "btnMaps";
-            this.btnMaps.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMaps_ItemClick);
             // 
             // frmMain
             // 
@@ -1261,6 +1281,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.BarButtonItem btnMonitor;
         private DevExpress.XtraBars.BarButtonItem btnMaps;
+        private DevExpress.XtraBars.BarButtonItem btnDashboard;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
         
     }

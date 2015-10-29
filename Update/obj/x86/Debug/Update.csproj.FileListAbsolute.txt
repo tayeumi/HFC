@@ -29,7 +29,6 @@ E:\HFC Project\Update\obj\x86\Debug\Update.csprojResolveAssemblyReference.cache
 E:\DEV\HFC\HFC\Update\bin\Debug\Update.exe.config
 E:\DEV\HFC\HFC\Update\bin\Debug\Update.exe
 E:\DEV\HFC\HFC\Update\bin\Debug\Update.pdb
-E:\DEV\HFC\HFC\Update\obj\x86\Debug\Update.csprojResolveAssemblyReference.cache
 E:\DEV\HFC\HFC\Update\obj\x86\Debug\Update.Update.resources
 E:\DEV\HFC\HFC\Update\obj\x86\Debug\Update.Properties.Resources.resources
 E:\DEV\HFC\HFC\Update\obj\x86\Debug\Update.csproj.GenerateResource.Cache

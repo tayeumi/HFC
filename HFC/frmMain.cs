@@ -175,6 +175,16 @@ namespace HFC
             }
         }
 
+        private void btnDashboard_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!Class.App.IsFocusForm(typeof(Forms.frmHome), this))
+            {
+                Forms.frmHome frm = new Forms.frmHome();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+        }
+
                 
     }
 }

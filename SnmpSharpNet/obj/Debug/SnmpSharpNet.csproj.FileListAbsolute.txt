@@ -10,6 +10,6 @@ E:\HFC Project\SnmpSharpNet\obj\Debug\SnmpSharpNet.pdb
 E:\HFC Project\SnmpSharpNet\obj\Debug\SnmpSharpNet.csprojResolveAssemblyReference.cache
 E:\DEV\HFC\HFC\SnmpSharpNet\bin\Debug\SnmpSharpNet.dll
 E:\DEV\HFC\HFC\SnmpSharpNet\bin\Debug\SnmpSharpNet.pdb
-E:\DEV\HFC\HFC\SnmpSharpNet\obj\Debug\SnmpSharpNet.csprojResolveAssemblyReference.cache
 E:\DEV\HFC\HFC\SnmpSharpNet\obj\Debug\SnmpSharpNet.dll
 E:\DEV\HFC\HFC\SnmpSharpNet\obj\Debug\SnmpSharpNet.pdb
+E:\DEV\HFC\HFC\SnmpSharpNet\bin\Debug\SnmpSharpNet.XML

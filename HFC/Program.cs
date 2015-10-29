@@ -26,7 +26,7 @@ namespace HFC
             try
             {
                Application.Run(new frmintro());
-                // Application.Run(new Forms.frmSignalRequest());
+                 //Application.Run(new Forms.frmHome());
                 
             }
             catch (Exception ex)
