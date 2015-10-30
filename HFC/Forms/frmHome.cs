@@ -49,7 +49,9 @@ namespace HFC.Forms
                 PCs.Points.Clear();
                 chartDevicePC.Series.Clear();
                 chartInterface.Series.Clear();
-                
+
+                chartDevicePC1.Series.Clear();
+                chartInterface1.Series.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                    if(dt.Rows[i]["Interface"].ToString()=="Totals"){
@@ -116,9 +118,11 @@ namespace HFC.Forms
                 I9.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
                 I10.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
                 I11.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
-
-                chartDevicePC.Series.AddRange(new Series[] { Modems,PCs });
-                chartInterface.Series.AddRange(new Series[] { I0,I1, I2, I3, I4, I5, I9, I10, I11 });
+            
+                chartDevicePC.Series.AddRange(new Series[] { Modems });
+                chartDevicePC1.Series.AddRange(new Series[] { PCs });
+                chartInterface1.Series.AddRange(new Series[] { I0,I1, I2, I3 });
+                chartInterface.Series.AddRange(new Series[] {  I4, I5, I9, I10, I11 });
             
 
 
