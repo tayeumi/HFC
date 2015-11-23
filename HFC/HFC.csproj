@@ -196,6 +196,7 @@
     <Compile Include="Class\NW_InterfaceControllerWarning.cs" />
     <Compile Include="Class\NW_InterfaceGauge.cs" />
     <Compile Include="Class\NW_Node.cs" />
+    <Compile Include="Class\NW_OpticalSW.cs" />
     <Compile Include="Class\NW_SignalLog.cs" />
     <Compile Include="Class\RegistryWriter.cs" />
     <Compile Include="Class\SolarWinds.cs" />
@@ -236,6 +237,12 @@
     </Compile>
     <Compile Include="Forms\frmDeviceToNode.Designer.cs">
       <DependentUpon>frmDeviceToNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDHCPService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDHCPService.Designer.cs">
+      <DependentUpon>frmDHCPService.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmHome.cs">
       <SubType>Form</SubType>
@@ -278,6 +285,18 @@
     </Compile>
     <Compile Include="Forms\frmNodeList_UpdateByPath.Designer.cs">
       <DependentUpon>frmNodeList_UpdateByPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOpticalSW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOpticalSW.Designer.cs">
+      <DependentUpon>frmOpticalSW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOpticalSW_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOpticalSW_Update.Designer.cs">
+      <DependentUpon>frmOpticalSW_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmSignalChart.cs">
       <SubType>Form</SubType>
@@ -383,6 +402,9 @@
     <EmbeddedResource Include="Forms\frmDeviceToNode.resx">
       <DependentUpon>frmDeviceToNode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDHCPService.resx">
+      <DependentUpon>frmDHCPService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmNodeList_UpdateByPath.resx">
       <DependentUpon>frmNodeList_UpdateByPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOpticalSW.resx">
+      <DependentUpon>frmOpticalSW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOpticalSW_Update.resx">
+      <DependentUpon>frmOpticalSW_Update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSignalChart.resx">
       <DependentUpon>frmSignalChart.cs</DependentUpon>

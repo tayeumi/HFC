@@ -72,8 +72,8 @@
             this.cboFilter = new DevExpress.XtraEditors.ComboBoxEdit();
             this.chartInterface = new DevExpress.XtraCharts.ChartControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.chartDevicePC1 = new DevExpress.XtraCharts.ChartControl();
+            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.chartInterface1 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.chartDevicePC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
@@ -98,8 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
-            this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartDevicePC1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series5)).BeginInit();
@@ -110,6 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(splineAreaSeriesView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(splineAreaSeriesView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
+            this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartInterface1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series7)).BeginInit();
@@ -223,25 +223,6 @@
             this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // splitContainerControl2
-            // 
-            this.splitContainerControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None;
-            this.splitContainerControl2.Horizontal = false;
-            this.splitContainerControl2.IsSplitterFixed = true;
-            this.splitContainerControl2.Location = new System.Drawing.Point(4, 290);
-            this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.chartInterface1);
-            this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.chartInterface);
-            this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(710, 301);
-            this.splitContainerControl2.SplitterPosition = 142;
-            this.splitContainerControl2.TabIndex = 10;
-            this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
             // chartDevicePC1
             // 
             xyDiagram3.AxisX.Range.ScrollingRange.SideMarginsEnabled = false;
@@ -277,6 +258,25 @@
             chartTitle3.Text = "BSR 64000  PCs";
             this.chartDevicePC1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
             chartTitle3});
+            // 
+            // splitContainerControl2
+            // 
+            this.splitContainerControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainerControl2.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None;
+            this.splitContainerControl2.Horizontal = false;
+            this.splitContainerControl2.IsSplitterFixed = true;
+            this.splitContainerControl2.Location = new System.Drawing.Point(4, 290);
+            this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.chartInterface1);
+            this.splitContainerControl2.Panel1.Text = "Panel1";
+            this.splitContainerControl2.Panel2.Controls.Add(this.chartInterface);
+            this.splitContainerControl2.Panel2.Text = "Panel2";
+            this.splitContainerControl2.Size = new System.Drawing.Size(710, 301);
+            this.splitContainerControl2.SplitterPosition = 142;
+            this.splitContainerControl2.TabIndex = 10;
+            this.splitContainerControl2.Text = "splitContainerControl2";
             // 
             // chartInterface1
             // 
@@ -347,8 +347,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartInterface)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
-            this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(splineAreaSeriesView4)).EndInit();
@@ -359,6 +357,8 @@
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(splineAreaSeriesView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartDevicePC1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
+            this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(xyDiagram4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(pointSeriesLabel10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(lineSeriesView4)).EndInit();

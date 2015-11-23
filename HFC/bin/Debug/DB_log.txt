@@ -2251,3 +2251,6 @@ The statement has been terminated.
 7/22/2015 11:35:06 AM : Procedure or function 'NW_CurrentTrafic_Insert' expects parameter '@DS', which was not supplied.
 7/22/2015 11:35:21 AM : Procedure or function 'NW_CurrentTrafic_Insert' expects parameter '@DS', which was not supplied.
 7/22/2015 11:35:25 AM : Procedure or function 'NW_CurrentTrafic_Insert' expects parameter '@DS', which was not supplied.
+11/20/2015 10:16:53 AM : SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+11/20/2015 10:17:25 AM : SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.
+11/20/2015 10:18:53 AM : SqlDateTime overflow. Must be between 1/1/1753 12:00:00 AM and 12/31/9999 11:59:59 PM.

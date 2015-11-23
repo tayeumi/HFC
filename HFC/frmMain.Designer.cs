@@ -117,6 +117,7 @@
             this.btnMonitor = new DevExpress.XtraBars.BarButtonItem();
             this.btnMaps = new DevExpress.XtraBars.BarButtonItem();
             this.btnDashboard = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOpticalSW = new DevExpress.XtraBars.BarButtonItem();
             this.LargeImageList = new DevExpress.Utils.ImageCollection(this.components);
             this.Menu_System = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.MenuHTTop1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -254,10 +255,11 @@
             this.btnTraffic,
             this.btnMonitor,
             this.btnMaps,
-            this.btnDashboard});
+            this.btnDashboard,
+            this.btnOpticalSW});
             this.ribbon.LargeImages = this.LargeImageList;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 130;
+            this.ribbon.MaxItemId = 131;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barSubItem4);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -844,6 +846,7 @@
             this.btnCMTSRequest.Caption = "CMTS Get Info";
             this.btnCMTSRequest.Id = 124;
             this.btnCMTSRequest.LargeImageIndex = 3;
+            this.btnCMTSRequest.LargeWidth = 100;
             this.btnCMTSRequest.Name = "btnCMTSRequest";
             this.btnCMTSRequest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCMTSRequest_ItemClick);
             // 
@@ -891,6 +894,15 @@
             this.btnDashboard.LargeWidth = 90;
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDashboard_ItemClick);
+            // 
+            // btnOpticalSW
+            // 
+            this.btnOpticalSW.Caption = "Optical SW";
+            this.btnOpticalSW.Id = 130;
+            this.btnOpticalSW.LargeImageIndex = 15;
+            this.btnOpticalSW.LargeWidth = 100;
+            this.btnOpticalSW.Name = "btnOpticalSW";
+            this.btnOpticalSW.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpticalSW_ItemClick);
             // 
             // LargeImageList
             // 
@@ -1012,8 +1024,9 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnCMTSRequest);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnOpticalSW);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "CMTS";
+            this.ribbonPageGroup3.Text = "CMTS-CATV";
             // 
             // repositoryItemComboBox1
             // 
@@ -1283,6 +1296,7 @@
         private DevExpress.XtraBars.BarButtonItem btnMaps;
         private DevExpress.XtraBars.BarButtonItem btnDashboard;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraBars.BarButtonItem btnOpticalSW;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
         
     }

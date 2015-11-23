@@ -187,6 +187,18 @@ namespace HFC
             Waiting.CloseWaitForm();
         }
 
+        private void btnOpticalSW_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Waiting.ShowWaitForm();
+            if (!Class.App.IsFocusForm(typeof(Forms.frmOpticalSW), this))
+            {
+                Forms.frmOpticalSW frm = new Forms.frmOpticalSW();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            Waiting.CloseWaitForm();
+        }
+
                 
     }
 }

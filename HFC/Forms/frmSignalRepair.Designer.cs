@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition6 = new DevExpress.XtraGrid.StyleFormatCondition();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSignalRepair));
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSignalRepair));
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition4 = new DevExpress.XtraGrid.StyleFormatCondition();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition5 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.gridSNRValue = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -126,6 +126,8 @@
             this.timerCountNotUse = new System.Windows.Forms.Timer(this.components);
             this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             this.timerNhieu = new System.Windows.Forms.Timer(this.components);
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnResetModem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDeviceDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -454,16 +456,16 @@
             this.gridSNRInterfaceController,
             this.gridSNRValue,
             this.gridTimeUpdate});
-            styleFormatCondition6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            styleFormatCondition6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            styleFormatCondition6.Appearance.Options.UseBackColor = true;
-            styleFormatCondition6.Appearance.Options.UseForeColor = true;
-            styleFormatCondition6.ApplyToRow = true;
-            styleFormatCondition6.Column = this.gridSNRValue;
-            styleFormatCondition6.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition6.Expression = "ToFloat([Signal]) < 20.0 And Len([Signal] )>3";
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            styleFormatCondition1.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Appearance.Options.UseForeColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.gridSNRValue;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "ToFloat([Signal]) < 20.0 And Len([Signal] )>3";
             this.gridSNRDetail.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition6});
+            styleFormatCondition1});
             this.gridSNRDetail.GridControl = this.gridSNR;
             this.gridSNRDetail.Name = "gridSNRDetail";
             this.gridSNRDetail.OptionsBehavior.Editable = false;
@@ -545,14 +547,14 @@
             this.colOffline,
             this.colOnline,
             this.colNodeName});
-            styleFormatCondition3.Appearance.BackColor = System.Drawing.Color.Red;
-            styleFormatCondition3.Appearance.Options.UseBackColor = true;
-            styleFormatCondition3.ApplyToRow = true;
-            styleFormatCondition3.Column = this.colOnline;
-            styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
-            styleFormatCondition3.Value1 = "0";
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.Red;
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.ApplyToRow = true;
+            styleFormatCondition2.Column = this.colOnline;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            styleFormatCondition2.Value1 = "0";
             this.gridNodeStatusDetail.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition3});
+            styleFormatCondition2});
             this.gridNodeStatusDetail.GridControl = this.gridNodeStatus;
             this.gridNodeStatusDetail.IndicatorWidth = 10;
             this.gridNodeStatusDetail.Name = "gridNodeStatusDetail";
@@ -771,9 +773,11 @@
             this.btnAddtoNode,
             this.toolStripMenuItem2,
             this.btnLog1Thang,
-            this.btnBieudo1Thang});
+            this.btnBieudo1Thang,
+            this.toolStripMenuItem4,
+            this.btnResetModem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 192);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 242);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // btnCapnhattuModem
@@ -870,13 +874,13 @@
             this.colChecked,
             this.colChart,
             this.colOn});
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            styleFormatCondition2.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.ApplyToRow = true;
-            styleFormatCondition2.Column = this.colValue4;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition2.Expression = "ToInt([Value4])<210 And Len([Value4])  > 0";
+            styleFormatCondition3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            styleFormatCondition3.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            styleFormatCondition3.Appearance.Options.UseBackColor = true;
+            styleFormatCondition3.ApplyToRow = true;
+            styleFormatCondition3.Column = this.colValue4;
+            styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition3.Expression = "ToInt([Value4])<210 And Len([Value4])  > 0";
             styleFormatCondition4.Appearance.BackColor = System.Drawing.Color.Aqua;
             styleFormatCondition4.Appearance.BackColor2 = System.Drawing.Color.White;
             styleFormatCondition4.Appearance.Options.UseBackColor = true;
@@ -893,7 +897,7 @@
             styleFormatCondition5.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
             styleFormatCondition5.Expression = "ToFloat([Value1])<30.0 And Len([Value1])  > 0";
             this.gridItemDetail.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition2,
+            styleFormatCondition3,
             styleFormatCondition4,
             styleFormatCondition5});
             this.gridItemDetail.GridControl = this.gridItem;
@@ -1115,6 +1119,18 @@
             this.timerNhieu.Interval = 60000;
             this.timerNhieu.Tick += new System.EventHandler(this.timerNhieu_Tick);
             // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(186, 6);
+            // 
+            // btnResetModem
+            // 
+            this.btnResetModem.Name = "btnResetModem";
+            this.btnResetModem.Size = new System.Drawing.Size(189, 22);
+            this.btnResetModem.Text = "Reset Modem";
+            this.btnResetModem.Click += new System.EventHandler(this.btnResetModem_Click);
+            // 
             // frmSignalRepair
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1264,6 +1280,8 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit3;
         private System.Windows.Forms.ToolStripMenuItem btnCapnhattuModem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem btnResetModem;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }
