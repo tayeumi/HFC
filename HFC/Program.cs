@@ -25,8 +25,8 @@ namespace HFC
             }      
             try
             {
-              Application.Run(new frmintro());
-               //   Application.Run(new Forms.frmOpticalSW());
+              // Application.Run(new frmintro());
+                 Application.Run(new Forms.frmDHCPCustomer());
                 
             }
             catch (Exception ex)

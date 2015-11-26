@@ -15,5 +15,18 @@ namespace HFC.Forms
         {
             InitializeComponent();
         }
+
+        void NW_Dhcp_Ip_Getlist()
+        {
+            Class.NW_Dhcp_Ip cls = new Class.NW_Dhcp_Ip();
+            DataTable dt= cls.NW_Dhcp_Ip_Getlist();
+            gridItem.DataSource=dt;
+
+        }
+
+        private void frmDHCPService_Load(object sender, EventArgs e)
+        {
+            NW_Dhcp_Ip_Getlist();
+        }
     }
 }

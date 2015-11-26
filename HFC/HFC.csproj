@@ -192,6 +192,8 @@
     <Compile Include="Class\NW_CurrentTrafic.cs" />
     <Compile Include="Class\NW_Device.cs" />
     <Compile Include="Class\NW_Device_Status.cs" />
+    <Compile Include="Class\NW_Dhcp_Customer.cs" />
+    <Compile Include="Class\NW_Dhcp_Ip.cs" />
     <Compile Include="Class\NW_Interface.cs" />
     <Compile Include="Class\NW_InterfaceControllerWarning.cs" />
     <Compile Include="Class\NW_InterfaceGauge.cs" />
@@ -237,6 +239,12 @@
     </Compile>
     <Compile Include="Forms\frmDeviceToNode.Designer.cs">
       <DependentUpon>frmDeviceToNode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDHCPCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDHCPCustomer.Designer.cs">
+      <DependentUpon>frmDHCPCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmDHCPService.cs">
       <SubType>Form</SubType>
@@ -401,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDeviceToNode.resx">
       <DependentUpon>frmDeviceToNode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDHCPCustomer.resx">
+      <DependentUpon>frmDHCPCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDHCPService.resx">
       <DependentUpon>frmDHCPService.cs</DependentUpon>

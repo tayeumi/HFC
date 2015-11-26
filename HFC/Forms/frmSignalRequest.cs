@@ -1175,36 +1175,11 @@ namespace HFC.Forms
                     cmts.Get_Traffic("sh cable modem 0/0 stats \r\n", out list);
                     if (list != null)
                     {
-                        //DataRow dr;
-                        //Regex rTraffic = new Regex(@"MAC (.*)\n\rIP (.*)\n\r(.*):(.*):(.*)\n\rNumber (.*)\n\rTotal (.*)\n\rAverage (.*)\n\rInstant (.*)\n\rTotal (.*)\n\rAverage (.*)\n\rInstant (.*)\n\rTime(.*)\n\rTotal");
-                        //Match _rTr = rTraffic.Match(list);
-                        //while (_rTr.Success)
-                        //{
-                        //    string kqtr = _rTr.Value.Trim();
-                        //    while (kqtr.IndexOf("  ") > 0)
-                        //    {
-                        //        kqtr = kqtr.Replace("  ", " ");
-                        //    }
-                        //    cat = kqtr.Split('\n');
-                        //    int t = cat.Length;
-                        //    if (cat.Length == 12)
-                        //    {
-                        //        cat[0] = cat[0].Replace("MAC Address:", "").ToString().Trim();
-                        //        cat[0] = cat[0].Replace("\r", "").ToString().Trim();
-                        //        cat[4] = cat[4].Replace("\rTotal US Data:", "").ToString().Trim();
-                        //        cat[4] = cat[4].Replace("KBytes", "").ToString().Trim();
-                        //        cat[7] = cat[7].Replace("\rTotal DS Data:", "").ToString().Trim();
-                        //        cat[7] = cat[7].Replace("KBytes", "").ToString().Trim();
-                        //        dr = dtTraffic.NewRow();
-                        //        dr["MacAddress"] = cat[0];
-                        //        dr["CurrentUS"] = cat[4];
-                        //        dr["CurrentDS"] = cat[7];
-                        //        dr["DateTime"] = dtime;
-                        //        dtTraffic.Rows.Add(dr);
-
-                        //    }
-                        //    _rTr = _rTr.NextMatch();
-                        //}
+                        list = list.Replace("0/0", "\n\r0/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1234,7 +1209,13 @@ namespace HFC.Forms
                     // card 1/0
                     cmts.Get_Traffic("sh cable modem 1/0 stats \r\n", out list);
                     if (list != null)
-                    {                        
+                    {
+                       
+                        list = list.Replace("1/0", "\n\r1/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1264,7 +1245,13 @@ namespace HFC.Forms
                     // card 2/0
                     cmts.Get_Traffic("sh cable modem 2/0 stats \r\n", out list);
                     if (list != null)
-                    {
+                    {                        
+                        list = list.Replace("2/0", "\n\r2/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
+
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1294,7 +1281,13 @@ namespace HFC.Forms
                     // card 3/0
                     cmts.Get_Traffic("sh cable modem 3/0 stats \r\n", out list);
                     if (list != null)
-                    {
+                    {                       
+                        list = list.Replace("3/0", "\n\r3/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
+
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1324,7 +1317,12 @@ namespace HFC.Forms
                     // card 4/0
                     cmts.Get_Traffic("sh cable modem 4/0 stats \r\n", out list);
                     if (list != null)
-                    {
+                    {                       
+                        list = list.Replace("4/0", "\n\r4/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1354,7 +1352,12 @@ namespace HFC.Forms
                     // card 5/0
                     cmts.Get_Traffic("sh cable modem 5/0 stats \r\n", out list);
                     if (list != null)
-                    {
+                    {                       
+                        list = list.Replace("5/0", "\n\r5/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1385,6 +1388,12 @@ namespace HFC.Forms
                     cmts.Get_Traffic("sh cable modem 9/0 stats \r\n", out list);
                     if (list != null)
                     {
+                        
+                        list = list.Replace("9/0", "\n\r9/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1415,6 +1424,12 @@ namespace HFC.Forms
                     cmts.Get_Traffic("sh cable modem 10/0 stats \r\n", out list);
                     if (list != null)
                     {
+                       
+                        list = list.Replace("10/0", "\n\r10/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1444,7 +1459,13 @@ namespace HFC.Forms
                     // card 11/0
                     cmts.Get_Traffic("sh cable modem 11/0 stats \r\n", out list);
                     if (list != null)
-                    {
+                    {                       
+                        list = list.Replace("11/0", "\n\r11/0");
+                        while (list.IndexOf("\n\r\n\r") > 0)
+                        {
+                            list = list.Replace("\n\r\n\r", "\n\r");
+                        }
+                        
                         string[] sp = list.Split('\n');
                         DataRow dr;
                         for (int i = 0; i < sp.Length; i++)
@@ -1576,6 +1597,11 @@ namespace HFC.Forms
                                         {
                                             dtTraffic_select.Rows[j]["CurrentDS"] = currds;
                                             dtTraffic_select.Rows[j]["DS"] = (currds - Oldcurrds).ToString();
+                                            // truong hop lon hon qua nhieu.
+                                            if (currds - Oldcurrds > 800000) // bi load lai traffic
+                                            {
+                                                dtTraffic_select.Rows[j]["DS"] = 0;
+                                            }
                                         }
                                         else if (currds == Oldcurrds)
                                         {
@@ -1586,12 +1612,21 @@ namespace HFC.Forms
                                         {
                                             dtTraffic_select.Rows[j]["CurrentDS"] = currds;
                                             dtTraffic_select.Rows[j]["DS"] = currds.ToString();
+                                            if (currds  > 800000) // bi load lai traffic
+                                            {
+                                                dtTraffic_select.Rows[j]["DS"] = 0;
+                                            }
                                         }
 
                                         if (currus > Oldcurrus)
                                         {
                                             dtTraffic_select.Rows[j]["CurrentUS"] = currus;
                                             dtTraffic_select.Rows[j]["US"] = (currus - Oldcurrus).ToString();
+
+                                            if (currus - Oldcurrus > 100000) // bi load lai traffic
+                                            {
+                                                dtTraffic_select.Rows[j]["US"] = 0;
+                                            }
                                         }
                                         else if (currus == Oldcurrus)
                                         {
@@ -1602,6 +1637,10 @@ namespace HFC.Forms
                                         {
                                             dtTraffic_select.Rows[j]["CurrentUS"] = currus;
                                             dtTraffic_select.Rows[j]["US"] = currus.ToString();
+                                            if (currus  > 100000) // bi load lai traffic
+                                            {
+                                                dtTraffic_select.Rows[j]["US"] = 0;
+                                            }
                                         }
 
                                     }

@@ -1531,20 +1531,7 @@ namespace HFC.Class
                                break;
                            }
                        }
-                       result = result.Replace("--More--\b\b\b\b\b\b\b\b\b[K", "");
-                       result = result.Replace("0/0", "\n\r0/0");
-                       result = result.Replace("1/0", "\n\r1/0");
-                       result = result.Replace("2/0", "\n\r2/0");
-                       result = result.Replace("3/0", "\n\r3/0");
-                       result = result.Replace("4/0", "\n\r4/0");
-                       result = result.Replace("5/0", "\n\r5/0");
-                       result = result.Replace("9/0", "\n\r9/0");
-                       result = result.Replace("10/0", "\n\r10/0");
-                       result = result.Replace("11/0", "\n\r11/0");
-                       while (result.IndexOf("\n\r\n\r") > 0)
-                       {
-                           result = result.Replace("\n\r\n\r", "\n\r");
-                       }
+                       result = result.Replace("--More--\b\b\b\b\b\b\b\b\b[K", "");                      
                        List = result;
                    }
                    catch { }

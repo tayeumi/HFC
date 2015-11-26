@@ -99,6 +99,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnLog1Thang = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBieudo1Thang = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnResetModem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridItemDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDatetime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMacAdress = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -126,8 +128,6 @@
             this.timerCountNotUse = new System.Windows.Forms.Timer(this.components);
             this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             this.timerNhieu = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnResetModem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDeviceDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -672,7 +672,7 @@
             // 
             this.radioRemote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioRemote.EditValue = "All";
-            this.radioRemote.Location = new System.Drawing.Point(2, 318);
+            this.radioRemote.Location = new System.Drawing.Point(10, 308);
             this.radioRemote.MenuManager = this.barManager1;
             this.radioRemote.Name = "radioRemote";
             this.radioRemote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -694,7 +694,7 @@
             this.gridItemRemote.Name = "gridItemRemote";
             this.gridItemRemote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.PicNhanVien});
-            this.gridItemRemote.Size = new System.Drawing.Size(182, 315);
+            this.gridItemRemote.Size = new System.Drawing.Size(190, 305);
             this.gridItemRemote.TabIndex = 1;
             this.gridItemRemote.UseEmbeddedNavigator = true;
             this.gridItemRemote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -850,6 +850,18 @@
             this.btnBieudo1Thang.Size = new System.Drawing.Size(189, 22);
             this.btnBieudo1Thang.Text = "Xem biểu đồ 1 tháng";
             this.btnBieudo1Thang.Click += new System.EventHandler(this.btnBieudo1Thang_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(186, 6);
+            // 
+            // btnResetModem
+            // 
+            this.btnResetModem.Name = "btnResetModem";
+            this.btnResetModem.Size = new System.Drawing.Size(189, 22);
+            this.btnResetModem.Text = "Reset Modem";
+            this.btnResetModem.Click += new System.EventHandler(this.btnResetModem_Click);
             // 
             // gridItemDetail
             // 
@@ -1118,18 +1130,6 @@
             // 
             this.timerNhieu.Interval = 60000;
             this.timerNhieu.Tick += new System.EventHandler(this.timerNhieu_Tick);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(186, 6);
-            // 
-            // btnResetModem
-            // 
-            this.btnResetModem.Name = "btnResetModem";
-            this.btnResetModem.Size = new System.Drawing.Size(189, 22);
-            this.btnResetModem.Text = "Reset Modem";
-            this.btnResetModem.Click += new System.EventHandler(this.btnResetModem_Click);
             // 
             // frmSignalRepair
             // 
