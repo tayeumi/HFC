@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colValue4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnRemote = new DevExpress.XtraEditors.SimpleButton();
             this.btnPHY = new DevExpress.XtraEditors.SimpleButton();
@@ -56,6 +56,8 @@
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ItemCheckStatus = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.btnLoadAll = new DevExpress.XtraEditors.SimpleButton();
             this.checkInsertData = new DevExpress.XtraEditors.CheckEdit();
@@ -174,16 +176,18 @@
             this.colCurrentDS,
             this.colLocation,
             this.colStatus,
-            this.gridColumn4});
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            styleFormatCondition2.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.ApplyToRow = true;
-            styleFormatCondition2.Column = this.colValue4;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition2.Expression = "ToInt([Value4])<210 And Len([Value4])  > 0";
+            this.gridColumn4,
+            this.colDS,
+            this.colUS});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            styleFormatCondition1.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colValue4;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "ToInt([Value4])<210 And Len([Value4])  > 0";
             this.gridItemDetail.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition2});
+            styleFormatCondition1});
             this.gridItemDetail.GridControl = this.gridItem;
             this.gridItemDetail.IndicatorWidth = 50;
             this.gridItemDetail.Name = "gridItemDetail";
@@ -344,6 +348,22 @@
             this.gridColumn4.FieldName = "Description";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Width = 147;
+            // 
+            // colDS
+            // 
+            this.colDS.Caption = "DS";
+            this.colDS.FieldName = "DS";
+            this.colDS.Name = "colDS";
+            this.colDS.Visible = true;
+            this.colDS.VisibleIndex = 11;
+            // 
+            // colUS
+            // 
+            this.colUS.Caption = "US";
+            this.colUS.FieldName = "US";
+            this.colUS.Name = "colUS";
+            this.colUS.Visible = true;
+            this.colUS.VisibleIndex = 12;
             // 
             // repositoryItemPictureEdit1
             // 
@@ -620,7 +640,9 @@
         private DevExpress.XtraEditors.CheckEdit checkMaps;
         private System.Windows.Forms.Timer timerMaps;
         private DevExpress.XtraEditors.SimpleButton btnMaps;
-        private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
         private DevExpress.XtraEditors.SimpleButton btnDeviceStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colDS;
+        private DevExpress.XtraGrid.Columns.GridColumn colUS;
+        private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

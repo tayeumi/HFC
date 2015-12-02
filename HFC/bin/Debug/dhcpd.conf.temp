@@ -1,0 +1,68 @@
+ddns-update-style none;
+next-server 101.99.28.152;
+log-facility local7;
+allow leasequery;
+
+###
+option space packetcable;
+option packetcable-encapsulate code 122 = encapsulate packetcable;
+option packetcable.primary-dhcp-server code 1 = ip-address;
+option packetcable.primary-dhcp-server 0.0.0.0;
+####
+
+shared-network LOKALES-INTERFACE {
+        subnet 101.99.28.128 netmask 255.255.255.224 {
+                authoritative;
+       }
+}
+
+
+class "CM"{
+  match if substring (option vendor-class-identifier, 0, 5) = "docsi";
+  default-lease-time 86400;
+  max-lease-time 86400;
+  min-lease-time 86400;  
+}
+
+default-lease-time 3600;
+max-lease-time 3600;
+min-lease-time 3600;
+shared-network network-19 {
+<_CPEDynamic>
+<_CPEStatic>	
+<_modemip>
+	subnet 203.205.34.0 netmask 255.255.255.0 {
+		authoritative;
+		option subnet-mask 255.255.255.0;
+		option routers 203.205.34.1;
+		option broadcast-address 203.205.34.255;
+	}
+	group {
+		use-host-decl-names on;
+		# PC an Modem 192.168.32.92 smart tivi Kunde PTH002139 LƯƠNG XUÂN THÂN
+		host cpe-203-205-34-2 {
+			hardware ethernet a4:7a:a4:6f:b2:d5 ;
+			fixed-address 203.205.34.2;
+			option host-name 	"mta47aa46fb2d5";
+			ddns-hostname = 	"mta47aa46fb2d5";
+		}
+	}
+}
+shared-network network-51 {
+	subnet 172.16.48.0 netmask 255.255.252.0 {
+		authoritative;
+		option subnet-mask 255.255.252.0;
+		option routers 172.16.48.1;
+		option broadcast-address 172.16.48.255;
+		option time-servers 172.16.48.1;
+		option time-offset 3600;
+		option bootfile-name "5-512000.cfg";
+		pool {
+			range 172.16.48.2 172.16.51.254;
+		allow members of "CM" ;
+		}
+	}
+	group {
+		use-host-decl-names on;
+	}
+}

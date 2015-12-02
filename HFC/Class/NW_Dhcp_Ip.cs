@@ -25,5 +25,27 @@ namespace HFC.Class
             db.CreateNewSqlCommand();
             return db.ExecuteDataTable(procname);
         }
+        public DataTable NW_Dhcp_Ip_GetbyCPEDynamic()
+        {
+            string procname = "NW_Dhcp_Ip_GetbyCPEDynamic";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            return db.ExecuteDataTable(procname);
+        }
+        public DataTable NW_Dhcp_Ip_GetbyCPEStatic()
+        {
+            string procname = "NW_Dhcp_Ip_GetbyCPEStatic";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            return db.ExecuteDataTable(procname);
+        }
+        public DataTable NW_Dhcp_Ip_GetbyPoolModem()
+        {
+            string procname = "NW_Dhcp_Ip_GetbyPoolModem";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            return db.ExecuteDataTable(procname);
+        }
+      
     }
 }

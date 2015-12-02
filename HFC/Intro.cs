@@ -153,6 +153,7 @@ namespace HFC
                 "DevExpress.XtraGauges.v12.2.Presets.dll", 
                 "DevExpress.XtraGauges.v12.2.Win.dll", 
                 "node.txt", 
+                "dhcpd.conf.temp",
                 "path.txt",
                 "nodewarning.txt", 
                 "Config.xml",

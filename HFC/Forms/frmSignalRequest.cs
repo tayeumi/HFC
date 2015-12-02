@@ -1133,7 +1133,7 @@ namespace HFC.Forms
                     }
 
 
-                }
+                }               
 
                 Waiting.CloseWaitForm();
                 gridItem.DataSource = dtIPPublic;
@@ -1492,9 +1492,153 @@ namespace HFC.Forms
                     }
                     #endregion
                 }
+                //============================================================== kiem tra
+                //// xu ly insert
+                //        Class.NW_CurrentTrafic cur = new Class.NW_CurrentTrafic();
+                //        dtTraffic_select = cur.NW_CurrentTrafic_GetAll();
+                //        DateTime timenow = DateTime.Now;
+                //        if (dtTraffic_select.Rows.Count < 1)
+                //        {
+                //            // lan dau insert ko can kiem tra va tinh luuluong
+                //            // tien hanh insert
+                //          //  Waiting.ShowWaitForm();
+                //            Waiting.SetWaitFormDescription(" Đang lưu dữ liệu ! ");
+
+                //            for (int i = 0; i < dtTraffic.Rows.Count; i++)
+                //            {
+                //                cur.MacAddress = dtTraffic.Rows[i]["MacAddress"].ToString();
+                //                cur.DS = dtTraffic.Rows[i]["CurrentDS"].ToString();
+                //                cur.US = dtTraffic.Rows[i]["CurrentUS"].ToString();
+                //                cur.DateTime = timenow;
+                //                cur.CurrentDS = dtTraffic.Rows[i]["CurrentDS"].ToString();
+                //                cur.CurrentUS = dtTraffic.Rows[i]["CurrentUS"].ToString();
+                //                cur.Insert();
+                //                Waiting.SetWaitFormDescription(" Đang lưu dữ liệu ! (" + (i + 1).ToString() + ")");
+                //            }
+                //           // Waiting.CloseWaitForm();
+                //        }
+                //        else
+                //        {
+                //            // het lan dau insert
+                //            DataRow[] result = null;
+                //            DataRow dr;
+                //            for (int i = 0; i < dtTraffic.Rows.Count; i++)
+                //            {
+                //                // cap nhat mac thieu luu luong
+                //                result = dtTraffic_select.Select("MacAddress ='" + dtTraffic.Rows[i]["MacAddress"].ToString() + "'");
+                //                if (result.Length > 0)
+                //                {
+
+                //                }
+                //                else
+                //                {
+                //                    dr = dtTraffic_select.NewRow();
+                //                    dr["MacAddress"] = dtTraffic.Rows[i]["MacAddress"].ToString();
+                //                    dr["DS"] = "0";
+                //                    dr["US"] = "0";
+                //                    dr["CurrentDS"] = "0";
+                //                    dr["CurrentUS"] = "0";
+                //                    dtTraffic_select.Rows.Add(dr);
+                //                }
+                //            }
+                //          //  Waiting.ShowWaitForm();
+                //            Waiting.SetWaitFormDescription(" Đang tính Lưu lượng ! ");
+                //            // bat dau tinh luu luong su dung
+
+                //            double currds = 0;
+                //            double currus = 0;
+                //            double Oldcurrds = 0;
+                //            double Oldcurrus = 0;
+
+                //            for (int j = 0; j < dtTraffic_select.Rows.Count; j++)
+                //            {
+                //                result = dtTraffic.Select("MacAddress ='" + dtTraffic_select.Rows[j]["MacAddress"].ToString() + "'");
+                //                currds = 0;
+                //                currus = 0;
+                //                Oldcurrds = 0;
+                //                Oldcurrus = 0;
+                //                if (result.Length > 0)
+                //                {
+                //                    foreach (DataRow row in result)
+                //                    {
+                //                        dtTraffic_select.Rows[j]["DateTime"] = row["DateTime"];
+                //                        double.TryParse(row["CurrentDS"].ToString(), out currds);
+                //                        double.TryParse(row["CurrentUS"].ToString(), out currus);
+                //                        double.TryParse(dtTraffic_select.Rows[j]["CurrentDS"].ToString(), out Oldcurrds);
+                //                        double.TryParse(dtTraffic_select.Rows[j]["CurrentUS"].ToString(), out Oldcurrus);
+                //                        if (currds > Oldcurrds)
+                //                        {
+                //                            dtTraffic_select.Rows[j]["CurrentDS"] = currds;
+                //                            dtTraffic_select.Rows[j]["DS"] = (currds - Oldcurrds).ToString();
+                //                            // truong hop lon hon qua nhieu.
+                //                            if (currds - Oldcurrds > 500000) // bi load lai traffic
+                //                            {
+                //                                dtTraffic_select.Rows[j]["DS"] = 0;
+                //                                MessageBox.Show("800000" + dtTraffic_select.Rows[j]["MacAddress"].ToString() +"----"+currds+ "----" +Oldcurrds);
+                //                            }
+                //                            if (Oldcurrds == 0)
+                //                            {
+                //                                dtTraffic_select.Rows[j]["DS"] = 0;
+                //                            }
+                //                        }
+                //                        else if (currds == Oldcurrds)
+                //                        {
+                //                            dtTraffic_select.Rows[j]["CurrentDS"] = currds;
+                //                            dtTraffic_select.Rows[j]["DS"] = "0";
+                //                        }
+                //                        else
+                //                        {
+                //                            dtTraffic_select.Rows[j]["CurrentDS"] = currds;
+                //                            dtTraffic_select.Rows[j]["DS"] = currds.ToString();
+                //                            if (currds > 800000) // bi load lai traffic
+                //                            {
+                //                                dtTraffic_select.Rows[j]["DS"] = 0;
+                //                            }
+                //                        }
+
+                //                        if (currus > Oldcurrus)
+                //                        {
+                //                            dtTraffic_select.Rows[j]["CurrentUS"] = currus;
+                //                            dtTraffic_select.Rows[j]["US"] = (currus - Oldcurrus).ToString();
+
+                //                            if (currus - Oldcurrus > 100000) // bi load lai traffic
+                //                            {
+                //                                dtTraffic_select.Rows[j]["US"] = 0;
+                //                            }
+                //                            if (Oldcurrus == 0)
+                //                            {
+                //                                dtTraffic_select.Rows[j]["US"] = 0;
+                //                            }
+                //                        }
+                //                        else if (currus == Oldcurrus)
+                //                        {
+                //                            dtTraffic_select.Rows[j]["CurrentUS"] = currus;
+                //                            dtTraffic_select.Rows[j]["US"] = "0";
+                //                        }
+                //                        else
+                //                        {
+                //                            dtTraffic_select.Rows[j]["CurrentUS"] = currus;
+                //                            dtTraffic_select.Rows[j]["US"] = currus.ToString();
+                //                            if (currus > 100000) // bi load lai traffic
+                //                            {
+                //                                dtTraffic_select.Rows[j]["US"] = 0;
+                //                            }
+                //                        }
+
+                //                    }
+                //                }
+                //                else
+                //                {
+                //                    dtTraffic_select.Rows[j]["DateTime"] = timenow;
+                //                    dtTraffic_select.Rows[j]["DS"] = "0";
+                //                    dtTraffic_select.Rows[j]["US"] = "0";
+                //                }
+                //            }
+                //        }
+                //=========================================
 
                 Waiting.CloseWaitForm();
-                gridItem.DataSource = dtTraffic;
+                gridItem.DataSource = dtTraffic_select;
             }
             catch(Exception ex)
             {
@@ -1598,7 +1742,11 @@ namespace HFC.Forms
                                             dtTraffic_select.Rows[j]["CurrentDS"] = currds;
                                             dtTraffic_select.Rows[j]["DS"] = (currds - Oldcurrds).ToString();
                                             // truong hop lon hon qua nhieu.
-                                            if (currds - Oldcurrds > 800000) // bi load lai traffic
+                                            if (currds - Oldcurrds > 500000) // bi load lai traffic
+                                            {
+                                                dtTraffic_select.Rows[j]["DS"] = 0;
+                                            }
+                                            if (Oldcurrds == 0)
                                             {
                                                 dtTraffic_select.Rows[j]["DS"] = 0;
                                             }
@@ -1612,7 +1760,7 @@ namespace HFC.Forms
                                         {
                                             dtTraffic_select.Rows[j]["CurrentDS"] = currds;
                                             dtTraffic_select.Rows[j]["DS"] = currds.ToString();
-                                            if (currds  > 800000) // bi load lai traffic
+                                            if (currds  > 500000) // bi load lai traffic
                                             {
                                                 dtTraffic_select.Rows[j]["DS"] = 0;
                                             }
@@ -1623,7 +1771,11 @@ namespace HFC.Forms
                                             dtTraffic_select.Rows[j]["CurrentUS"] = currus;
                                             dtTraffic_select.Rows[j]["US"] = (currus - Oldcurrus).ToString();
 
-                                            if (currus - Oldcurrus > 100000) // bi load lai traffic
+                                            if (currus - Oldcurrus > 50000) // bi load lai traffic
+                                            {
+                                                dtTraffic_select.Rows[j]["US"] = 0;
+                                            }
+                                            if (Oldcurrus == 0)
                                             {
                                                 dtTraffic_select.Rows[j]["US"] = 0;
                                             }
@@ -1637,7 +1789,7 @@ namespace HFC.Forms
                                         {
                                             dtTraffic_select.Rows[j]["CurrentUS"] = currus;
                                             dtTraffic_select.Rows[j]["US"] = currus.ToString();
-                                            if (currus  > 100000) // bi load lai traffic
+                                            if (currus  > 50000) // bi load lai traffic
                                             {
                                                 dtTraffic_select.Rows[j]["US"] = 0;
                                             }

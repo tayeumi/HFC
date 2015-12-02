@@ -26,12 +26,25 @@ namespace OutSource
             {
                 string procname = "NW_Trafic_GetByDay";
                 DbAccess db = new DbAccess();
+                if (MacAddress == null)
+                {
+                    procname = "NW_Trafic_GetByDay";
+                }
+                else
+                {
+                    procname = "NW_Trafic_GetByDayMac";
+                }                
                 db.CreateNewSqlCommand();
+                if (MacAddress != null)
+                {
+                    db.AddParameter("@MacAddress", MacAddress);
+                }
                 db.AddParameter("@Day", Day);
                 db.AddParameter("@Month", Month);
                 db.AddParameter("@Year", Year);
                 return db.ExecuteDataTable(procname);
             }
+           
         }
     
 }
