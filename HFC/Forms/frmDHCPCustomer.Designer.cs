@@ -35,6 +35,10 @@
             this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDel = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnAddStaticIP = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddIP = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDelIP = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCreateDHCPFile = new System.Windows.Forms.ToolStripMenuItem();
             this.gridItemDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIpAddress = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,9 +97,11 @@
             this.btnEdit,
             this.btnDel,
             this.toolStripMenuItem1,
+            this.btnAddStaticIP,
+            this.toolStripMenuItem2,
             this.btnCreateDHCPFile});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 120);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 126);
             // 
             // btnAdd
             // 
@@ -111,6 +117,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(170, 22);
             this.btnEdit.Text = "Sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDel
             // 
@@ -124,6 +131,37 @@
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 6);
+            // 
+            // btnAddStaticIP
+            // 
+            this.btnAddStaticIP.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnAddIP,
+            this.btnDelIP});
+            this.btnAddStaticIP.Image = global::HFC.Properties.Resources.Action_Navigation_History_Forward;
+            this.btnAddStaticIP.Name = "btnAddStaticIP";
+            this.btnAddStaticIP.Size = new System.Drawing.Size(170, 22);
+            this.btnAddStaticIP.Text = "Cấp IP Tĩnh";
+            // 
+            // btnAddIP
+            // 
+            this.btnAddIP.Image = global::HFC.Properties.Resources.add;
+            this.btnAddIP.Name = "btnAddIP";
+            this.btnAddIP.Size = new System.Drawing.Size(134, 22);
+            this.btnAddIP.Text = "Cấp IP tĩnh";
+            this.btnAddIP.Click += new System.EventHandler(this.btnAddIP_Click);
+            // 
+            // btnDelIP
+            // 
+            this.btnDelIP.Image = global::HFC.Properties.Resources.Delete;
+            this.btnDelIP.Name = "btnDelIP";
+            this.btnDelIP.Size = new System.Drawing.Size(134, 22);
+            this.btnDelIP.Text = "Xóa IP Tĩnh";
+            this.btnDelIP.Click += new System.EventHandler(this.btnDelIP_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 6);
             // 
             // btnCreateDHCPFile
             // 
@@ -356,6 +394,8 @@
             this.Controls.Add(this.groupImport);
             this.Controls.Add(this.gridItem);
             this.Name = "frmDHCPCustomer";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "frmDHCPCustomer";
             this.Load += new System.EventHandler(this.frmDHCPCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).EndInit();
@@ -401,6 +441,10 @@
         private System.Windows.Forms.ToolStripMenuItem btnEdit;
         private System.Windows.Forms.ToolStripMenuItem btnDel;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem btnAddStaticIP;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem btnAddIP;
+        private System.Windows.Forms.ToolStripMenuItem btnDelIP;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

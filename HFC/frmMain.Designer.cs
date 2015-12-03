@@ -118,6 +118,7 @@
             this.btnMaps = new DevExpress.XtraBars.BarButtonItem();
             this.btnDashboard = new DevExpress.XtraBars.BarButtonItem();
             this.btnOpticalSW = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDHCPCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.LargeImageList = new DevExpress.Utils.ImageCollection(this.components);
             this.Menu_System = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.MenuHTTop1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -128,6 +129,7 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.groupDHCP = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Menu_Get = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
@@ -256,10 +258,11 @@
             this.btnMonitor,
             this.btnMaps,
             this.btnDashboard,
-            this.btnOpticalSW});
+            this.btnOpticalSW,
+            this.btnDHCPCustomer});
             this.ribbon.LargeImages = this.LargeImageList;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 131;
+            this.ribbon.MaxItemId = 135;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barSubItem4);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -270,7 +273,7 @@
             this.repositoryItemComboBox1});
             this.ribbon.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(928, 143);
+            this.ribbon.Size = new System.Drawing.Size(995, 143);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -904,6 +907,14 @@
             this.btnOpticalSW.Name = "btnOpticalSW";
             this.btnOpticalSW.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOpticalSW_ItemClick);
             // 
+            // btnDHCPCustomer
+            // 
+            this.btnDHCPCustomer.Caption = "Customer";
+            this.btnDHCPCustomer.Id = 131;
+            this.btnDHCPCustomer.LargeImageIndex = 2;
+            this.btnDHCPCustomer.Name = "btnDHCPCustomer";
+            this.btnDHCPCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDHCPCustomer_ItemClick);
+            // 
             // LargeImageList
             // 
             this.LargeImageList.ImageSize = new System.Drawing.Size(35, 35);
@@ -976,7 +987,8 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup4,
             this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.groupDHCP});
             this.Menu_Action.Name = "Menu_Action";
             this.Menu_Action.Text = "Quản lý Cable Internet - CMTS";
             // 
@@ -1014,6 +1026,12 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Dashboard";
             // 
+            // groupDHCP
+            // 
+            this.groupDHCP.ItemLinks.Add(this.btnDHCPCustomer);
+            this.groupDHCP.Name = "groupDHCP";
+            this.groupDHCP.Text = "DHCP Service";
+            // 
             // Menu_Get
             // 
             this.Menu_Get.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1043,7 +1061,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 680);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(928, 33);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(995, 33);
             // 
             // repositoryItemPictureEdit1
             // 
@@ -1147,7 +1165,7 @@
             this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 713);
+            this.ClientSize = new System.Drawing.Size(995, 713);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1297,6 +1315,8 @@
         private DevExpress.XtraBars.BarButtonItem btnDashboard;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem btnOpticalSW;
+        private DevExpress.XtraBars.BarButtonItem btnDHCPCustomer;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupDHCP;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
         
     }

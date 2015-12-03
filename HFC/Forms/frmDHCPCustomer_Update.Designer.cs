@@ -33,7 +33,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtMacAddress = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.txtIpAddress = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -50,9 +49,9 @@
             this.cboBootfile = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtNote = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.cboPoolIp = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cboPoolIp = new DevExpress.XtraEditors.LookUpEdit();
+            this.txtIpAddress = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMacAddress.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIpAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerAddress.Properties)).BeginInit();
@@ -61,6 +60,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboBootfile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPoolIp.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIpAddress.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -77,6 +77,7 @@
             this.txtMacAddress.Name = "txtMacAddress";
             this.txtMacAddress.Size = new System.Drawing.Size(254, 20);
             this.txtMacAddress.TabIndex = 0;
+            this.txtMacAddress.Validated += new System.EventHandler(this.txtMacAddress_Validated);
             // 
             // labelControl2
             // 
@@ -85,13 +86,6 @@
             this.labelControl2.Size = new System.Drawing.Size(56, 13);
             this.labelControl2.TabIndex = 2;
             this.labelControl2.Text = "IP Address:";
-            // 
-            // txtIpAddress
-            // 
-            this.txtIpAddress.Location = new System.Drawing.Point(274, 43);
-            this.txtIpAddress.Name = "txtIpAddress";
-            this.txtIpAddress.Size = new System.Drawing.Size(126, 20);
-            this.txtIpAddress.TabIndex = 1;
             // 
             // labelControl3
             // 
@@ -122,21 +116,21 @@
             this.txtCustomerCode.Location = new System.Drawing.Point(146, 74);
             this.txtCustomerCode.Name = "txtCustomerCode";
             this.txtCustomerCode.Size = new System.Drawing.Size(254, 20);
-            this.txtCustomerCode.TabIndex = 2;
+            this.txtCustomerCode.TabIndex = 3;
             // 
             // txtCustomerName
             // 
             this.txtCustomerName.Location = new System.Drawing.Point(146, 106);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(254, 20);
-            this.txtCustomerName.TabIndex = 3;
+            this.txtCustomerName.TabIndex = 4;
             // 
             // txtCustomerAddress
             // 
             this.txtCustomerAddress.Location = new System.Drawing.Point(146, 139);
             this.txtCustomerAddress.Name = "txtCustomerAddress";
             this.txtCustomerAddress.Size = new System.Drawing.Size(254, 20);
-            this.txtCustomerAddress.TabIndex = 4;
+            this.txtCustomerAddress.TabIndex = 5;
             // 
             // btnClose
             // 
@@ -146,7 +140,7 @@
             this.btnClose.Location = new System.Drawing.Point(327, 249);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(71, 29);
-            this.btnClose.TabIndex = 9;
+            this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Đóng";
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -163,7 +157,7 @@
             this.btnUpdateNew.Location = new System.Drawing.Point(236, 249);
             this.btnUpdateNew.Name = "btnUpdateNew";
             this.btnUpdateNew.Size = new System.Drawing.Size(88, 29);
-            this.btnUpdateNew.TabIndex = 8;
+            this.btnUpdateNew.TabIndex = 10;
             this.btnUpdateNew.Text = "Lưu && Thêm";
             this.btnUpdateNew.Click += new System.EventHandler(this.btnUpdateNew_Click);
             // 
@@ -174,7 +168,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(146, 249);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(87, 29);
-            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Lưu && Đóng";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -191,7 +185,7 @@
             this.txtLocation.Location = new System.Drawing.Point(146, 191);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(254, 20);
-            this.txtLocation.TabIndex = 6;
+            this.txtLocation.TabIndex = 7;
             // 
             // labelControl7
             // 
@@ -213,16 +207,18 @@
             "7-640000.cfg",
             "10-640000.cfg",
             "full.cfg",
-            "test.cfg"});
+            "test.cfg",
+            "auto/offline.bin"});
+            this.cboBootfile.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cboBootfile.Size = new System.Drawing.Size(254, 20);
-            this.cboBootfile.TabIndex = 10;
+            this.cboBootfile.TabIndex = 6;
             // 
             // txtNote
             // 
             this.txtNote.Location = new System.Drawing.Point(146, 217);
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(254, 20);
-            this.txtNote.TabIndex = 6;
+            this.txtNote.TabIndex = 8;
             // 
             // labelControl8
             // 
@@ -234,18 +230,34 @@
             // 
             // cboPoolIp
             // 
-            this.cboPoolIp.Location = new System.Drawing.Point(146, 43);
+            this.cboPoolIp.Location = new System.Drawing.Point(147, 43);
             this.cboPoolIp.Name = "cboPoolIp";
             this.cboPoolIp.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboPoolIp.Size = new System.Drawing.Size(122, 20);
-            this.cboPoolIp.TabIndex = 10;
+            this.cboPoolIp.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PoolIp", "PoolIp")});
+            this.cboPoolIp.Properties.NullText = "[Chọn Pool IP]";
+            this.cboPoolIp.Size = new System.Drawing.Size(123, 20);
+            this.cboPoolIp.TabIndex = 1;
+            this.cboPoolIp.EditValueChanged += new System.EventHandler(this.cboPoolIp_EditValueChanged);
+            // 
+            // txtIpAddress
+            // 
+            this.txtIpAddress.Location = new System.Drawing.Point(276, 43);
+            this.txtIpAddress.Name = "txtIpAddress";
+            this.txtIpAddress.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtIpAddress.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtIpAddress.Size = new System.Drawing.Size(124, 20);
+            this.txtIpAddress.TabIndex = 2;
             // 
             // frmDHCPCustomer_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(479, 292);
+            this.Controls.Add(this.txtIpAddress);
             this.Controls.Add(this.cboPoolIp);
             this.Controls.Add(this.cboBootfile);
             this.Controls.Add(this.btnClose);
@@ -263,13 +275,13 @@
             this.Controls.Add(this.txtCustomerAddress);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.txtCustomerCode);
-            this.Controls.Add(this.txtIpAddress);
             this.Controls.Add(this.txtMacAddress);
             this.Controls.Add(this.labelControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmDHCPCustomer_Update";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmDHCPCustomer_Update";
             ((System.ComponentModel.ISupportInitialize)(this.txtMacAddress.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIpAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerAddress.Properties)).EndInit();
@@ -278,6 +290,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cboBootfile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPoolIp.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtIpAddress.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +301,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtMacAddress;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit txtIpAddress;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -305,6 +317,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit cboBootfile;
         private DevExpress.XtraEditors.TextEdit txtNote;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.ComboBoxEdit cboPoolIp;
+        private DevExpress.XtraEditors.LookUpEdit cboPoolIp;
+        private DevExpress.XtraEditors.ComboBoxEdit txtIpAddress;
     }
 }

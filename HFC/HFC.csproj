@@ -246,6 +246,12 @@
     <Compile Include="Forms\frmDHCPCustomer.Designer.cs">
       <DependentUpon>frmDHCPCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmDHCPCustomer_StaticIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDHCPCustomer_StaticIP.Designer.cs">
+      <DependentUpon>frmDHCPCustomer_StaticIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmDHCPCustomer_Update.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +424,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDHCPCustomer.resx">
       <DependentUpon>frmDHCPCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDHCPCustomer_StaticIP.resx">
+      <DependentUpon>frmDHCPCustomer_StaticIP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmDHCPCustomer_Update.resx">
       <DependentUpon>frmDHCPCustomer_Update.cs</DependentUpon>

@@ -106,3 +106,4 @@ E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmOpticalSW.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmOpticalSW_Update.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmDHCPCustomer.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmDHCPCustomer_Update.resources
+E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmDHCPCustomer_StaticIP.resources

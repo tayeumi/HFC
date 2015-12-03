@@ -55,6 +55,7 @@ namespace HFC
             if (Class.App.client_User != "admin")
             {
                 Menu_Get.Visible = false;
+                groupDHCP.Visible = false;
                 if (Class.App.client_User == "super")
                 {
                     btnDanhSachNode.Enabled = true;
@@ -69,6 +70,8 @@ namespace HFC
             else
             {
                 Menu_Get.Visible = true;
+                groupDHCP.Visible = true;
+
 
             }
         }
@@ -193,6 +196,18 @@ namespace HFC
             if (!Class.App.IsFocusForm(typeof(Forms.frmOpticalSW), this))
             {
                 Forms.frmOpticalSW frm = new Forms.frmOpticalSW();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            Waiting.CloseWaitForm();
+        }
+
+        private void btnDHCPCustomer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Waiting.ShowWaitForm();
+            if (!Class.App.IsFocusForm(typeof(Forms.frmDHCPCustomer), this))
+            {
+                Forms.frmDHCPCustomer frm = new Forms.frmDHCPCustomer();
                 frm.MdiParent = this;
                 frm.Show();
             }

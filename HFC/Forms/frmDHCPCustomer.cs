@@ -18,12 +18,15 @@ namespace HFC.Forms
         }
         DataTable dt = new DataTable();
         DataTable dtIpPublic = new DataTable();
-        void NW_Dhcp_Customer_Getlist()
+        public void NW_Dhcp_Customer_Getlist()
         {
+          //  Waiting.ShowWaitForm();
+           // Waiting.SetWaitFormDescription("Đang tải thông tin khách hàng");
             Class.NW_Dhcp_Customer cls = new Class.NW_Dhcp_Customer();
             dt = cls.NW_Dhcp_Customer_Getlist();
             dtIpPublic = cls.NW_Dhcp_Customer_Getlist();
             gridItem.DataSource = dt;
+         //   Waiting.CloseWaitForm();
         }
 
         private void btnFile_Click(object sender, EventArgs e)
@@ -428,7 +431,55 @@ namespace HFC.Forms
         {
             frmDHCPCustomer_Update frm = new frmDHCPCustomer_Update(true, "Thêm Modem ", null, null);
             frm.Owner = this;
-            frm.ShowDialog(); 
+            frm.ShowDialog();
+            if (frm.add_edit)
+            {
+                NW_Dhcp_Customer_Getlist();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            string code = gridItemDetail.GetFocusedRowCellValue(colIpAddress).ToString();
+            frmDHCPCustomer_Update frm = new frmDHCPCustomer_Update(false, "Cập nhật Modem ", null, code);
+            frm.Owner = this;
+            frm.ShowDialog();
+            if (frm.add_edit)
+            {
+                NW_Dhcp_Customer_Getlist();
+            }
+        }
+
+       
+
+        private void btnAddIP_Click(object sender, EventArgs e)
+        {
+            string code = gridItemDetail.GetFocusedRowCellValue(colIpAddress).ToString();
+            string cus = gridItemDetail.GetFocusedRowCellValue(colCustomerName).ToString();
+            string note = gridItemDetail.GetFocusedRowCellValue(colNote).ToString();
+            frmDHCPCustomer_StaticIP frm = new frmDHCPCustomer_StaticIP(code, "Cập nhật IP Wan [" + cus + "]",note);
+            frm.Owner = this;
+            frm.ShowDialog();
+            if (frm.add_edit)
+            {
+                NW_Dhcp_Customer_Getlist();
+            }
+        }
+
+        private void btnDelIP_Click(object sender, EventArgs e)
+        {
+            Class.NW_Dhcp_Customer cls = new Class.NW_Dhcp_Customer();
+            cls.IpAddress = gridItemDetail.GetFocusedRowCellValue(colIpAddress).ToString();
+            if (cls.NW_Dhcp_Customer_DeleteIPStatic())
+            {
+                MessageBox.Show("Xóa IP Static thành công !");
+                NW_Dhcp_Customer_Getlist();
+            }
+            else
+            {
+                MessageBox.Show("Xóa IP Static thất bại !");
+
+            }
         }
     }
 }

@@ -20380,3 +20380,6 @@ The statement has been terminated.
 The statement has been terminated.
 12/2/2015 5:10:27 PM : Violation of PRIMARY KEY constraint 'PK_NW_Dhcp_Customer'. Cannot insert duplicate key in object 'dbo.NW_Dhcp_Customer'.
 The statement has been terminated.
+12/3/2015 12:59:45 PM : Violation of PRIMARY KEY constraint 'PK_NW_Dhcp_Customer'. Cannot insert duplicate key in object 'dbo.NW_Dhcp_Customer'.
+The statement has been terminated.
+12/3/2015 1:42:57 PM : Procedure or function 'NW_Dhcp_Customer_UpdateIPStatic' expects parameter '@PoolPublic', which was not supplied.

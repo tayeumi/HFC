@@ -47,6 +47,22 @@ namespace HFC.Class
             db.AddParameter("@PoolIp", PoolIp);
             return db.ExecuteDataTable(procname);
         }
+        public DataTable NW_Dhcp_Customer_GetbyMacaddress()
+        {
+            string procname = "NW_Dhcp_Customer_GetbyMacaddress";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            db.AddParameter("@MacAddress", MacAddress);
+            return db.ExecuteDataTable(procname);
+        }
+        public DataTable NW_Dhcp_Customer_GetbyIp()
+        {
+            string procname = "NW_Dhcp_Customer_GetbyIp";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            db.AddParameter("@IpAddress", IpAddress);
+            return db.ExecuteDataTable(procname);
+        }
         public bool Insert()
         {
             DbAccess db = new DbAccess();
@@ -68,6 +84,75 @@ namespace HFC.Class
                 db.AddParameter("@Location", Location);
                 db.AddParameter("@Note", Note);
                 db.ExecuteNonQueryWithTransaction("NW_Dhcp_Customer_Insert");
+                db.CommitTransaction();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                db.RollbackTransaction();
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
+        public bool NW_Dhcp_Customer_UpdateIPStatic()
+        {
+            DbAccess db = new DbAccess();
+            db.BeginTransaction();
+            try
+            {
+                db.CreateNewSqlCommand();
+                db.AddParameter("@IpAddress", IpAddress);
+                db.AddParameter("@IpPublic", IpPublic);               
+                db.AddParameter("@PoolPublic", PoolPublic);
+                db.AddParameter("@MacPc", MacPc);
+                db.AddParameter("@Note", Note);
+                db.ExecuteNonQueryWithTransaction("NW_Dhcp_Customer_UpdateIPStatic");
+                db.CommitTransaction();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                db.RollbackTransaction();
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
+        public bool NW_Dhcp_Customer_DeleteIPStatic()
+        {
+            DbAccess db = new DbAccess();
+            db.BeginTransaction();
+            try
+            {
+                db.CreateNewSqlCommand();
+                db.AddParameter("@IpAddress", IpAddress);
+                db.ExecuteNonQueryWithTransaction("NW_Dhcp_Customer_DeleteIPStatic");
+                db.CommitTransaction();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                db.RollbackTransaction();
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
+        public bool Update()
+        {
+            DbAccess db = new DbAccess();
+            db.BeginTransaction();
+            try
+            {
+                db.CreateNewSqlCommand();
+                db.AddParameter("@IpAddress", IpAddress);
+                db.AddParameter("@MacAddress", MacAddress);
+                db.AddParameter("@MacAddress_CMTS", MacAddress_CMTS);
+                db.AddParameter("@CustomerCode", CustomerCode);
+                db.AddParameter("@CustomerName", CustomerName);
+                db.AddParameter("@CustomerAddress", CustomerAddress);
+                db.AddParameter("@Bootfile", Bootfile);
+                db.AddParameter("@Location", Location);
+                db.AddParameter("@Note", Note);
+                db.ExecuteNonQueryWithTransaction("NW_Dhcp_Customer_Update");
                 db.CommitTransaction();
                 return true;
             }
