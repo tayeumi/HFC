@@ -187,6 +187,7 @@
     <Compile Include="Class\CMTS.cs" />
     <Compile Include="Class\CN-ADMIN.cs" />
     <Compile Include="Class\DbAccess.cs" />
+    <Compile Include="Class\DHCPRestart.cs" />
     <Compile Include="Class\ExportDataToExcel.cs" />
     <Compile Include="Class\MyWebServer.cs" />
     <Compile Include="Class\NW_CurrentTrafic.cs" />
@@ -263,6 +264,18 @@
     </Compile>
     <Compile Include="Forms\frmDHCPService.Designer.cs">
       <DependentUpon>frmDHCPService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDHCPService_Restart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDHCPService_Restart.Designer.cs">
+      <DependentUpon>frmDHCPService_Restart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDHCPService_Template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDHCPService_Template.Designer.cs">
+      <DependentUpon>frmDHCPService_Template.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmHome.cs">
       <SubType>Form</SubType>
@@ -434,6 +447,12 @@
     <EmbeddedResource Include="Forms\frmDHCPService.resx">
       <DependentUpon>frmDHCPService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDHCPService_Restart.resx">
+      <DependentUpon>frmDHCPService_Restart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmDHCPService_Template.resx">
+      <DependentUpon>frmDHCPService_Template.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -530,6 +549,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="my_network.ico" />
+    <None Include="Resources\Action_Reload.png" />
     <None Include="Resources\Action_Navigation_Next_Object.png" />
     <None Include="Resources\offline.png" />
     <None Include="Resources\161.png" />

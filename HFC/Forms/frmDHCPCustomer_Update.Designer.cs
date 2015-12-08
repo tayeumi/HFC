@@ -44,23 +44,23 @@
             this.btnUpdateNew = new DevExpress.XtraEditors.SimpleButton();
             this.btnUpdate = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.txtLocation = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.cboBootfile = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtNote = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.cboPoolIp = new DevExpress.XtraEditors.LookUpEdit();
             this.txtIpAddress = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtLocation = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMacAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboBootfile.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPoolIp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIpAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -180,13 +180,6 @@
             this.labelControl6.TabIndex = 2;
             this.labelControl6.Text = "Bootfile:";
             // 
-            // txtLocation
-            // 
-            this.txtLocation.Location = new System.Drawing.Point(146, 191);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(254, 20);
-            this.txtLocation.TabIndex = 7;
-            // 
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(73, 194);
@@ -251,12 +244,66 @@
             this.txtIpAddress.Size = new System.Drawing.Size(124, 20);
             this.txtIpAddress.TabIndex = 2;
             // 
+            // txtLocation
+            // 
+            this.txtLocation.Location = new System.Drawing.Point(146, 191);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtLocation.Properties.Items.AddRange(new object[] {
+            "BT-01",
+            "BT-02",
+            "BT-03",
+            "BT-05",
+            "BT-06",
+            "BT-07",
+            "BT-11",
+            "BT-12",
+            "BT-13",
+            "BT-14",
+            "BT-15",
+            "BT-17",
+            "BT-19",
+            "BT-21",
+            "BT-22",
+            "BT-24",
+            "BT-25",
+            "BT-26",
+            "BT-27",
+            "GV-01",
+            "GV-03",
+            "GV-04",
+            "GV-05",
+            "GV-06",
+            "GV-07",
+            "GV-08",
+            "GV-09",
+            "GV-10",
+            "GV-11",
+            "GV-12",
+            "GV-13",
+            "GV-14",
+            "GV-15",
+            "GV-16",
+            "GV-17",
+            "Hiep Binh Chanh",
+            "HUB",
+            "KY THUAT TEST",
+            "LAP MOI",
+            "TD-Binh Chieu",
+            "TD-Hiep Binh Phuoc",
+            "TD-Linh Trung",
+            "TD-Truong Tho"});
+            this.txtLocation.Size = new System.Drawing.Size(253, 20);
+            this.txtLocation.TabIndex = 7;
+            // 
             // frmDHCPCustomer_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(479, 292);
+            this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.txtIpAddress);
             this.Controls.Add(this.cboPoolIp);
             this.Controls.Add(this.cboBootfile);
@@ -271,7 +318,6 @@
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtNote);
-            this.Controls.Add(this.txtLocation);
             this.Controls.Add(this.txtCustomerAddress);
             this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.txtCustomerCode);
@@ -286,11 +332,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboBootfile.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNote.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboPoolIp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIpAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLocation.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,12 +358,12 @@
         private DevExpress.XtraEditors.SimpleButton btnUpdateNew;
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.TextEdit txtLocation;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.ComboBoxEdit cboBootfile;
         private DevExpress.XtraEditors.TextEdit txtNote;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LookUpEdit cboPoolIp;
         private DevExpress.XtraEditors.ComboBoxEdit txtIpAddress;
+        private DevExpress.XtraEditors.ComboBoxEdit txtLocation;
     }
 }

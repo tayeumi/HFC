@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Data;
 using Microsoft.Office.Interop.Excel;
 using System.IO;
+using System.Net;
 
 
 namespace HFC.Class
@@ -467,6 +468,30 @@ namespace HFC.Class
             TextWriter sw = new StreamWriter(@"App_log.txt", true);
             sw.WriteLine(DateTime.Now + " : " + logline);
             sw.Close();
+        }
+        public static void uploadFile(string FTPAddress, string filePath, string username, string password)
+        {
+            //Create FTP request
+            FtpWebRequest request = (FtpWebRequest)FtpWebRequest.Create(FTPAddress + "/" + Path.GetFileName(filePath));
+
+            request.Method = WebRequestMethods.Ftp.UploadFile;
+            request.Credentials = new NetworkCredential(username, password);
+            request.UsePassive = false;
+            request.UseBinary = true;
+            request.KeepAlive = false;
+            request.Proxy = null;
+            request.EnableSsl = false;
+            //Load the file
+            FileStream stream = File.OpenRead(filePath);
+            byte[] buffer = new byte[stream.Length];
+            stream.Read(buffer, 0, buffer.Length);
+            stream.Close();
+
+            //Upload file
+            Stream reqStream = request.GetRequestStream();
+            reqStream.Write(buffer, 0, buffer.Length);           
+            
+            reqStream.Close();
         }
     }
 }

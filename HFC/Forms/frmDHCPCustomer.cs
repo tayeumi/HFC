@@ -332,7 +332,7 @@ namespace HFC.Forms
                             {
                                 string ipcpe = dtmodem.Rows[j]["IpPublic"].ToString();
                                 ipcpe = ipcpe.Replace(":", "-");
-                                string reIPcpe = ipcpe.Replace(":", "");
+                                string reIPcpe = dtmodem.Rows[j]["MacPc"].ToString().Replace(":", "");
                                 txtmodem += "\t\t# PC an Modem " + dtmodem.Rows[j]["IpAddress"].ToString() + " " + dtmodem.Rows[j]["Note"].ToString() + " Kunde " + dtmodem.Rows[j]["CustomerCode"].ToString() + " " + dtmodem.Rows[j]["CustomerName"].ToString() + "\n" +
                                             "\t\thost " + ipcpe + " {\n" +
                                                 "\t\t\thardware ethernet " + dtmodem.Rows[j]["MacPc"].ToString() + " ;\n" +
@@ -404,6 +404,12 @@ namespace HFC.Forms
             }
             catch {
                 MessageBox.Show("Lỗi tạo file..");
+            }
+
+            if (System.IO.File.Exists("dhcpd.conf"))
+            {
+                frmDHCPService_Template frm = new frmDHCPService_Template("dhcpd.conf");
+                frm.ShowDialog();
             }
         }
 
@@ -480,6 +486,18 @@ namespace HFC.Forms
                 MessageBox.Show("Xóa IP Static thất bại !");
 
             }
+        }
+
+        private void btnDHCPRestart_Click(object sender, EventArgs e)
+        {
+            frmDHCPService_Restart frm = new frmDHCPService_Restart();
+            frm.ShowDialog();
+        }
+
+        private void btnDHCPTemplate_Click(object sender, EventArgs e)
+        {
+            frmDHCPService_Template frm = new frmDHCPService_Template("dhcpd.conf.temp");
+            frm.ShowDialog();
         }
     }
 }

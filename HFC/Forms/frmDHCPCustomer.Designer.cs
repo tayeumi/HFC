@@ -40,6 +40,7 @@
             this.btnDelIP = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCreateDHCPFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDHCPRestart = new System.Windows.Forms.ToolStripMenuItem();
             this.gridItemDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIpAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMacAddress = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,6 +64,7 @@
             this.btnDeleteAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnImport = new DevExpress.XtraEditors.SimpleButton();
             this.Waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::HFC.frmWaiting), true, true);
+            this.btnDHCPTemplate = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
@@ -99,9 +101,11 @@
             this.toolStripMenuItem1,
             this.btnAddStaticIP,
             this.toolStripMenuItem2,
-            this.btnCreateDHCPFile});
+            this.btnCreateDHCPFile,
+            this.btnDHCPRestart,
+            this.btnDHCPTemplate});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 126);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 192);
             // 
             // btnAdd
             // 
@@ -146,7 +150,7 @@
             // 
             this.btnAddIP.Image = global::HFC.Properties.Resources.add;
             this.btnAddIP.Name = "btnAddIP";
-            this.btnAddIP.Size = new System.Drawing.Size(134, 22);
+            this.btnAddIP.Size = new System.Drawing.Size(152, 22);
             this.btnAddIP.Text = "Cấp IP tĩnh";
             this.btnAddIP.Click += new System.EventHandler(this.btnAddIP_Click);
             // 
@@ -154,7 +158,7 @@
             // 
             this.btnDelIP.Image = global::HFC.Properties.Resources.Delete;
             this.btnDelIP.Name = "btnDelIP";
-            this.btnDelIP.Size = new System.Drawing.Size(134, 22);
+            this.btnDelIP.Size = new System.Drawing.Size(152, 22);
             this.btnDelIP.Text = "Xóa IP Tĩnh";
             this.btnDelIP.Click += new System.EventHandler(this.btnDelIP_Click);
             // 
@@ -170,6 +174,14 @@
             this.btnCreateDHCPFile.Size = new System.Drawing.Size(170, 22);
             this.btnCreateDHCPFile.Text = "Create DHCP conf";
             this.btnCreateDHCPFile.Click += new System.EventHandler(this.btnCreateDHCPFile_Click);
+            // 
+            // btnDHCPRestart
+            // 
+            this.btnDHCPRestart.Image = global::HFC.Properties.Resources.Action_Reload;
+            this.btnDHCPRestart.Name = "btnDHCPRestart";
+            this.btnDHCPRestart.Size = new System.Drawing.Size(170, 22);
+            this.btnDHCPRestart.Text = "DHCP Restart";
+            this.btnDHCPRestart.Click += new System.EventHandler(this.btnDHCPRestart_Click);
             // 
             // gridItemDetail
             // 
@@ -352,7 +364,7 @@
             this.groupImport.Controls.Add(this.btnRead);
             this.groupImport.Controls.Add(this.txtLink);
             this.groupImport.Controls.Add(this.labelControl1);
-            this.groupImport.Location = new System.Drawing.Point(3, 1);
+            this.groupImport.Location = new System.Drawing.Point(3, 3);
             this.groupImport.Name = "groupImport";
             this.groupImport.Size = new System.Drawing.Size(868, 67);
             this.groupImport.TabIndex = 7;
@@ -386,6 +398,14 @@
             this.btnImport.Text = "(3) Import";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // btnDHCPTemplate
+            // 
+            this.btnDHCPTemplate.Image = global::HFC.Properties.Resources.Action_ChooseSkin;
+            this.btnDHCPTemplate.Name = "btnDHCPTemplate";
+            this.btnDHCPTemplate.Size = new System.Drawing.Size(170, 22);
+            this.btnDHCPTemplate.Text = "DHCP Template";
+            this.btnDHCPTemplate.Click += new System.EventHandler(this.btnDHCPTemplate_Click);
+            // 
             // frmDHCPCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,7 +416,7 @@
             this.Name = "frmDHCPCustomer";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "frmDHCPCustomer";
+            this.Text = "DHCP Customer";
             this.Load += new System.EventHandler(this.frmDHCPCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
@@ -445,6 +465,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem btnAddIP;
         private System.Windows.Forms.ToolStripMenuItem btnDelIP;
+        private System.Windows.Forms.ToolStripMenuItem btnDHCPRestart;
+        private System.Windows.Forms.ToolStripMenuItem btnDHCPTemplate;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

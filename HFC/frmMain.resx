@@ -1679,8 +1679,8 @@
         m5628H/naFoByTA20CT8r9q3sKHrM6btcDdYolOozCdAuDa+XC63VwXx2i5kvYyqWIuC73fb/7krDLZq
         1oZZ8eqmOLgntwojxRQvbdabQcs8ohl5gYh5+TmmQrWjFz6RSGSkXV9PP0D8UkHwCvLYU9gtB2ztIoAY
         vhvZbHaqW3l6cXsV+O8r8AfO0wQfDzwFlwAAAABJRU5ErkJgghEKAACJUE5HDQoaCgAAAA1JSERSAAAA
-        IwAAACMIBgAAAB7Zs1kAAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOvQAADr0B
-        R/uQrQAACaZJREFUWEft13lQ0+kZB/BY19WdtVun/+jMjnV2a7tr9xidtZ2ujq4dF69uq3anU7faqju7
+        IwAAACMIBgAAAB7Zs1kAAAABc1JHQgCuzhzpAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOvAAADrwB
+        lbxySQAACaZJREFUWEft13lQ0+kZB/BY19WdtVun/+jMjnV2a7tr9xidtZ2ujq4dF69uq3anU7faqju7
         XoD3BauLux7IIYJyhiscCXcgITdJSMgvCQQICQEhUQyCAQwgomBFIN++v58SzQSY7c50pn80M+8/ISSf
         3/M+z/s+D4v1/9d/OQIeT8Drj++v/EVXl32J09m8zGlvWhofHz/3R/1sf3//ivv377e67nbWNtRqNZRW
         Xq6Q8rkiQWG8Uqk8L5OJg0Qi0V8qKyt/T0lSd+jFKZFGKVvoav3ihmf4vUee4Xc9Y49+hUH3SXQ4W9Dm
@@ -1722,8 +1722,8 @@
         pD9MTU1ty8zMrOJyuQUkhxJkMslFkn9nxcKyfX6dHnljDlm7ydpB1h/J+pisd8iaT9brfhn/bNaZM2/e
         vEVbt24NCAwM3HcwaN+Fo4eDk48dOZgbHLg3f+mH70fOnTt3M/ncYrJ++vw7fGckvwnuxRs/+INTfAf9
         //Rp+gpZsyZ5gGl++n/sT/8G7NiokrTKnl4AAAAASUVORK5CYIKUCwAAiVBORw0KGgoAAAANSUhEUgAA
-        ACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADr4AAA6+
-        AepCscAAAAspSURBVFhHrZgHVFRXGsdN240x3WzJbrLZPVmDJUYTGxpbosYYY3TtxugqUYwaC1JUiCAY
+        ACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADr0AAA69
+        AUf7kK0AAAspSURBVFhHrZgHVFRXGsdN240x3WzJbrLZPVmDJUYTGxpbosYYY3TtxugqUYwaC1JUiCAY
         UBFBekeiiCgqMMwISJWmNKkz1KHNMDMMSFEUQc1/v+/NjA4b47rn5J3zO/f63uPdn9/33Tv3vUGDnvx4
         im418DT1f41n6Nqv8SxdM4bv4+fwc5/44D/gh/xOz++pZZ7XM5haAy9QnxlCvKjnJWqZl/W8Qi3D5/gZ
         /OwnEnp67uFsky+9Kk7P95VVzPeWVXzhVV4x91iZdK5HmXTO0TLpbGKWW5n0E9dS6YxDJdLpB4ul05gf
@@ -1778,19 +1778,19 @@
     <value>245, 17</value>
   </metadata>
   <metadata name="popupMenu2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>661, 17</value>
-  </metadata>
-  <metadata name="timechechSv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <metadata name="timechechSv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>143, 56</value>
+  </metadata>
   <metadata name="timecheckThongBao.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>137, 56</value>
+    <value>263, 56</value>
   </metadata>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>299, 56</value>
+    <value>425, 56</value>
   </metadata>
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>405, 56</value>
+    <value>531, 56</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -1960,7 +1960,7 @@
 </value>
   </data>
   <metadata name="TabbedMdiManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>529, 56</value>
+    <value>17, 95</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>77</value>
@@ -2132,6 +2132,6 @@
 </value>
   </data>
   <metadata name="alertControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>692, 56</value>
+    <value>180, 95</value>
   </metadata>
 </root>

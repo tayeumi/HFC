@@ -79,6 +79,11 @@ namespace HFC.Forms
                 return;
             }
 
+            if (txtIpAddress.Text.Length < 5)
+            {
+                MessageBox.Show("Địa chỉ IP Address chưa đúng định dạng, Vui lòng nhập lại.!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtMacAddress.Text.Length != 17)
             {
                 MessageBox.Show("Địa chỉ Mac Address chưa đúng định dạng, Vui lòng nhập lại.!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -140,7 +145,11 @@ namespace HFC.Forms
                 Class.App.InputNotAccess();
                 return;
             }
-
+            if (txtIpAddress.Text.Length < 5)
+            {
+                MessageBox.Show("Địa chỉ IP Address chưa đúng định dạng, Vui lòng nhập lại.!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtMacAddress.Text.Length != 17)
             {
                 MessageBox.Show("Địa chỉ Mac Address chưa đúng định dạng, Vui lòng nhập lại.!", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);

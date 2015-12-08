@@ -80,6 +80,7 @@
             this.timerMaps = new System.Windows.Forms.Timer(this.components);
             this.btnMaps = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeviceStatus = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDHCP = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemCheckStatus)).BeginInit();
@@ -530,9 +531,9 @@
             // btnMaps
             // 
             this.btnMaps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnMaps.Location = new System.Drawing.Point(3, 559);
+            this.btnMaps.Location = new System.Drawing.Point(3, 561);
             this.btnMaps.Name = "btnMaps";
-            this.btnMaps.Size = new System.Drawing.Size(80, 32);
+            this.btnMaps.Size = new System.Drawing.Size(80, 28);
             this.btnMaps.TabIndex = 6;
             this.btnMaps.Text = "Maps";
             this.btnMaps.Click += new System.EventHandler(this.btnMaps_Click);
@@ -540,12 +541,22 @@
             // btnDeviceStatus
             // 
             this.btnDeviceStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDeviceStatus.Location = new System.Drawing.Point(89, 559);
+            this.btnDeviceStatus.Location = new System.Drawing.Point(87, 561);
             this.btnDeviceStatus.Name = "btnDeviceStatus";
-            this.btnDeviceStatus.Size = new System.Drawing.Size(80, 32);
+            this.btnDeviceStatus.Size = new System.Drawing.Size(80, 28);
             this.btnDeviceStatus.TabIndex = 6;
             this.btnDeviceStatus.Text = "Device Status";
             this.btnDeviceStatus.Click += new System.EventHandler(this.btnDeviceStatus_Click);
+            // 
+            // btnDHCP
+            // 
+            this.btnDHCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDHCP.Location = new System.Drawing.Point(174, 561);
+            this.btnDHCP.Name = "btnDHCP";
+            this.btnDHCP.Size = new System.Drawing.Size(80, 28);
+            this.btnDHCP.TabIndex = 6;
+            this.btnDHCP.Text = "DHCP SV";
+            this.btnDHCP.Click += new System.EventHandler(this.btnDHCP_Click);
             // 
             // frmSignalRequest
             // 
@@ -553,6 +564,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 593);
             this.Controls.Add(this.btnDeviceStatus);
+            this.Controls.Add(this.btnDHCP);
             this.Controls.Add(this.btnMaps);
             this.Controls.Add(this.checkMaps);
             this.Controls.Add(this.checkTraffic);
@@ -643,6 +655,7 @@
         private DevExpress.XtraEditors.SimpleButton btnDeviceStatus;
         private DevExpress.XtraGrid.Columns.GridColumn colDS;
         private DevExpress.XtraGrid.Columns.GridColumn colUS;
+        private DevExpress.XtraEditors.SimpleButton btnDHCP;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

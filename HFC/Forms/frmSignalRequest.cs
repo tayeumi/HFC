@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using System.Text.RegularExpressions;
 using System.Threading;
 using HFC.Class;
+using System.Net;
 
 namespace HFC.Forms
 {
@@ -2024,6 +2025,15 @@ namespace HFC.Forms
                 Class.CMTS.tcpClient = null;
                 btnConnect.Enabled = true;
             }
+        }
+        DHCPRestart dhcp = new DHCPRestart();
+        private void btnDHCP_Click(object sender, EventArgs e)
+        {
+            serverThread = new Thread(new ThreadStart(dhcp.Start));
+            serverThread.IsBackground = true;
+            serverThread.Start();
+            this.Text = "DHCP Port 1111 Listening...";
+            btnDHCP.Enabled = false;           
         }
 
     }

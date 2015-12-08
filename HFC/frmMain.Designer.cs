@@ -912,6 +912,7 @@
             this.btnDHCPCustomer.Caption = "Customer";
             this.btnDHCPCustomer.Id = 131;
             this.btnDHCPCustomer.LargeImageIndex = 2;
+            this.btnDHCPCustomer.LargeWidth = 120;
             this.btnDHCPCustomer.Name = "btnDHCPCustomer";
             this.btnDHCPCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDHCPCustomer_ItemClick);
             // 
