@@ -672,7 +672,7 @@
             // 
             this.radioRemote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioRemote.EditValue = "All";
-            this.radioRemote.Location = new System.Drawing.Point(10, 308);
+            this.radioRemote.Location = new System.Drawing.Point(14, 303);
             this.radioRemote.MenuManager = this.barManager1;
             this.radioRemote.Name = "radioRemote";
             this.radioRemote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -694,7 +694,7 @@
             this.gridItemRemote.Name = "gridItemRemote";
             this.gridItemRemote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.PicNhanVien});
-            this.gridItemRemote.Size = new System.Drawing.Size(190, 305);
+            this.gridItemRemote.Size = new System.Drawing.Size(194, 300);
             this.gridItemRemote.TabIndex = 1;
             this.gridItemRemote.UseEmbeddedNavigator = true;
             this.gridItemRemote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -777,7 +777,7 @@
             this.toolStripMenuItem4,
             this.btnResetModem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 242);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 220);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // btnCapnhattuModem

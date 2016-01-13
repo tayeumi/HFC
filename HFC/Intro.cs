@@ -47,18 +47,18 @@ namespace HFC
             // delete first 
             if (Application.StartupPath != "E:\\HFC Project\\HFC\\bin\\Debug") // lap trinh thi ko xoa va tai lai file nay
             {
-                if (System.IO.File.Exists("node.txt"))
-                {
-                    System.IO.File.Delete("node.txt");
-                }
-                if (System.IO.File.Exists("nodewarning.txt"))
-                {
-                    System.IO.File.Delete("nodewarning.txt");
-                }
-                if (System.IO.File.Exists("path.txt"))
-                {
-                    System.IO.File.Delete("path.txt");
-                }
+                //if (System.IO.File.Exists("node.txt"))
+                //{
+                //    System.IO.File.Delete("node.txt");
+                //}
+                //if (System.IO.File.Exists("nodewarning.txt"))
+                //{
+                //    System.IO.File.Delete("nodewarning.txt");
+                //}
+                //if (System.IO.File.Exists("path.txt"))
+                //{
+                //    System.IO.File.Delete("path.txt");
+                //}
             }
            Checkfile.Enabled = true;
            try
@@ -97,6 +97,10 @@ namespace HFC
                if (!Directory.Exists(@"Report"))
                {
                    Directory.CreateDirectory(@"Report");
+               }
+               if (!Directory.Exists(@"Team"))
+               {
+                   Directory.CreateDirectory(@"Team");
                }
            }
            catch { }
@@ -155,7 +159,7 @@ namespace HFC
                 "node.txt", 
                 "dhcpd.conf.temp",
                 "path.txt",
-                "nodewarning.txt", 
+                "nodewarning.txt",                 
                 "Config.xml",
                 "SnmpSharpNet.dll" };
             lblSLFile.Visible = false;

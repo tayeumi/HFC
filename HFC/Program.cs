@@ -26,7 +26,7 @@ namespace HFC
             try
             {
               Application.Run(new frmintro());
-                // Application.Run(new Forms.frmDHCPCustomer());
+                // Application.Run(new Forms.frmTeamview());
                 //  Application.Run(new Forms.frmDHCPService_Template());
                 
             }

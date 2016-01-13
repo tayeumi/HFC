@@ -201,6 +201,7 @@
     <Compile Include="Class\NW_Node.cs" />
     <Compile Include="Class\NW_OpticalSW.cs" />
     <Compile Include="Class\NW_SignalLog.cs" />
+    <Compile Include="Class\NW_Teamview.cs" />
     <Compile Include="Class\RegistryWriter.cs" />
     <Compile Include="Class\SolarWinds.cs" />
     <Compile Include="Class\SolarWinds_Get.cs" />
@@ -361,6 +362,12 @@
     <Compile Include="Forms\frmSignalRequest.Designer.cs">
       <DependentUpon>frmSignalRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmTeamview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTeamview.Designer.cs">
+      <DependentUpon>frmTeamview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmTraffic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -494,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmSignalRequest.resx">
       <DependentUpon>frmSignalRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTeamview.resx">
+      <DependentUpon>frmTeamview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTraffic.resx">
       <DependentUpon>frmTraffic.cs</DependentUpon>

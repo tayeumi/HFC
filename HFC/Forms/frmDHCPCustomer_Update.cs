@@ -73,6 +73,11 @@ namespace HFC.Forms
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (cboPoolIp.EditValue == null)
+            {
+                Class.App.InputNotAccess();
+                return;
+            }
             if (txtMacAddress.Text.Length < 1)
             {
                 Class.App.InputNotAccess();
@@ -140,6 +145,11 @@ namespace HFC.Forms
 
         private void btnUpdateNew_Click(object sender, EventArgs e)
         {
+            if (cboPoolIp.EditValue == null)
+            {
+                Class.App.InputNotAccess();
+                return;
+            }
             if (txtMacAddress.Text.Length < 1)
             {
                 Class.App.InputNotAccess();

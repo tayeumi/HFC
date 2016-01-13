@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DBAccess.cs" />
+    <Compile Include="NW_Teamview.cs" />
     <Compile Include="NW_Traffic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -93,6 +93,21 @@ namespace HFC.Forms
 
         private void btnAddIP_Click(object sender, EventArgs e)
         {
+            if (cboPoolIp.EditValue == null)
+            {
+                Class.App.InputNotAccess();
+                return;
+            }
+            if (txtIpAddress.Text == "")
+            {
+                Class.App.InputNotAccess();
+                return;
+            }
+            if (txtMacAddress.Text == "")
+            {
+                Class.App.InputNotAccess();
+                return;
+            }
             Class.NW_Dhcp_Customer cls = new Class.NW_Dhcp_Customer();
             cls.IpAddress = ipaddress;
             cls.PoolPublic = cboPoolIp.EditValue.ToString();

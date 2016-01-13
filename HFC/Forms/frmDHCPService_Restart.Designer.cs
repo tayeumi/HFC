@@ -37,6 +37,7 @@
             this.webcontrol.Location = new System.Drawing.Point(0, 0);
             this.webcontrol.MinimumSize = new System.Drawing.Size(20, 20);
             this.webcontrol.Name = "webcontrol";
+            this.webcontrol.ScrollBarsEnabled = false;
             this.webcontrol.Size = new System.Drawing.Size(607, 355);
             this.webcontrol.TabIndex = 0;
             // 
@@ -46,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(607, 355);
             this.Controls.Add(this.webcontrol);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmDHCPService_Restart";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -119,10 +119,17 @@
             this.btnDashboard = new DevExpress.XtraBars.BarButtonItem();
             this.btnOpticalSW = new DevExpress.XtraBars.BarButtonItem();
             this.btnDHCPCustomer = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKetNoiTuXa = new DevExpress.XtraBars.BarButtonItem();
+            this.btntest = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHide = new DevExpress.XtraBars.BarButtonItem();
+            this.btnShow = new DevExpress.XtraBars.BarButtonItem();
+            this.btnConnetTeam = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuportTeamView = new DevExpress.XtraBars.BarButtonItem();
             this.LargeImageList = new DevExpress.Utils.ImageCollection(this.components);
             this.Menu_System = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.MenuHTTop1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.MenuHTTop2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.Menu_Action = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -152,6 +159,8 @@
             this.TabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.Waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::HFC.frmWaiting), true, true);
             this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
+            this.timerAppcepTeamviewer = new System.Windows.Forms.Timer(this.components);
+            this.timerTeamview = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SmallImageList)).BeginInit();
@@ -259,10 +268,16 @@
             this.btnMaps,
             this.btnDashboard,
             this.btnOpticalSW,
-            this.btnDHCPCustomer});
+            this.btnDHCPCustomer,
+            this.btnKetNoiTuXa,
+            this.btntest,
+            this.btnHide,
+            this.btnShow,
+            this.btnConnetTeam,
+            this.btnSuportTeamView});
             this.ribbon.LargeImages = this.LargeImageList;
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 135;
+            this.ribbon.MaxItemId = 141;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.barSubItem4);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -916,6 +931,55 @@
             this.btnDHCPCustomer.Name = "btnDHCPCustomer";
             this.btnDHCPCustomer.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDHCPCustomer_ItemClick);
             // 
+            // btnKetNoiTuXa
+            // 
+            this.btnKetNoiTuXa.Caption = "Kết nối từ xa";
+            this.btnKetNoiTuXa.Id = 135;
+            this.btnKetNoiTuXa.LargeImageIndex = 33;
+            this.btnKetNoiTuXa.LargeWidth = 100;
+            this.btnKetNoiTuXa.Name = "btnKetNoiTuXa";
+            this.btnKetNoiTuXa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKetNoiTuXa_ItemClick);
+            // 
+            // btntest
+            // 
+            this.btntest.Caption = "Test";
+            this.btntest.Id = 136;
+            this.btntest.Name = "btntest";
+            this.btntest.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btntest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btntest_ItemClick);
+            // 
+            // btnHide
+            // 
+            this.btnHide.Caption = "Hide";
+            this.btnHide.Id = 137;
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnHide.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHide_ItemClick);
+            // 
+            // btnShow
+            // 
+            this.btnShow.Caption = "Show";
+            this.btnShow.Id = 138;
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnShow.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnShow_ItemClick);
+            // 
+            // btnConnetTeam
+            // 
+            this.btnConnetTeam.Caption = "Connect";
+            this.btnConnetTeam.Id = 139;
+            this.btnConnetTeam.Name = "btnConnetTeam";
+            this.btnConnetTeam.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.btnConnetTeam.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnConnetTeam_ItemClick);
+            // 
+            // btnSuportTeamView
+            // 
+            this.btnSuportTeamView.Caption = "Teamview Support";
+            this.btnSuportTeamView.Id = 140;
+            this.btnSuportTeamView.LargeImageIndex = 31;
+            this.btnSuportTeamView.Name = "btnSuportTeamView";
+            this.btnSuportTeamView.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuportTeamView_ItemClick);
+            // 
             // LargeImageList
             // 
             this.LargeImageList.ImageSize = new System.Drawing.Size(35, 35);
@@ -952,12 +1016,15 @@
             this.LargeImageList.Images.SetKeyName(29, "gauge.png");
             this.LargeImageList.Images.SetKeyName(30, "1439533498_Maps-Android-R.png");
             this.LargeImageList.Images.SetKeyName(31, "Action_WindowList_32x32.png");
+            this.LargeImageList.Images.SetKeyName(32, "ModelEditor_ModelMerge_32x32.png");
+            this.LargeImageList.Images.SetKeyName(33, "team-viewer-icon.png");
             // 
             // Menu_System
             // 
             this.Menu_System.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.MenuHTTop1,
-            this.MenuHTTop2});
+            this.MenuHTTop2,
+            this.ribbonPageGroup7});
             this.Menu_System.Name = "Menu_System";
             this.Menu_System.Tag = "Sys_System";
             this.Menu_System.Text = "Hệ thống";
@@ -980,6 +1047,16 @@
             this.MenuHTTop2.Tag = "Sys_System_Manager";
             this.MenuHTTop2.Text = "Quản lý ";
             this.MenuHTTop2.Visible = false;
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnKetNoiTuXa);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btntest);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnHide);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnShow);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnConnetTeam);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Hỗ trợ";
             // 
             // Menu_Action
             // 
@@ -1044,6 +1121,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnCMTSRequest);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnOpticalSW);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnSuportTeamView);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "CMTS-CATV";
             // 
@@ -1159,6 +1237,16 @@
             // 
             this.alertControl.AllowHtmlText = true;
             this.alertControl.AutoHeight = true;
+            // 
+            // timerAppcepTeamviewer
+            // 
+            this.timerAppcepTeamviewer.Interval = 1000;
+            this.timerAppcepTeamviewer.Tick += new System.EventHandler(this.timerAppcepTeamviewer_Tick);
+            // 
+            // timerTeamview
+            // 
+            this.timerTeamview.Interval = 12000;
+            this.timerTeamview.Tick += new System.EventHandler(this.timerTeamview_Tick);
             // 
             // frmMain
             // 
@@ -1318,6 +1406,15 @@
         private DevExpress.XtraBars.BarButtonItem btnOpticalSW;
         private DevExpress.XtraBars.BarButtonItem btnDHCPCustomer;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupDHCP;
+        private DevExpress.XtraBars.BarButtonItem btnKetNoiTuXa;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private System.Windows.Forms.Timer timerAppcepTeamviewer;
+        private DevExpress.XtraBars.BarButtonItem btntest;
+        private DevExpress.XtraBars.BarButtonItem btnHide;
+        private DevExpress.XtraBars.BarButtonItem btnShow;
+        private DevExpress.XtraBars.BarButtonItem btnConnetTeam;
+        private DevExpress.XtraBars.BarButtonItem btnSuportTeamView;
+        private System.Windows.Forms.Timer timerTeamview;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
         
     }

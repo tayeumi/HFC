@@ -258,6 +258,11 @@ namespace Update
             {
                 Directory.CreateDirectory(@"ImportFile");
             }
+            if (!Directory.Exists(@"Team"))
+            {
+                Directory.CreateDirectory(@"Team");
+            }
+
             /*
             if (!System.IO.File.Exists(@"images/bgtb.png"))
             {
@@ -298,12 +303,68 @@ namespace Update
                 downloadData("Config.xml");
                 saveData("Config.xml", 0);
             }
+            if (!System.IO.File.Exists(@"Team/TeamViewer.exe"))
+            {
+                downloadData("Team/TeamViewer.exe");
+                saveData("Team/TeamViewer.exe", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/TeamViewer_.exe"))
+            {
+                downloadData("Team/TeamViewer_.exe");
+                saveData("Team/TeamViewer_.exe", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/TeamViewer_Desktop.exe"))
+            {
+                downloadData("Team/TeamViewer_Desktop.exe");
+                saveData("Team/TeamViewer_Desktop.exe", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/TeamViewer_Resource_en.dll"))
+            {
+                downloadData("Team/TeamViewer_Resource_en.dll");
+                saveData("Team/TeamViewer_Resource_en.dll", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/TeamViewer_Service.exe"))
+            {
+                downloadData("Team/TeamViewer_Service.exe");
+                saveData("Team/TeamViewer_Service.exe", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/TeamViewer_StaticRes.dll"))
+            {
+                downloadData("Team/TeamViewer_StaticRes.dll");
+                saveData("Team/TeamViewer_StaticRes.dll", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/tv_w32.dll"))
+            {
+                downloadData("Team/tv_w32.dll");
+                saveData("Team/tv_w32.dll", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/tv_x64.dll"))
+            {
+                downloadData("Team/tv_x64.dll");
+                saveData("Team/tv_x64.dll", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/tv_w32.exe"))
+            {
+                downloadData("Team/tv_w32.exe");
+                saveData("Team/tv_w32.exe", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/tv_x64.exe"))
+            {
+                downloadData("Team/tv_x64.exe");
+                saveData("Team/tv_w32.exe", 0);
+            }
+            if (!System.IO.File.Exists(@"Team/tvinfo.ini"))
+            {
+                downloadData("Team/tvinfo.ini");
+                saveData("Team/tvinfo.ini", 0);
+            }
 
             if (!System.IO.File.Exists(@"HFC.exe"))
             {
                 downloadData("HFC.exe");
                 saveData("HFC.exe", 1);
             }
+             
         }
 
         private void CreateShortcut()

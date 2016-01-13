@@ -56,6 +56,7 @@
     <Content Include="getTraffic.aspx" />
     <Content Include="sv1.aspx" />
     <Content Include="sv2.aspx" />
+    <Content Include="teamviewe.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -90,6 +91,7 @@
       <DependentUpon>getTraffic.aspx</DependentUpon>
     </Compile>
     <Compile Include="NW_SignalLog.cs" />
+    <Compile Include="NW_Teamview.cs" />
     <Compile Include="NW_Traffic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sv1.aspx.cs">
@@ -105,6 +107,13 @@
     </Compile>
     <Compile Include="sv2.aspx.designer.cs">
       <DependentUpon>sv2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teamviewe.aspx.cs">
+      <DependentUpon>teamviewe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teamviewe.aspx.designer.cs">
+      <DependentUpon>teamviewe.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
