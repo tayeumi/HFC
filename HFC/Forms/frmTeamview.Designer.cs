@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gridItem = new DevExpress.XtraGrid.GridControl();
             this.gridItemDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -36,12 +37,16 @@
             this.colPC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDateTime = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLocation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnRefresh = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridItem
             // 
+            this.gridItem.ContextMenuStrip = this.contextMenuStrip1;
             this.gridItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridItem.Location = new System.Drawing.Point(0, 0);
             this.gridItem.MainView = this.gridItemDetail;
@@ -62,6 +67,7 @@
             this.colLocation});
             this.gridItemDetail.GridControl = this.gridItem;
             this.gridItemDetail.Name = "gridItemDetail";
+            this.gridItemDetail.OptionsBehavior.Editable = false;
             this.gridItemDetail.OptionsView.ShowGroupPanel = false;
             this.gridItemDetail.DoubleClick += new System.EventHandler(this.gridItemDetail_DoubleClick);
             // 
@@ -113,6 +119,20 @@
             this.colLocation.Visible = true;
             this.colLocation.VisibleIndex = 5;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRefresh});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(114, 26);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(152, 22);
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // frmTeamview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +145,7 @@
             this.Load += new System.EventHandler(this.frmTeamview_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -139,5 +160,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPC;
         private DevExpress.XtraGrid.Columns.GridColumn colDateTime;
         private DevExpress.XtraGrid.Columns.GridColumn colLocation;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem btnRefresh;
     }
 }

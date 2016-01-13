@@ -39,5 +39,10 @@ namespace HFC.Forms
                 Process.Start(Application.StartupPath + "\\Team\\TeamViewer.exe", "-i "+id+" --Password "+pass);
             }
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            teamview();
+        }
     }
 }

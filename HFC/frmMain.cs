@@ -234,7 +234,7 @@ namespace HFC
                     }
                 }
 
-                if (System.IO.File.Exists(Application.StartupPath + @"\Team7\TeamViewer.exe"))
+                if (System.IO.File.Exists(Application.StartupPath + @"\Team\TeamViewer.exe"))
                 {
                     bool team = false;
                     foreach (Process proc in Process.GetProcessesByName("TeamViewer"))
@@ -243,7 +243,7 @@ namespace HFC
                     }
                     if (team == false)
                     {
-                        Process p = Process.Start(Application.StartupPath + @"\Team7\TeamViewer.exe");
+                        Process p = Process.Start(Application.StartupPath + @"\Team\TeamViewer.exe");
                         p.WaitForInputIdle();
                         timerTeamview.Start();
                     }
