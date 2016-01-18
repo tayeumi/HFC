@@ -37,9 +37,9 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 12);
+            this.progressBar1.Location = new System.Drawing.Point(12, 11);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(217, 26);
+            this.progressBar1.Size = new System.Drawing.Size(217, 24);
             this.progressBar1.TabIndex = 4;
             this.progressBar1.Visible = false;
             // 
@@ -47,21 +47,21 @@
             // 
             this.lbProgress.AutoSize = true;
             this.lbProgress.ForeColor = System.Drawing.Color.Green;
-            this.lbProgress.Location = new System.Drawing.Point(122, 19);
+            this.lbProgress.Location = new System.Drawing.Point(122, 18);
             this.lbProgress.Name = "lbProgress";
-            this.lbProgress.Size = new System.Drawing.Size(0, 14);
+            this.lbProgress.Size = new System.Drawing.Size(0, 13);
             this.lbProgress.TabIndex = 5;
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(46, 74);
+            this.btnStart.Location = new System.Drawing.Point(46, 69);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 23);
+            this.btnStart.Size = new System.Drawing.Size(75, 21);
             this.btnStart.TabIndex = 6;
             this.btnStart.Text = "start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // 
             // Update
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 53);
+            this.ClientSize = new System.Drawing.Size(245, 49);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lbProgress);
             this.Controls.Add(this.progressBar1);

@@ -36,6 +36,12 @@ namespace WebCM
                     }
                 }
             }
+            else
+            {
+                NW_Teamview cls = new NW_Teamview();
+                gridItem.DataSource = cls.NW_Teamview_Getlist();
+                gridItem.DataBind();
+            }
         }
     }
 }

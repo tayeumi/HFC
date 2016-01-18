@@ -1245,7 +1245,7 @@
             // 
             // timerTeamview
             // 
-            this.timerTeamview.Interval = 12000;
+            this.timerTeamview.Interval = 2000;
             this.timerTeamview.Tick += new System.EventHandler(this.timerTeamview_Tick);
             // 
             // frmMain

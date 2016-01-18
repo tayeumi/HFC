@@ -34,7 +34,7 @@ namespace Update
 
         private void Update_Load(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+           timer1.Enabled = true;
            // timer1.Enabled = true;
         }
 
@@ -42,8 +42,9 @@ namespace Update
         //Connects to a URL and attempts to download the file
         int bytebuffer = 1024; //set cai nay de tang toc do down.
         private void downloadData(string url)
-        {           
+        {
             string Link = "http://101.99.28.157/tool/update/hfc/";
+           // string Link = "http://101.99.28.157/tool/update/hfc/";
             url = Link + url;
             progressBar1.Visible = true;
             progressBar1.Value = 0;
@@ -151,7 +152,7 @@ namespace Update
             {
                 if (update == 1)
                 {
-                   System.Diagnostics.Process.Start("HFC.exe");
+                    System.Diagnostics.Process.Start("HFC.exe");
                    if (!System.IO.File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\Quản lý nhân sự LBC.lnk"))
                    {
                        CreateShortcut();
@@ -262,20 +263,7 @@ namespace Update
             {
                 Directory.CreateDirectory(@"Team");
             }
-
-            /*
-            if (!System.IO.File.Exists(@"images/bgtb.png"))
-            {
-                downloadData("images/bgtb.png");
-                saveData("images/bgtb.png", 0);
-            }
-
-            if (!System.IO.File.Exists(@"images/LBC-logo.png"))
-            {
-                downloadData("images/LBC-logo.png");
-                saveData("images/LBC-logo.png", 0);
-            }
-            */
+           
             if (!System.IO.File.Exists(@"media/default_ring.wav"))
             {
                 downloadData("media/default_ring.wav");
@@ -351,7 +339,7 @@ namespace Update
             if (!System.IO.File.Exists(@"Team/tv_x64.exe"))
             {
                 downloadData("Team/tv_x64.exe");
-                saveData("Team/tv_w32.exe", 0);
+                saveData("Team/tv_x64.exe", 0);
             }
             if (!System.IO.File.Exists(@"Team/tvinfo.ini"))
             {
@@ -374,18 +362,18 @@ namespace Update
                 if (!System.IO.File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\PTH Network Management.lnk"))
                 {
 
-                object shDesktop = (object)"Desktop";
-                WshShell shell = new WshShell();
-                //  string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\IT.lnk";
-                string shortcutAddress = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\IT.lnk";
-                IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
-                shortcut.Description = "PTH Network Management";
-                shortcut.Hotkey = "Ctrl+Shift+N";
-            
-                shortcut.TargetPath = System.Environment.CurrentDirectory + @"\HFC.exe";
-                shortcut.WorkingDirectory = System.Environment.CurrentDirectory;
-                shortcut.Save();
-              
+                    object shDesktop = (object)"Desktop";
+                    WshShell shell = new WshShell();
+                    //  string shortcutAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\IT.lnk";
+                    string shortcutAddress = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\IT.lnk";
+                    IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(shortcutAddress);
+                    shortcut.Description = "PTH Network Management";
+                    shortcut.Hotkey = "Ctrl+Shift+N";
+
+                    shortcut.TargetPath = System.Environment.CurrentDirectory + @"\HFC.exe";
+                    shortcut.WorkingDirectory = System.Environment.CurrentDirectory;
+                    shortcut.Save();
+
                     if (System.IO.File.Exists(shortcutAddress))
                     {
                         System.IO.File.Move(shortcutAddress, Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\PTH Network Management.lnk");
@@ -394,5 +382,6 @@ namespace Update
             }
             catch { }
         }
+    
     }
 }

@@ -26,3 +26,4 @@ E:\DEV\HFC\HFC\WebCM\bin\SnmpSharpNet.pdb
 E:\DEV\HFC\HFC\WebCM\bin\SnmpSharpNet.xml
 E:\DEV\HFC\HFC\WebCM\obj\Debug\WebCM.dll
 E:\DEV\HFC\HFC\WebCM\obj\Debug\WebCM.pdb
+E:\DEV\HFC\HFC\WebCM\obj\Debug\WebCM.csprojResolveAssemblyReference.cache
