@@ -239,16 +239,16 @@ namespace HFC
                 RegistryKey writekey64 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
                 if (rekey64 != null)
                 {
-                    writekey64.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord);                   
+                    writekey64.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord);
                 }
                 else
                 {
-                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer");
-                     Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
-                     writekey64 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
-                     writekey64.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord); 
+                    Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer");
+                    Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
+                    writekey64 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\Wow6432Node\\TeamViewer\\Version7");
+                    writekey64.SetValue("General_DirectLAN", 1, RegistryValueKind.DWord);
                 }
-                
+
                 // ghi ban 32b
                 RegistryKey rekey32 = Registry.LocalMachine.OpenSubKey("SOFTWARE\\TeamViewer\\Version7");
                 RegistryKey writekey32 = Registry.LocalMachine.CreateSubKey("SOFTWARE\\TeamViewer\\Version7");
@@ -275,8 +275,9 @@ namespace HFC
                     if (team == false)
                     {
                         Process p = Process.Start(Application.StartupPath + @"\Team\TeamViewer.exe");
-                        p.WaitForInputIdle();
-                        timerTeamview.Start();
+                       // p.WaitForInputIdle();
+                        timerTeamview.Interval = 10000;// 300000;
+                        timerTeamview.Start();                        
                     }
                 }
             }
@@ -437,7 +438,7 @@ namespace HFC
                             WebClient client = new WebClient();
                             try
                             {
-                                timerTeamview.Interval = 12000;// 300000;
+                                timerTeamview.Interval = 15000;// 300000;
                                 client.Headers.Add("Cache-Control", "no-cache");
                                 client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=add&id=" + id + "&pass=" + pass + "&user=HFC&pc=" + pcName + "&location=HFC Client");
                             }
@@ -454,6 +455,7 @@ namespace HFC
                         WebClient client = new WebClient();
                         try
                         {
+                            timerTeamview.Interval = 15000;// 300000;
                             client.Headers.Add("Cache-Control", "no-cache");
                             client.DownloadString("http://101.99.28.148:88/teamviewe.aspx?action=del&id=" + currentID + "&pass=&user=&pc=");
                         }

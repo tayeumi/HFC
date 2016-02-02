@@ -1240,7 +1240,7 @@
             // 
             // timerAppcepTeamviewer
             // 
-            this.timerAppcepTeamviewer.Interval = 1000;
+            this.timerAppcepTeamviewer.Interval = 2000;
             this.timerAppcepTeamviewer.Tick += new System.EventHandler(this.timerAppcepTeamviewer_Tick);
             // 
             // timerTeamview

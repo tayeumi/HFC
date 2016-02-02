@@ -38,4 +38,3 @@ E:\DEV\HFC\HFC\SendFile\obj\Debug\SendFile.SendFile.resources
 E:\DEV\HFC\HFC\SendFile\obj\Debug\SendFile.csproj.GenerateResource.Cache
 E:\DEV\HFC\HFC\SendFile\obj\Debug\SendFile.exe
 E:\DEV\HFC\HFC\SendFile\obj\Debug\SendFile.pdb
-E:\DEV\HFC\HFC\SendFile\obj\Debug\SendFile.csprojResolveAssemblyReference.cache

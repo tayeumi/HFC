@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="applicationMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>518, 17</value>
   </metadata>
   <metadata name="SmallImageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>385, 17</value>
@@ -1813,7 +1813,7 @@
         REGJVAkg0eLCJVFsYlZCYv9QSGxs9fX1bbp+/TrXrl1rk7gWY8S6JdYRMdF/d5x9KYzi2CEGKt72BZyQ
         WCFfRSKwkPiuGPf8afFV/tPxwony+aPpf3P9KgAv1MzvHfRnfV/ujPj1F1HJvwCO+69O+vvHOwAAAABJ
         RU5ErkJgglIIAACJUE5HDQoaCgAAAA1JSERSAAAAIwAAACMIBgAAAB7Zs1kAAAABc1JHQgCuzhzpAAAA
-        BGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAB+dJREFUWEftmHtQVOcZxncB5bLA7rLA
+        BGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwAAADsABataJCQAAB+dJREFUWEftmHtQVOcZxncB5bLA7rLA
         LrcFAWWNjaHTaLV2zEw7Tv/IpM5kbMhkOq2t7aSdZjLtJBqb6RgvFWLxgoKIJOAgeEkI0aCgoGIsROVO
         0ozGetcV2Ctnd+XO+vT5CFhgD6apTv/qmXnmLN953+f9ve/5dg+7CsX/j/9wAlE/ywt97i/lf3qpuLHm
         pdK2LzLK2v7x8hNSRln75y8XN1Yv+XP5H+JXbAt+JFLayoKnf1rSenNhgxuas/cRXPdvhfC1imtCoVTY
@@ -1854,19 +1854,19 @@
     <value>245, 17</value>
   </metadata>
   <metadata name="popupMenu2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>294, 56</value>
+    <value>151, 56</value>
   </metadata>
   <metadata name="timechechSv.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>420, 56</value>
+    <value>277, 56</value>
   </metadata>
   <metadata name="timecheckThongBao.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
+    <value>397, 56</value>
   </metadata>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>179, 95</value>
+    <value>559, 56</value>
   </metadata>
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>285, 95</value>
+    <value>17, 95</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -2036,7 +2036,7 @@
 </value>
   </data>
   <metadata name="TabbedMdiManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
+    <value>328, 95</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>77</value>
@@ -2208,12 +2208,12 @@
 </value>
   </data>
   <metadata name="alertControl.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>180, 134</value>
+    <value>491, 95</value>
   </metadata>
   <metadata name="timerAppcepTeamviewer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>409, 95</value>
+    <value>141, 95</value>
   </metadata>
   <metadata name="timerTeamview.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 56</value>
+    <value>17, 56</value>
   </metadata>
 </root>
