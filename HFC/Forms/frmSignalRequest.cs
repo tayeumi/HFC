@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using HFC.Class;
 using System.Net;
+using System.IO;
 
 namespace HFC.Forms
 {
@@ -1880,6 +1881,11 @@ namespace HFC.Forms
                          de.Status = dtDevice.Rows[i]["Status"].ToString();
                          de.Update();
                      }
+
+                     if (DateTime.Now.Hour == 3 && Min == 30)
+                     {
+                         btnGetSNRLow_Click(null, null);
+                     }
                      Waiting.CloseWaitForm();
 
                      timerMaps.Enabled = true;
@@ -2036,5 +2042,49 @@ namespace HFC.Forms
             btnDHCP.Enabled = false;           
         }
 
+        private void btnGetSNRLow_Click(object sender, EventArgs e)
+        {
+            Class.NW_SignalLog cls = new NW_SignalLog();
+            cls.Day = DateTime.Today.AddDays(-1).Day;
+            cls.Minute = 21;
+            DataTable dt21=cls.NW_SignalLog_5Day_GetSNRLow();
+            string file21=Application.StartupPath + "/Report/SNR-" + DateTime.Today.AddDays(-1).Day + "-" + DateTime.Today.AddDays(-1).Month + "-" + DateTime.Today.AddDays(-1).Year + "-21H.csv";            
+            if (dt21.Rows.Count > 0)
+            {                
+                Class.CreateCSVFile cr = new CreateCSVFile();
+                cr.CreateCSVFiles(dt21, file21);
+            }
+            cls.Minute = 20;
+            DataTable dt20 = cls.NW_SignalLog_5Day_GetSNRLow();
+            string file20 = Application.StartupPath + "/Report/SNR-" + DateTime.Today.AddDays(-1).Day + "-" + DateTime.Today.AddDays(-1).Month + "-" + DateTime.Today.AddDays(-1).Year + "-20H.csv";
+            if (dt20.Rows.Count > 0)
+            {
+                Class.CreateCSVFile cr = new CreateCSVFile();
+                cr.CreateCSVFiles(dt20, file20);
+            }
+            cls.Minute = 19;
+            DataTable dt19 = cls.NW_SignalLog_5Day_GetSNRLow();
+            string file19 = Application.StartupPath + "/Report/SNR-" + DateTime.Today.AddDays(-1).Day + "-" + DateTime.Today.AddDays(-1).Month + "-" + DateTime.Today.AddDays(-1).Year + "-19H.csv";
+            if (dt19.Rows.Count > 0)
+            {
+                Class.CreateCSVFile cr = new CreateCSVFile();
+                cr.CreateCSVFiles(dt19, file19);
+            }
+
+
+            if (File.Exists(file21) && File.Exists(file20) && File.Exists(file19))
+            {
+                try
+                {
+                    Application.DoEvents();
+                    Class.S_SendMail.Sendmail("log@phuthehung.vn", "hotro@phuthehung.vn", "Danh sách khách hàng thông số SNR thấp ngày " + DateTime.Today.AddDays(-1).Day.ToString(), "Dear All \r\n Danh sách khách hàng mạng chậm do thông số chưa đạt cần cải thiện ngay. \r\n \r\nSent from PTH Network System !", file21, file20, file19);
+
+                }
+                catch { }
+            }           
+
+        }
+
+       
     }
 }

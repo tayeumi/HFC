@@ -81,6 +81,7 @@
             this.btnMaps = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeviceStatus = new DevExpress.XtraEditors.SimpleButton();
             this.btnDHCP = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGetSNRLow = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ItemCheckStatus)).BeginInit();
@@ -558,12 +559,23 @@
             this.btnDHCP.Text = "DHCP SV";
             this.btnDHCP.Click += new System.EventHandler(this.btnDHCP_Click);
             // 
+            // btnGetSNRLow
+            // 
+            this.btnGetSNRLow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnGetSNRLow.Location = new System.Drawing.Point(260, 561);
+            this.btnGetSNRLow.Name = "btnGetSNRLow";
+            this.btnGetSNRLow.Size = new System.Drawing.Size(80, 28);
+            this.btnGetSNRLow.TabIndex = 6;
+            this.btnGetSNRLow.Text = "GetSNRLow";
+            this.btnGetSNRLow.Click += new System.EventHandler(this.btnGetSNRLow_Click);
+            // 
             // frmSignalRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1228, 593);
             this.Controls.Add(this.btnDeviceStatus);
+            this.Controls.Add(this.btnGetSNRLow);
             this.Controls.Add(this.btnDHCP);
             this.Controls.Add(this.btnMaps);
             this.Controls.Add(this.checkMaps);
@@ -656,6 +668,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDS;
         private DevExpress.XtraGrid.Columns.GridColumn colUS;
         private DevExpress.XtraEditors.SimpleButton btnDHCP;
+        private DevExpress.XtraEditors.SimpleButton btnGetSNRLow;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

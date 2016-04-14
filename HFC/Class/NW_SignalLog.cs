@@ -22,7 +22,8 @@ namespace HFC.Class
         public string Description { get; set; }
         public string CurrentDS { get; set; }
         public string CurrentUS { get; set; }
-
+        public int Day { get; set; }
+        public int Minute { get; set; }
         public DataTable NW_SignalLog_GetByMac()
         {
             string procname = "NW_SignalLog_GetByMac";
@@ -45,6 +46,15 @@ namespace HFC.Class
             DbAccess db = new DbAccess();
             db.CreateNewSqlCommand();
             db.AddParameter("@MacAddress", MacAddress);
+            return db.ExecuteDataTable(procname);
+        }
+        public DataTable NW_SignalLog_5Day_GetSNRLow()
+        {
+            string procname = "NW_SignalLog_5Day_GetSNRLow";
+            DbAccess db = new DbAccess();
+            db.CreateNewSqlCommand();
+            db.AddParameter("@Day", Day);
+            db.AddParameter("@Minute", Minute);
             return db.ExecuteDataTable(procname);
         }
         public bool Insert()

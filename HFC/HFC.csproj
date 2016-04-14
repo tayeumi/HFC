@@ -186,6 +186,7 @@
     <Compile Include="Class\App.cs" />
     <Compile Include="Class\CMTS.cs" />
     <Compile Include="Class\CN-ADMIN.cs" />
+    <Compile Include="Class\CreateCSVFile.cs" />
     <Compile Include="Class\DbAccess.cs" />
     <Compile Include="Class\DHCPRestart.cs" />
     <Compile Include="Class\ExportDataToExcel.cs" />
@@ -380,6 +381,12 @@
     <Compile Include="Forms\frmTrafficMonitor.Designer.cs">
       <DependentUpon>frmTrafficMonitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmTrap_SNMP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTrap_SNMP.Designer.cs">
+      <DependentUpon>frmTrap_SNMP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,6 +517,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmTrafficMonitor.resx">
       <DependentUpon>frmTrafficMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTrap_SNMP.resx">
+      <DependentUpon>frmTrap_SNMP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
