@@ -371,22 +371,22 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 392);
-            this.barDockControlBottom.Size = new System.Drawing.Size(698, 59);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 390);
+            this.barDockControlBottom.Size = new System.Drawing.Size(698, 61);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 392);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 390);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(698, 0);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 392);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 390);
             // 
             // dockManager1
             // 
@@ -405,13 +405,13 @@
             // 
             // hideContainerRight
             // 
-            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(188)))), ((int)(((byte)(199)))), ((int)(((byte)(216)))));
+            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.hideContainerRight.Controls.Add(this.dockPanel1);
             this.hideContainerRight.Controls.Add(this.dockPanel2);
             this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(675, 0);
+            this.hideContainerRight.Location = new System.Drawing.Point(679, 0);
             this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(23, 392);
+            this.hideContainerRight.Size = new System.Drawing.Size(19, 390);
             // 
             // dockPanel1
             // 
@@ -630,7 +630,7 @@
             this.groupItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupItem.Location = new System.Drawing.Point(0, 0);
             this.groupItem.Name = "groupItem";
-            this.groupItem.Size = new System.Drawing.Size(675, 392);
+            this.groupItem.Size = new System.Drawing.Size(679, 390);
             this.groupItem.TabIndex = 22;
             this.groupItem.Text = "Giám sát Thiết bị ( Nhiễu )";
             this.groupItem.DoubleClick += new System.EventHandler(this.groupItem_DoubleClick);
@@ -638,13 +638,13 @@
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(2, 16);
+            this.splitContainerControl1.Location = new System.Drawing.Point(2, 22);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Panel1.Controls.Add(this.xtraTabControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridItem);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(671, 374);
+            this.splitContainerControl1.Size = new System.Drawing.Size(675, 366);
             this.splitContainerControl1.SplitterPosition = 192;
             this.splitContainerControl1.TabIndex = 2;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -655,7 +655,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(192, 374);
+            this.xtraTabControl1.Size = new System.Drawing.Size(192, 366);
             this.xtraTabControl1.TabIndex = 2;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1});
@@ -665,14 +665,14 @@
             this.xtraTabPage1.Controls.Add(this.radioRemote);
             this.xtraTabPage1.Controls.Add(this.gridItemRemote);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(190, 341);
+            this.xtraTabPage1.Size = new System.Drawing.Size(186, 338);
             this.xtraTabPage1.Text = "Interface Signal";
             // 
             // radioRemote
             // 
             this.radioRemote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioRemote.EditValue = "All";
-            this.radioRemote.Location = new System.Drawing.Point(14, 303);
+            this.radioRemote.Location = new System.Drawing.Point(22, 285);
             this.radioRemote.MenuManager = this.barManager1;
             this.radioRemote.Name = "radioRemote";
             this.radioRemote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -694,7 +694,7 @@
             this.gridItemRemote.Name = "gridItemRemote";
             this.gridItemRemote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.PicNhanVien});
-            this.gridItemRemote.Size = new System.Drawing.Size(194, 300);
+            this.gridItemRemote.Size = new System.Drawing.Size(202, 282);
             this.gridItemRemote.TabIndex = 1;
             this.gridItemRemote.UseEmbeddedNavigator = true;
             this.gridItemRemote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -755,7 +755,7 @@
             this.ItemCheckStatus,
             this.repositoryItemPictureEdit2,
             this.repositoryItemCheckEdit1});
-            this.gridItem.Size = new System.Drawing.Size(473, 374);
+            this.gridItem.Size = new System.Drawing.Size(478, 366);
             this.gridItem.TabIndex = 2;
             this.gridItem.UseEmbeddedNavigator = true;
             this.gridItem.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -892,14 +892,14 @@
             styleFormatCondition3.ApplyToRow = true;
             styleFormatCondition3.Column = this.colValue4;
             styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition3.Expression = "ToInt([Value4])<210 And Len([Value4])  > 0";
+            styleFormatCondition3.Expression = "ToInt([Value4])<230 And Len([Value4])  > 0";
             styleFormatCondition4.Appearance.BackColor = System.Drawing.Color.Aqua;
             styleFormatCondition4.Appearance.BackColor2 = System.Drawing.Color.White;
             styleFormatCondition4.Appearance.Options.UseBackColor = true;
             styleFormatCondition4.ApplyToRow = true;
             styleFormatCondition4.Column = this.colValue2;
             styleFormatCondition4.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition4.Expression = "ToFloat([Value2])>54.0 And Len([Value2])  > 0";
+            styleFormatCondition4.Expression = "ToFloat([Value2])>53.0 And Len([Value2])  > 0";
             styleFormatCondition5.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             styleFormatCondition5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             styleFormatCondition5.Appearance.Options.UseFont = true;

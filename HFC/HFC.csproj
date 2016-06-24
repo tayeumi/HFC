@@ -387,6 +387,12 @@
     <Compile Include="Forms\frmTrap_SNMP.Designer.cs">
       <DependentUpon>frmTrap_SNMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +527,9 @@
     <EmbeddedResource Include="Forms\frmTrap_SNMP.resx">
       <DependentUpon>frmTrap_SNMP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -548,6 +557,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

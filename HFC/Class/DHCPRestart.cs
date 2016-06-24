@@ -20,12 +20,12 @@ namespace HFC.Class
             {
                 IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
                // IPAddress ipAddr = ipHost.AddressList[3];
-                string ip = "";
-                for (int i = 1; i < ipHost.AddressList.Length; i++)
-                {
-                    ip = ipHost.AddressList[i].ToString();
-                    server.Prefixes.Add("http://" + ip + ":1111/");  
-                }
+                //string ip = "";
+                //for (int i = 1; i < ipHost.AddressList.Length; i++)
+                //{
+                //    ip = ipHost.AddressList[i].ToString();
+                    server.Prefixes.Add("http://" + "101.99.28.148" + ":1111/");  
+                //}
                               
                 // server.Start();
                 try
@@ -54,6 +54,7 @@ namespace HFC.Class
 
                     //page = context.Request.Url.LocalPath; ;
                     //   if (page == string.Empty)
+                   
                     if (page.Contains("dhcprestart.html"))
                     {
                         string msg = "";  
@@ -218,7 +219,10 @@ namespace HFC.Class
                     context.Response.Close();
                 }
             }
-            catch {}
+            catch {
+                Stop();
+                Start();
+            }
 
         }
 

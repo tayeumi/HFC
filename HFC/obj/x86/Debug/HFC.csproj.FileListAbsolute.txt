@@ -111,3 +111,5 @@ E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmDHCPService_Restart.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmDHCPService_Template.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmTeamview.resources
 E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.frmTrap_SNMP.resources
+E:\DEV\HFC\HFC\HFC\obj\x86\Debug\HFC.Forms.Test.resources
+E:\DEV\HFC\HFC\HFC\bin\Debug\HFC.exe.config

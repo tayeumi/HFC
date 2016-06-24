@@ -58,7 +58,7 @@ namespace HFC.Class
 
              }
                 // mail.Attachments.Add(new Attachment(attachmentFilename));
-            SmtpClient SmtpMail = new SmtpClient("mail.phuthehung.vn",25);            
+            SmtpClient SmtpMail = new SmtpClient("mail.phuthehung.vn",587);            
             // and then send the mail             
             SmtpMail.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
             NetworkCredential netCred = new NetworkCredential("log@phuthehung.vn", "Pth12345");           
