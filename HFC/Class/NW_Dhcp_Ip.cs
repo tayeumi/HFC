@@ -32,12 +32,25 @@ namespace HFC.Class
             db.CreateNewSqlCommand();
             return db.ExecuteDataTable(procname);
         }
+        public DataTable NW_Dhcp_Ip_GetbyCPEDynamic_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Ip where Name like 'CPE%' and Static=0";
+
+            return Class.MySqlConnect.ExecQuery(sql);
+        }
         public DataTable NW_Dhcp_Ip_GetbyCPEStatic()
         {
             string procname = "NW_Dhcp_Ip_GetbyCPEStatic";
             DbAccess db = new DbAccess();
             db.CreateNewSqlCommand();
             return db.ExecuteDataTable(procname);
+        }
+      
+        public DataTable NW_Dhcp_Ip_GetbyCPEStatic_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Ip where Name like 'CPE%' and Static=1";
+
+            return Class.MySqlConnect.ExecQuery(sql);
         }
         public DataTable NW_Dhcp_Ip_GetbyPoolModem()
         {
@@ -46,6 +59,11 @@ namespace HFC.Class
             db.CreateNewSqlCommand();
             return db.ExecuteDataTable(procname);
         }
+        public DataTable NW_Dhcp_Ip_GetbyPoolModem_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Ip where Name like '%Modem%'";
+            return Class.MySqlConnect.ExecQuery(sql);
+        }
         public DataTable NW_Dhcp_Ip_GetIPbyPool()
         {
             string procname = "NW_Dhcp_Ip_GetIPbyPool";
@@ -53,6 +71,11 @@ namespace HFC.Class
             db.CreateNewSqlCommand();
             db.AddParameter("@PoolIp", PoolIp);
             return db.ExecuteDataTable(procname);
+        }
+        public DataTable NW_Dhcp_Ip_GetIPbyPool_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Ip where PoolIP ='" + PoolIp + "'";
+            return Class.MySqlConnect.ExecQuery(sql);
         }
       
     }

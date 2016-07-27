@@ -216,12 +216,15 @@ namespace HFC.Forms
 
         private void frmDHCPCustomer_Load(object sender, EventArgs e)
         {
-            NW_Dhcp_Customer_Getlist();
-            //if (dt.Rows.Count > 0)
-            //{
-            //    groupImport.Enabled = false; 
-
-            //}
+           // NW_Dhcp_Customer_Getlist();           
+            try
+            {
+                //string sql = "select * from NW_Dhcp_Ip";
+                //DataTable dttest ;
+                //dttest = Class.MySqlConnect.ExecQuery(sql);.
+                NW_Dhcp_Customer_Getlist_MySQL();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void btnImport_Click(object sender, EventArgs e)
@@ -252,7 +255,7 @@ namespace HFC.Forms
                     //{
                     //    string degug = "";
                     //}
-                    if (!cls.Insert())
+                    if (!cls.InsertMySQL()) // thay the import vao dl binh thuong thi impoort vao Mysql server co DHCP SV
                     {
                         fail += "\r\n" + dt.Rows[i]["IpAddress"].ToString();
                     }
@@ -267,7 +270,7 @@ namespace HFC.Forms
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
             Class.NW_Dhcp_Customer cls = new Class.NW_Dhcp_Customer();
-           if (cls.NW_Dhcp_Customer_DeleteAll())
+           if (cls.NW_Dhcp_Customer_DeleteAll_MySQL())
                MessageBox.Show("Đã xóa xong! ");
 
         }
@@ -293,7 +296,7 @@ namespace HFC.Forms
             {
                 if (dt.Rows.Count > 0)
                 {
-                    if (System.IO.File.Exists(@"dhcpd.conf.temp"))
+                    if (System.IO.File.Exists(@"c"))
                     {
                         string txt = System.IO.File.ReadAllText(@"dhcpd.conf.temp");
                         string CPEDynamic = "";
@@ -301,9 +304,9 @@ namespace HFC.Forms
                         string PoolModem = "";
                         Class.NW_Dhcp_Ip clsIP = new Class.NW_Dhcp_Ip();
                         Class.NW_Dhcp_Customer clsModem = new Class.NW_Dhcp_Customer();
-                        DataTable dtCPEDynamic = clsIP.NW_Dhcp_Ip_GetbyCPEDynamic();
-                        DataTable dtCPEStatic = clsIP.NW_Dhcp_Ip_GetbyCPEStatic();
-                        DataTable dtPoolModem = clsIP.NW_Dhcp_Ip_GetbyPoolModem();
+                        DataTable dtCPEDynamic = clsIP.NW_Dhcp_Ip_GetbyCPEDynamic_MySQL();
+                        DataTable dtCPEStatic = clsIP.NW_Dhcp_Ip_GetbyCPEStatic_MySQL();
+                        DataTable dtPoolModem = clsIP.NW_Dhcp_Ip_GetbyPoolModem_MySQL();
                         #region CPEDynamic
                         for (int i = 0; i < dtCPEDynamic.Rows.Count; i++)
                         {
@@ -314,7 +317,7 @@ namespace HFC.Forms
                                             "\t\toption routers " + dtCPEDynamic.Rows[i]["Router"].ToString() + ";\n" +
                                             "\t\toption broadcast-address " + dtCPEDynamic.Rows[i]["Broadcast"].ToString() + ";\n" +
                                             "\t\tpool {\n" +
-                                                "\t\trange " + dtCPEDynamic.Rows[i]["Range"].ToString() + ";\n" +
+                                                "\t\trange " + dtCPEDynamic.Rows[i]["RangeIP"].ToString() + ";\n" +
                                                 "\t\t}\n" +
                                             "\t}\n" +
                                             "\tgroup {\n" +
@@ -326,7 +329,7 @@ namespace HFC.Forms
                         for (int i = 0; i < dtCPEStatic.Rows.Count; i++)
                         {
                             clsModem.PoolIp = dtCPEStatic.Rows[i]["PoolIp"].ToString();
-                            DataTable dtmodem = clsModem.NW_Dhcp_Customer_GetbyPoolPublic();
+                            DataTable dtmodem = clsModem.NW_Dhcp_Customer_GetbyPoolPublic_MySQL();
                             string txtmodem = "";
                             for (int j = 0; j < dtmodem.Rows.Count; j++)
                             {
@@ -359,7 +362,7 @@ namespace HFC.Forms
                         for (int i = 0; i < dtPoolModem.Rows.Count; i++)
                         {
                             clsModem.PoolIp = dtPoolModem.Rows[i]["PoolIp"].ToString();
-                            DataTable dtmodem = clsModem.NW_Dhcp_Customer_GetbyPool();
+                            DataTable dtmodem = clsModem.NW_Dhcp_Customer_GetbyPool_MySQL();
                             string listmodem = "";
                             for (int j = 0; j < dtmodem.Rows.Count; j++)
                             {
@@ -421,10 +424,10 @@ namespace HFC.Forms
                     string IP = "";
                     IP = gridItemDetail.GetFocusedRowCellValue(colIpAddress).ToString();  
                     cls.IpAddress = IP;
-                    if (cls.NW_Dhcp_Customer_Delete())
+                    if (cls.NW_Dhcp_Customer_Delete_MySQL())
                     {
                          Class.App.DeleteSuccessfully(IP);
-                         NW_Dhcp_Customer_Getlist();
+                         NW_Dhcp_Customer_Getlist_MySQL();
                     }
                     else
                     {
@@ -440,19 +443,23 @@ namespace HFC.Forms
             frm.ShowDialog();
             if (frm.add_edit)
             {
-                NW_Dhcp_Customer_Getlist();
+                NW_Dhcp_Customer_Getlist_MySQL();
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string code = gridItemDetail.GetFocusedRowCellValue(colIpAddress).ToString();
-            frmDHCPCustomer_Update frm = new frmDHCPCustomer_Update(false, "Cập nhật Modem ", null, code);
-            frm.Owner = this;
-            frm.ShowDialog();
-            if (frm.add_edit)
+            if (gridItemDetail.FocusedRowHandle > -1)
             {
-                NW_Dhcp_Customer_Getlist();
+                string code="";
+                code= gridItemDetail.GetFocusedRowCellValue(colIpAddress).ToString();
+                frmDHCPCustomer_Update frm = new frmDHCPCustomer_Update(false, "Cập nhật Modem ", null, code);
+                frm.Owner = this;
+                frm.ShowDialog();
+                if (frm.add_edit)
+                {
+                    NW_Dhcp_Customer_Getlist_MySQL();
+                }
             }
         }
 
@@ -468,7 +475,7 @@ namespace HFC.Forms
             frm.ShowDialog();
             if (frm.add_edit)
             {
-                NW_Dhcp_Customer_Getlist();
+                NW_Dhcp_Customer_Getlist_MySQL();
             }
         }
 
@@ -476,10 +483,10 @@ namespace HFC.Forms
         {
             Class.NW_Dhcp_Customer cls = new Class.NW_Dhcp_Customer();
             cls.IpAddress = gridItemDetail.GetFocusedRowCellValue(colIpAddress).ToString();
-            if (cls.NW_Dhcp_Customer_DeleteIPStatic())
+            if (cls.NW_Dhcp_Customer_DeleteIPStatic_MySQL())
             {
                 MessageBox.Show("Xóa IP Static thành công !");
-                NW_Dhcp_Customer_Getlist();
+                NW_Dhcp_Customer_Getlist_MySQL();
             }
             else
             {
@@ -499,5 +506,18 @@ namespace HFC.Forms
             frmDHCPService_Template frm = new frmDHCPService_Template("dhcpd.conf.temp");
             frm.ShowDialog();
         }
+        //////////////////////////////////////////MySQL
+        public void NW_Dhcp_Customer_Getlist_MySQL()
+        {
+            string sql = "Select * from NW_Dhcp_Customer";
+            dt = Class.MySqlConnect.ExecQuery(sql);
+            gridItem.DataSource = dt;
+            dtIpPublic = dt.Copy();
+        }
+
+
+        /////////////////////////////////////////////////
+
+
     }
 }

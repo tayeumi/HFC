@@ -21,7 +21,8 @@ namespace HFC.Forms
         {
             InitializeComponent();
             this.Text = Caption_name;
-            NW_Dhcp_Ip_GetbyPoolModem();
+            //NW_Dhcp_Ip_GetbyPoolModem();
+            NW_Dhcp_Ip_GetbyPoolModem_MySQL();
             if (Add_new)
             {
                 call_Code_New();
@@ -40,11 +41,20 @@ namespace HFC.Forms
             cboPoolIp.Properties.ValueMember = "PoolIp";
 
         }
+        void NW_Dhcp_Ip_GetbyPoolModem_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Ip where Name like '%Modem%'";
+            DataTable dtip = Class.MySqlConnect.ExecQuery(sql);
+            cboPoolIp.Properties.DataSource = dtip;
+            cboPoolIp.Properties.DisplayMember = "PoolIp";
+            cboPoolIp.Properties.ValueMember = "PoolIp";
+
+        }
         private void call_info(string Form_name, string code)
         {
             Class.NW_Dhcp_Customer cls = new Class.NW_Dhcp_Customer();
             cls.IpAddress = code;
-            DataTable dt = cls.NW_Dhcp_Customer_GetbyIp();
+            DataTable dt = cls.NW_Dhcp_Customer_GetbyIp_MySQL();
             txtMacAddress.Text = dt.Rows[0]["MacAddress"].ToString();
             cboPoolIp.EditValue = dt.Rows[0]["PoolIp"].ToString();
             txtIpAddress.Text = dt.Rows[0]["IpAddress"].ToString();
@@ -115,7 +125,7 @@ namespace HFC.Forms
             cls.MacPc = "";
             if (txtIpAddress.Enabled)
             {
-                if (cls.Insert())
+                if (cls.InsertMySQL())
                 {
                     Class.App.SaveSuccessfully();
                     add_edit = true;
@@ -128,7 +138,7 @@ namespace HFC.Forms
             }
             else
             {
-                if (cls.Update())
+                if (cls.UpdateMySQL())
                 {
                     Class.App.SaveSuccessfully();
                     add_edit = true;
@@ -186,7 +196,7 @@ namespace HFC.Forms
             cls.MacPc = "";
             if (txtIpAddress.Enabled)
             {
-                if (cls.Insert())
+                if (cls.InsertMySQL())
                 {
                     Class.App.SaveSuccessfully();
                     add_edit = true;
@@ -198,7 +208,7 @@ namespace HFC.Forms
             }
             else
             {
-                if (cls.Update())
+                if (cls.UpdateMySQL())
                 {
                     Class.App.SaveSuccessfully();
                     add_edit = true;
@@ -212,7 +222,8 @@ namespace HFC.Forms
             txtIpAddress.Enabled = true;
             cboPoolIp.Enabled = true;
             call_Code_New();
-            NW_Dhcp_Ip_GetbyPoolModem();
+            //NW_Dhcp_Ip_GetbyPoolModem();
+            NW_Dhcp_Ip_GetbyPoolModem_MySQL();
 
         }
 
@@ -226,7 +237,7 @@ namespace HFC.Forms
             Class.NW_Dhcp_Ip cls = new Class.NW_Dhcp_Ip();
             Class.NW_Dhcp_Customer clscus = new Class.NW_Dhcp_Customer();
             clscus.PoolIp = cboPoolIp.EditValue.ToString();
-            DataTable dtcus = clscus.NW_Dhcp_Customer_GetbyPool();
+            DataTable dtcus = clscus.NW_Dhcp_Customer_GetbyPool_MySQL();
             cls.PoolIp = cboPoolIp.EditValue.ToString();
             DataTable dt = cls.NW_Dhcp_Ip_GetIPbyPool();
             string ip = "";
@@ -299,7 +310,7 @@ namespace HFC.Forms
             {
                 Class.NW_Dhcp_Customer clscus = new Class.NW_Dhcp_Customer();
                 clscus.MacAddress = txtMacAddress.Text;
-                DataTable dt = clscus.NW_Dhcp_Customer_GetbyMacaddress();
+                DataTable dt = clscus.NW_Dhcp_Customer_GetbyMacaddress_MySQL();
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show(" Mac Address đã có, vui lòng chọn mac khác ! ");

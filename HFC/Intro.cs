@@ -161,7 +161,8 @@ namespace HFC
                 "path.txt",
                 "nodewarning.txt",                 
                 "Config.xml",
-                "SnmpSharpNet.dll" };
+                "SnmpSharpNet.dll",
+                 "MySql.Data.dll"};
             lblSLFile.Visible = false;
             for (int i = 0; i < DllFile.Length; i++)            
             {

@@ -206,12 +206,12 @@
             this.colMacPc,
             this.colPoolPublic,
             this.colNote});
+            this.gridItemDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridItemDetail.GridControl = this.gridItem;
             this.gridItemDetail.Name = "gridItemDetail";
             this.gridItemDetail.OptionsBehavior.CopyToClipboardWithColumnHeaders = false;
             this.gridItemDetail.OptionsBehavior.Editable = false;
             this.gridItemDetail.OptionsCustomization.AllowRowSizing = true;
-            this.gridItemDetail.OptionsSelection.InvertSelection = true;
             this.gridItemDetail.OptionsSelection.MultiSelect = true;
             this.gridItemDetail.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.gridItemDetail.OptionsView.ColumnAutoWidth = false;

@@ -24,7 +24,7 @@ namespace HFC.Forms
             this.Text = Title;
             ipaddress = IPAddress;
             Class.NW_Dhcp_Ip clsIP = new Class.NW_Dhcp_Ip();
-            DataTable dtip = clsIP.NW_Dhcp_Ip_GetbyCPEStatic();
+            DataTable dtip = clsIP.NW_Dhcp_Ip_GetbyCPEStatic_MySQL();
             cboPoolIp.Properties.DataSource = dtip;
             cboPoolIp.Properties.DisplayMember = "PoolIp";
             cboPoolIp.Properties.ValueMember = "PoolIp";
@@ -36,14 +36,14 @@ namespace HFC.Forms
             Class.NW_Dhcp_Ip cls = new Class.NW_Dhcp_Ip();
             Class.NW_Dhcp_Customer clscus = new Class.NW_Dhcp_Customer();
             clscus.PoolIp = cboPoolIp.EditValue.ToString();
-            DataTable dtcus = clscus.NW_Dhcp_Customer_GetbyPoolPublic();
+            DataTable dtcus = clscus.NW_Dhcp_Customer_GetbyPoolPublic_MySQL();
             cls.PoolIp = cboPoolIp.EditValue.ToString();
-            DataTable dt = cls.NW_Dhcp_Ip_GetIPbyPool();
+            DataTable dt = cls.NW_Dhcp_Ip_GetIPbyPool_MySQL();
             string ip = "";
             bool check = false; ;
             if (dt.Rows.Count > 0)
             {
-                string range = dt.Rows[0]["Range"].ToString();
+                string range = dt.Rows[0]["RangeIP"].ToString();
                 string[] cat = range.Split(' ');
                 if (cat.Length > 1)
                 {
@@ -114,7 +114,7 @@ namespace HFC.Forms
             cls.IpPublic = txtIpAddress.Text;
             cls.MacPc = txtMacAddress.Text;
             cls.Note = txtNote.Text;
-            if (cls.NW_Dhcp_Customer_UpdateIPStatic())
+            if (cls.NW_Dhcp_Customer_UpdateIPStatic_MySQL())
             {
                 Class.App.SaveSuccessfully();
                 add_edit = true;

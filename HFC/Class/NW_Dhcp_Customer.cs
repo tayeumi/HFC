@@ -39,6 +39,12 @@ namespace HFC.Class
             db.AddParameter("@PoolIp", PoolIp);
             return db.ExecuteDataTable(procname);
         }
+        public DataTable NW_Dhcp_Customer_GetbyPool_MySQL()
+        {
+            string sql = " select * from NW_Dhcp_Customer where PoolIp='"+PoolIp+"'";
+            return Class.MySqlConnect.ExecQuery(sql);
+        }
+
         public DataTable NW_Dhcp_Customer_GetbyPoolPublic()
         {
             string procname = "NW_Dhcp_Customer_GetbyPoolPublic";
@@ -46,6 +52,11 @@ namespace HFC.Class
             db.CreateNewSqlCommand();
             db.AddParameter("@PoolIp", PoolIp);
             return db.ExecuteDataTable(procname);
+        }
+        public DataTable NW_Dhcp_Customer_GetbyPoolPublic_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Customer where PoolPublic='"+PoolIp+"'";
+            return Class.MySqlConnect.ExecQuery(sql);
         }
         public DataTable NW_Dhcp_Customer_GetbyMacaddress()
         {
@@ -55,6 +66,12 @@ namespace HFC.Class
             db.AddParameter("@MacAddress", MacAddress);
             return db.ExecuteDataTable(procname);
         }
+        public DataTable NW_Dhcp_Customer_GetbyMacaddress_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Customer where MacAddress='"+MacAddress+"'";
+
+            return Class.MySqlConnect.ExecQuery(sql);
+        }
         public DataTable NW_Dhcp_Customer_GetbyIp()
         {
             string procname = "NW_Dhcp_Customer_GetbyIp";
@@ -62,6 +79,11 @@ namespace HFC.Class
             db.CreateNewSqlCommand();
             db.AddParameter("@IpAddress", IpAddress);
             return db.ExecuteDataTable(procname);
+        }
+        public DataTable NW_Dhcp_Customer_GetbyIp_MySQL()
+        {
+            string sql = "select * from NW_Dhcp_Customer where IpAddress='"+IpAddress+"'";
+            return Class.MySqlConnect.ExecQuery(sql);
         }
         public bool Insert()
         {
@@ -94,6 +116,22 @@ namespace HFC.Class
                 return false;
             }
         }
+
+        public bool InsertMySQL()
+        {
+            try{
+                string sql = "insert into NW_Dhcp_Customer(IpAddress,MacAddress,MacAddress_CMTS,CustomerCode,CustomerName,CustomerAddress,PoolIp,Bootfile,IpPublic,MacPc,PoolPublic,Location,Note)values('"+IpAddress+"','"+MacAddress+"','"+MacAddress_CMTS+"','"+CustomerCode+"','"+CustomerName+"','"+CustomerAddress+"','"+PoolIp+"','"+Bootfile+"','"+IpPublic+"','"+MacPc+"','"+PoolPublic+"','"+Location+"','"+Note+"')";
+                Class.MySqlConnect.ExecNonQuery(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
+
         public bool NW_Dhcp_Customer_UpdateIPStatic()
         {
             DbAccess db = new DbAccess();
@@ -117,6 +155,21 @@ namespace HFC.Class
                 return false;
             }
         }
+        public bool NW_Dhcp_Customer_UpdateIPStatic_MySQL()
+        {
+            string sql = "update NW_Dhcp_Customer set IpPublic='"+IpPublic+"',PoolPublic='"+PoolPublic+"',MacPc='"+MacPc+"',Note='"+Note+"' where IpAddress='"+IpAddress+"'";
+            
+            try
+            {
+                Class.MySqlConnect.ExecNonQuery(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {                
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
         public bool NW_Dhcp_Customer_DeleteIPStatic()
         {
             DbAccess db = new DbAccess();
@@ -132,6 +185,21 @@ namespace HFC.Class
             catch (Exception ex)
             {
                 db.RollbackTransaction();
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
+        public bool NW_Dhcp_Customer_DeleteIPStatic_MySQL()
+        {
+           
+            try
+            {
+                string sql = "update NW_Dhcp_Customer set IpPublic='',PoolPublic='',MacPc='' where IpAddress='"+IpAddress+"'";
+                Class.MySqlConnect.ExecNonQuery(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {
                 Class.App.Log_Write(ex.Message);
                 return false;
             }
@@ -163,6 +231,21 @@ namespace HFC.Class
                 return false;
             }
         }
+        public bool UpdateMySQL()
+        {
+           
+            try
+            {
+                string sql = "Update NW_Dhcp_Customer set MacAddress='"+MacAddress+"',MacAddress_CMTS='"+MacAddress_CMTS+"',CustomerCode='"+CustomerCode+"',CustomerName='"+CustomerName+"',CustomerAddress='"+CustomerAddress+"',Bootfile='"+Bootfile+"',Location='"+Location+"',Note='"+Note+"' where IpAddress='"+IpAddress+"'";
+                Class.MySqlConnect.ExecNonQuery(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
         public bool NW_Dhcp_Customer_DeleteAll()
         {
             DbAccess db = new DbAccess();
@@ -177,6 +260,22 @@ namespace HFC.Class
             catch (Exception ex)
             {
                 db.RollbackTransaction();
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
+        public bool NW_Dhcp_Customer_DeleteAll_MySQL()
+        {
+            
+            try
+            {
+                string sql = "delete from NW_Dhcp_Customer";
+                Class.MySqlConnect.ExecNonQuery(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {
+               
                 Class.App.Log_Write(ex.Message);
                 return false;
             }
@@ -196,6 +295,22 @@ namespace HFC.Class
             catch (Exception ex)
             {
                 db.RollbackTransaction();
+                Class.App.Log_Write(ex.Message);
+                return false;
+            }
+        }
+
+        public bool NW_Dhcp_Customer_Delete_MySQL()
+        {            
+            try
+            {
+                string sql = "delete from NW_Dhcp_Customer where IpAddress='" + IpAddress+"'";
+                Class.MySqlConnect.ExecNonQuery(sql);
+                return true;
+            }
+            catch (Exception ex)
+            {
+               
                 Class.App.Log_Write(ex.Message);
                 return false;
             }
