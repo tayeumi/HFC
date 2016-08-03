@@ -15,6 +15,8 @@
         <asp:Label ID="Label1" runat="server" Text="Mac:  "></asp:Label>
         <asp:TextBox ID="txtMac" runat="server"></asp:TextBox>
         <asp:Button ID="btnTim" runat="server" onclick="btnTim_Click" Text="Xem" />
+        <asp:Button ID="btnReset" runat="server" onclick="btnReset_Click" 
+            Text="Reset modem" Visible="False" />
         <br />
         <asp:Chart ID="ChartItem" runat="server" Height="146px" RightToLeft="Yes" 
             Width="731px">

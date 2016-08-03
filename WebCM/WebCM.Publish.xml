@@ -2,16 +2,16 @@
 <publishData>
   <publishProfile publishUrl="C:\WebCm" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="WebCM" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="teamviewe.aspx" publishTime="01/18/2016 15:32:57" />
+    <file relUrl="getTraffic.aspx" publishTime="08/03/2016 09:19:33" />
     <file relUrl="bin/SnmpSharpNet.dll" publishTime="11/03/2014 11:03:04" />
     <file relUrl="bin/SnmpSharpNet.xml" publishTime="11/03/2014 11:03:03" />
     <file relUrl="getHistory.aspx" publishTime="06/23/2015 09:32:39" />
     <file relUrl="Web.config" publishTime="01/18/2016 15:33:07" />
     <file relUrl="sv2.aspx" publishTime="06/22/2015 17:25:11" />
     <file relUrl="bin/SnmpSharpNet.pdb" publishTime="11/03/2014 11:03:03" />
-    <file relUrl="bin/WebCM.pdb" publishTime="01/18/2016 14:02:06" />
-    <file relUrl="bin/WebCM.dll" publishTime="01/18/2016 14:02:06" />
-    <file relUrl="getSignal.aspx" publishTime="08/07/2015 09:24:22" />
+    <file relUrl="bin/WebCM.dll" publishTime="08/03/2016 09:46:38" />
+    <file relUrl="bin/WebCM.pdb" publishTime="08/03/2016 09:46:38" />
     <file relUrl="sv1.aspx" publishTime="01/25/2013 13:19:05" />
-    <file relUrl="getTraffic.aspx" publishTime="08/07/2015 10:56:00" />
+    <file relUrl="getSignal.aspx" publishTime="08/03/2016 09:23:57" />
   </publishProfile>
 </publishData>

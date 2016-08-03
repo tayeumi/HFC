@@ -777,7 +777,7 @@
             this.toolStripMenuItem4,
             this.btnResetModem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 220);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 242);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // btnCapnhattuModem
