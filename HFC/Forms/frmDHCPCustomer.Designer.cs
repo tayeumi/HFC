@@ -57,6 +57,7 @@
             this.colMacPc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPoolPublic = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNote = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             this.PicNhanVien = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.txtLink = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -67,7 +68,6 @@
             this.btnDeleteAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnImport = new DevExpress.XtraEditors.SimpleButton();
             this.Waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::HFC.frmWaiting), true, true);
-            this.colLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
@@ -341,6 +341,14 @@
             this.colNote.Visible = true;
             this.colNote.VisibleIndex = 9;
             // 
+            // colLocation
+            // 
+            this.colLocation.Caption = "Location";
+            this.colLocation.FieldName = "Location";
+            this.colLocation.Name = "colLocation";
+            this.colLocation.Visible = true;
+            this.colLocation.VisibleIndex = 10;
+            // 
             // PicNhanVien
             // 
             this.PicNhanVien.CustomHeight = 105;
@@ -428,14 +436,6 @@
             this.btnImport.Text = "(3) Import";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
-            // colLocation
-            // 
-            this.colLocation.Caption = "Location";
-            this.colLocation.FieldName = "Location";
-            this.colLocation.Name = "colLocation";
-            this.colLocation.Visible = true;
-            this.colLocation.VisibleIndex = 10;
-            // 
             // frmDHCPCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,7 +499,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnDHCPTemplate;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem btnExportExcel;
-        private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
         private DevExpress.XtraGrid.Columns.GridColumn colLocation;
+        private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

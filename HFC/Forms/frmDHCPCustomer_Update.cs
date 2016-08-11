@@ -244,7 +244,7 @@ namespace HFC.Forms
             bool check = false; ;
             if (dt.Rows.Count > 0)
             {
-                string range=dt.Rows[0]["Range"].ToString();
+                string range=dt.Rows[0]["RangeIP"].ToString();
                 string[] cat = range.Split(' ');
                 if (cat.Length > 1)
                 {
@@ -309,13 +309,30 @@ namespace HFC.Forms
             if (txtIpAddress.Enabled)
             {
                 Class.NW_Dhcp_Customer clscus = new Class.NW_Dhcp_Customer();
-                clscus.MacAddress = txtMacAddress.Text;
+                clscus.MacAddress = txtMacAddress.Text;                
                 DataTable dt = clscus.NW_Dhcp_Customer_GetbyMacaddress_MySQL();
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show(" Mac Address đã có, vui lòng chọn mac khác ! ");
                     txtMacAddress.Focus();
                 }
+            }
+            else
+            {
+                // truong hop sua nhung co roi cung ko dc update
+                Class.NW_Dhcp_Customer clscus = new Class.NW_Dhcp_Customer();
+                clscus.MacAddress = txtMacAddress.Text;
+                clscus.IpAddress=txtIpAddress.Text;
+                DataTable dt = clscus.NW_Dhcp_Customer_GetbyMacaddress_MySQL();
+                if (dt.Rows.Count > 0)
+                {
+                    if (dt.Rows[0]["IpAddress"].ToString() != clscus.IpAddress)
+                    {
+                        MessageBox.Show(" Mac Address đã có, vui lòng chọn mac khác ! ");
+                        txtMacAddress.Focus();
+                    }
+                }
+
             }
            
         }
