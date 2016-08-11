@@ -79,6 +79,25 @@ namespace HFC
 
                 this.Close();
             }
+                if (txtTaiKhoan.Text == "lapmoi" & txtMatkhau.Text == "lapmoilapmoi")
+                {
+                    // MessageBox.Show(" Đăng nhập thành công !");
+                    taikhoan = txtTaiKhoan.Text;
+                    Class.App.client_User = txtTaiKhoan.Text;
+                    if (checkLuuPass.Checked)
+                    {
+                        Class.RegistryWriter rg = new Class.RegistryWriter();
+                        rg.WriteKey("user_client", txtTaiKhoan.Text);
+                    }
+                    else
+                    {
+                        Class.RegistryWriter rg = new Class.RegistryWriter();
+                        rg.WriteKey("user_client", "");
+
+                    }
+
+                    this.Close();
+                }
         }
 
         private void frmDangNhap_Load(object sender, EventArgs e)

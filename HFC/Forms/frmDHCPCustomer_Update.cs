@@ -239,7 +239,7 @@ namespace HFC.Forms
             clscus.PoolIp = cboPoolIp.EditValue.ToString();
             DataTable dtcus = clscus.NW_Dhcp_Customer_GetbyPool_MySQL();
             cls.PoolIp = cboPoolIp.EditValue.ToString();
-            DataTable dt = cls.NW_Dhcp_Ip_GetIPbyPool();
+            DataTable dt = cls.NW_Dhcp_Ip_GetIPbyPool_MySQL();
             string ip = "";
             bool check = false; ;
             if (dt.Rows.Count > 0)

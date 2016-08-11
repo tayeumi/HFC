@@ -42,6 +42,8 @@
             this.btnCreateDHCPFile = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDHCPRestart = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDHCPTemplate = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnExportExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.gridItemDetail = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colIpAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMacAddress = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,6 +67,7 @@
             this.btnDeleteAll = new DevExpress.XtraEditors.SimpleButton();
             this.btnImport = new DevExpress.XtraEditors.SimpleButton();
             this.Waiting = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::HFC.frmWaiting), true, true);
+            this.colLocation = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridItem)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridItemDetail)).BeginInit();
@@ -103,9 +106,11 @@
             this.toolStripMenuItem2,
             this.btnCreateDHCPFile,
             this.btnDHCPRestart,
-            this.btnDHCPTemplate});
+            this.btnDHCPTemplate,
+            this.toolStripMenuItem3,
+            this.btnExportExcel});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 170);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 198);
             // 
             // btnAdd
             // 
@@ -191,6 +196,18 @@
             this.btnDHCPTemplate.Text = "DHCP Template";
             this.btnDHCPTemplate.Click += new System.EventHandler(this.btnDHCPTemplate_Click);
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(167, 6);
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(170, 22);
+            this.btnExportExcel.Text = "Xuất Excel";
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
+            // 
             // gridItemDetail
             // 
             this.gridItemDetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -205,7 +222,8 @@
             this.colIpPublic,
             this.colMacPc,
             this.colPoolPublic,
-            this.colNote});
+            this.colNote,
+            this.colLocation});
             this.gridItemDetail.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridItemDetail.GridControl = this.gridItem;
             this.gridItemDetail.Name = "gridItemDetail";
@@ -218,6 +236,7 @@
             this.gridItemDetail.OptionsView.RowAutoHeight = true;
             this.gridItemDetail.OptionsView.ShowAutoFilterRow = true;
             this.gridItemDetail.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.Default;
+            this.gridItemDetail.DoubleClick += new System.EventHandler(this.gridItemDetail_DoubleClick);
             // 
             // colIpAddress
             // 
@@ -341,7 +360,7 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(18, 34);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(19, 13);
+            this.labelControl1.Size = new System.Drawing.Size(18, 13);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Link";
             // 
@@ -409,6 +428,14 @@
             this.btnImport.Text = "(3) Import";
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // colLocation
+            // 
+            this.colLocation.Caption = "Location";
+            this.colLocation.FieldName = "Location";
+            this.colLocation.Name = "colLocation";
+            this.colLocation.Visible = true;
+            this.colLocation.VisibleIndex = 10;
+            // 
             // frmDHCPCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +497,9 @@
         private System.Windows.Forms.ToolStripMenuItem btnDelIP;
         private System.Windows.Forms.ToolStripMenuItem btnDHCPRestart;
         private System.Windows.Forms.ToolStripMenuItem btnDHCPTemplate;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem btnExportExcel;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
+        private DevExpress.XtraGrid.Columns.GridColumn colLocation;
     }
 }

@@ -225,6 +225,15 @@ namespace HFC.Forms
                 NW_Dhcp_Customer_Getlist_MySQL();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+            if (Class.App.client_User == "admin")
+            {
+                groupImport.Enabled = true;
+            }
+            else
+            {
+                groupImport.Enabled = false    ;
+            }
         }
 
         private void btnImport_Click(object sender, EventArgs e)
@@ -513,6 +522,33 @@ namespace HFC.Forms
             dt = Class.MySqlConnect.ExecQuery(sql);
             gridItem.DataSource = dt;
             dtIpPublic = dt.Copy();
+        }
+
+        private void gridItemDetail_DoubleClick(object sender, EventArgs e)
+        {
+            if (gridItemDetail.FocusedRowHandle > -1)
+            {
+                string mac = gridItemDetail.GetFocusedRowCellValue(colMacAddress).ToString();
+                if (mac != "")
+                {
+                    mac = mac.Replace(":", "");
+                    mac = mac.Insert(4, ".");
+                    mac = mac.Insert(9, ".");
+                        frmSignalHistory frm = new frmSignalHistory(mac, 0);
+                        frm.ShowDialog();
+                    
+                }
+            }
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "Excel File|*.xlsx";
+            saveFile.Title = "Exprot to Excel File";
+            saveFile.ShowDialog();
+            if (saveFile.FileName != "")
+                gridItem.ExportToXlsx(saveFile.FileName);
         }
 
 

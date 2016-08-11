@@ -72,6 +72,11 @@ namespace HFC
                     btnDanhSachNode.Enabled = false;
                     btnDanhsachDevice.Enabled = false;
                 }
+
+                if (Class.App.client_User == "lapmoi")
+                {
+                    groupDHCP.Visible = true;
+                }
             }
             else
             {

@@ -199,8 +199,7 @@
             "5-512000.cfg",
             "7-640000.cfg",
             "10-640000.cfg",
-            "full.cfg",
-            "test.cfg",
+            "15-1536.cfg",
             "auto/offline.bin"});
             this.cboBootfile.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.cboBootfile.Size = new System.Drawing.Size(254, 20);
@@ -293,7 +292,8 @@
             "TD-Binh Chieu",
             "TD-Hiep Binh Phuoc",
             "TD-Linh Trung",
-            "TD-Truong Tho"});
+            "TD-Truong Tho",
+            "TD-Tam Binh"});
             this.txtLocation.Size = new System.Drawing.Size(253, 20);
             this.txtLocation.TabIndex = 7;
             // 
