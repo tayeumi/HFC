@@ -305,7 +305,7 @@ namespace HFC.Forms
             {
                 if (dt.Rows.Count > 0)
                 {
-                    if (System.IO.File.Exists(@"c"))
+                    if (System.IO.File.Exists(@"dhcpd.conf.temp"))
                     {
                         string txt = System.IO.File.ReadAllText(@"dhcpd.conf.temp");
                         string CPEDynamic = "";
@@ -549,6 +549,11 @@ namespace HFC.Forms
             saveFile.ShowDialog();
             if (saveFile.FileName != "")
                 gridItem.ExportToXlsx(saveFile.FileName);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            NW_Dhcp_Customer_Getlist_MySQL();
         }
 
 

@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.gridItem = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.btnEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDel = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,6 +100,8 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRefresh,
+            this.toolStripMenuItem4,
             this.btnAdd,
             this.btnEdit,
             this.btnDel,
@@ -110,7 +114,20 @@
             this.toolStripMenuItem3,
             this.btnExportExcel});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 198);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(171, 226);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::HFC.Properties.Resources.Action_Reload;
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(170, 22);
+            this.btnRefresh.Text = "Load lại";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(167, 6);
             // 
             // btnAdd
             // 
@@ -203,6 +220,7 @@
             // 
             // btnExportExcel
             // 
+            this.btnExportExcel.Image = global::HFC.Properties.Resources.Excel;
             this.btnExportExcel.Name = "btnExportExcel";
             this.btnExportExcel.Size = new System.Drawing.Size(170, 22);
             this.btnExportExcel.Text = "Xuất Excel";
@@ -368,7 +386,7 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(18, 34);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(18, 13);
+            this.labelControl1.Size = new System.Drawing.Size(19, 13);
             this.labelControl1.TabIndex = 5;
             this.labelControl1.Text = "Link";
             // 
@@ -500,6 +518,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem btnExportExcel;
         private DevExpress.XtraGrid.Columns.GridColumn colLocation;
+        private System.Windows.Forms.ToolStripMenuItem btnRefresh;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private DevExpress.XtraSplashScreen.SplashScreenManager Waiting;
     }
 }

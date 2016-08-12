@@ -325,6 +325,7 @@
             this.Controls.Add(this.labelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmDHCPCustomer_Update";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmDHCPCustomer_Update";
             ((System.ComponentModel.ISupportInitialize)(this.txtMacAddress.Properties)).EndInit();

@@ -6,3 +6,4 @@ E:\DEV\HFC\HFC\OutSource\bin\Debug\OutSource.dll
 E:\DEV\HFC\HFC\OutSource\bin\Debug\OutSource.pdb
 E:\DEV\HFC\HFC\OutSource\obj\Debug\OutSource.dll
 E:\DEV\HFC\HFC\OutSource\obj\Debug\OutSource.pdb
+E:\DEV\HFC\HFC\OutSource\bin\Debug\MySql.Data.dll

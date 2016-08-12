@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\HFC\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -38,6 +41,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DBAccess.cs" />
+    <Compile Include="MySqlConnect.cs" />
+    <Compile Include="NW_Dhcp_Customer.cs" />
+    <Compile Include="NW_Dhcp_Ip.cs" />
     <Compile Include="NW_Teamview.cs" />
     <Compile Include="NW_Traffic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

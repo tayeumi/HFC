@@ -672,7 +672,7 @@
             // 
             this.radioRemote.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radioRemote.EditValue = "All";
-            this.radioRemote.Location = new System.Drawing.Point(46, 263);
+            this.radioRemote.Location = new System.Drawing.Point(62, 243);
             this.radioRemote.MenuManager = this.barManager1;
             this.radioRemote.Name = "radioRemote";
             this.radioRemote.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
@@ -694,7 +694,7 @@
             this.gridItemRemote.Name = "gridItemRemote";
             this.gridItemRemote.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.PicNhanVien});
-            this.gridItemRemote.Size = new System.Drawing.Size(226, 260);
+            this.gridItemRemote.Size = new System.Drawing.Size(242, 240);
             this.gridItemRemote.TabIndex = 1;
             this.gridItemRemote.UseEmbeddedNavigator = true;
             this.gridItemRemote.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {

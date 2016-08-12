@@ -119,7 +119,7 @@
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
             this.labelControl2.Location = new System.Drawing.Point(190, 52);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(131, 13);
+            this.labelControl2.Size = new System.Drawing.Size(132, 13);
             this.labelControl2.TabIndex = 33;
             this.labelControl2.Text = "Example : 1111.2222.3333";
             // 
